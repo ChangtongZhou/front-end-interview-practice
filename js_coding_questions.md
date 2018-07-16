@@ -20,3 +20,18 @@ function duplicate(arr) {
 }
 ```
 
+## Q2. Reverse array:
+
+```javascript
+function reverse(arr) {
+    let new_arr = arr.map((x, i) => arr[arr.length-1-i]);
+    return new_arr;
+}
+```
+
+{% hint style="info" %}
+The **`map()`** method creates a new array with the results of calling a provided function on every element in the calling array.
+{% endhint %}
+
+
+
