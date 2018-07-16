@@ -278,7 +278,7 @@ You are submitting the form and you don't want the browser to submit it, in fact
 * is the abstract equality operator 
 * compares value 
 * compares for equality after doing any necessary type conversions 
-* **`===`:**
+* `===`**:**
 * is the strict equality operator.
 * compares data type and value 
 * doesn't do type conversion, so if two values are not the same type, will return `false` 
@@ -324,9 +324,10 @@ Specifies the prototype to be assigned to all instances of objects created by th
 * JavaScript’s class inheritance uses the prototype chain to wire the child `Constructor.prototype` to the parent `Constructor.prototype` for delegation. Usually, the `super()` constructor is also called. Those steps form single-ancestor parent/child hierarchies and create the tightest coupling available in OO design.
 
 ### Prototypal inheritance:
+
 * A prototype is a working object instance
 * Objects inherit directly from other objects
-  
+
 ## $scope:
 
 ### Def:
@@ -449,24 +450,28 @@ const newPerson = Object.keys(person).reduce((obj, key) => {
 * The function does not produce any observable side effects such as network requests, input and output devices, or data mutation.
 
 ### Why are they important?
+
 * One of the major benefits of using pure functions is they are immediately testable. They will always produce the same result if you pass in the same arguments.
 * They also makes maintaining and refactoring code much easier. You can change a pure function and not have to worry about unintended side effects messing up the entire application and ending up in debugging hell. Making your programs more flexible and adaptable to future changes.
 * Usually is used in ReactJS/Redux
 * completely independent of outside state, and as such, they are immune to entire classes of bugs that have to do with shared mutable state. Their independent nature also makes them great candidates for parallel processing across many CPUs, and across entire distributed computing clusters, which makes them essential for many types of scientific and resource-intensive computing tasks.
-
 * Pure function e.g.
-``` javascript
-function priceAfterTax(productPrice) {
- return (productPrice * 0.20) + productPrice;
-}
-```
+
+  ```javascript
+  function priceAfterTax(productPrice) {
+  return (productPrice * 0.20) + productPrice;
+  }
+  ```
+
 * Impure Function e.g.
-``` javascript
-var tax = 20;
-function calculateTax(productPrice) {
- return (productPrice * (tax/100)) + productPrice; 
-}
-```
+
+  ```javascript
+  var tax = 20;
+  function calculateTax(productPrice) {
+  return (productPrice * (tax/100)) + productPrice; 
+  }
+  ```
+
   * Because the function depends on an external tax variable you’d be right! A pure function can not depend on outside variables. It fails one of the requirements thus this function is impure.
 
 ## AMD vs. CommonJS:
@@ -1231,7 +1236,7 @@ Every script has access to the global scope, and if everyone uses the global nam
 
 The `load` event fires at the end of the document loading process. At this point, all of the objects in the document are in the DOM, and all the images, scripts, links and sub-frames have finished loading.
 
-#### Disadvantages: 
+#### Disadvantages:
 
 Need to wait for everything to finish loading
 
@@ -1244,7 +1249,7 @@ Need to wait for everything to finish loading
 
 ### Server-side rendering:
 
-Web apps tend to be highly interactive and dynamic, allowing the user to perform actions and receive a response to their action. Traditionally, the browser receives HTML from the server and renders it. When the user navigates to another URL, a full-page refresh is required and the server sends fresh new HTML to the new page. 
+Web apps tend to be highly interactive and dynamic, allowing the user to perform actions and receive a response to their action. Traditionally, the browser receives HTML from the server and renders it. When the user navigates to another URL, a full-page refresh is required and the server sends fresh new HTML to the new page.
 
 ### Single page app:
 
@@ -1314,7 +1319,7 @@ console.log(it.next());   // throws StopIteration (as the generator is now close
 * A promise may be in one of 3 possible states: fulfilled, rejected, or pending. 
 * Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
 
-### Polyfills of promise: 
+### Polyfills of promise:
 
 * `$.deferred`, Q and Bluebird but not all of them comply with the specification. 
 * ES2015 supports Promises out of the box and polyfills are typically not needed these days.
@@ -1385,13 +1390,13 @@ For arrays:
 * `for` loops - `for (var i = 0; i < arr.length; i++)`. The common pitfall here is that `var` is in the function scope and not the block scope and most of the time you would want block scoped iterator variable. ES2015 introduces `let`which has block scope and it is recommended to use that instead. So this becomes: `for (let i = 0; i < arr.length; i++)`.
 * `forEach` - `arr.forEach(function (el, index) { ... })`. This construct can be more convenient at times because you do not have to use the `index` if all you need is the array elements. There are also the `every` and `some` methods which will allow you to terminate the iteration early.
 
-## Synchronous vs. asynchronous functions.
+## Synchronous vs. Asynchronous functions.
 
-Synchronous functions are blocking while asynchronous functions are not. 
+Synchronous functions are blocking while asynchronous functions are not.
 
-In synchronous functions, statements complete before the next statement is run. In this case, the program is evaluated exactly in order of the statements and execution of the program is paused if one of the statements take a very long time.
+In **synchronous functions**, statements complete before the next statement is run. In this case, the program is evaluated exactly in order of the statements and execution of the program is paused if one of the statements take a very long time.
 
-Asynchronous functions usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty. Heavy duty operations such as loading data from a web server or querying a database should be done asynchronously so that the main thread can continue executing other operations instead of blocking until that long operation to complete \(in the case of browsers, the UI will freeze\).
+**Asynchronous functions** usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty. Heavy duty operations such as loading data from a web server or querying a database should be done asynchronously so that the main thread can continue executing other operations instead of blocking until that long operation to complete \(in the case of browsers, the UI will freeze\).
 
 ## What is event loop? Call stack vs. task queue?
 
