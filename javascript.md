@@ -313,6 +313,20 @@ console.log(a == undefined); // true
 
 Specifies the prototype to be assigned to all instances of objects created by the given function when used as a constructor
 
+## Class inheritance vs. Prototypal inheritance:
+
+### Class inheritance:
+
+* A class is like a blueprint - a description of the object to be created
+* Classes inhert from classes and create subclass relationships
+* Instances are typically instantiated via constructor functions with the `new` key word
+* In JS, class inheritance is implemented on top of prototypal inheritance
+* JavaScript’s class inheritance uses the prototype chain to wire the child `Constructor.prototype` to the parent `Constructor.prototype` for delegation. Usually, the `super()` constructor is also called. Those steps form single-ancestor parent/child hierarchies and create the tightest coupling available in OO design.
+
+### Prototypal inheritance:
+* A prototype is a working object instance
+* Objects inherit directly from other objects
+  
 ## $scope:
 
 ### Def:
@@ -426,6 +440,34 @@ const newPerson = Object.keys(person).reduce((obj, key) => {
 * Many missing features that some developers might be used to
 * No more access to `function.caller` and `function.arguments`
 * Concatenation of scripts written in different strict modes might cause issues.
+
+## Pure Function:
+
+### Def:
+
+* The function always returns the same result if the same arguments are passed in. It doesn't depend on any state, or data, change during a program's execution.
+* The function does not produce any observable side effects such as network requests, input and output devices, or data mutation.
+
+### Why are they important?
+* One of the major benefits of using pure functions is they are immediately testable. They will always produce the same result if you pass in the same arguments.
+* They also makes maintaining and refactoring code much easier. You can change a pure function and not have to worry about unintended side effects messing up the entire application and ending up in debugging hell. Making your programs more flexible and adaptable to future changes.
+* Usually is used in ReactJS/Redux
+* completely independent of outside state, and as such, they are immune to entire classes of bugs that have to do with shared mutable state. Their independent nature also makes them great candidates for parallel processing across many CPUs, and across entire distributed computing clusters, which makes them essential for many types of scientific and resource-intensive computing tasks.
+
+* Pure function e.g.
+``` javascript
+function priceAfterTax(productPrice) {
+ return (productPrice * 0.20) + productPrice;
+}
+```
+* Impure Function e.g.
+``` javascript
+var tax = 20;
+function calculateTax(productPrice) {
+ return (productPrice * (tax/100)) + productPrice; 
+}
+```
+  * Because the function depends on an external tax variable you’d be right! A pure function can not depend on outside variables. It fails one of the requirements thus this function is impure.
 
 ## AMD vs. CommonJS:
 
@@ -1507,6 +1549,10 @@ ES2015 defines a module syntax which aims to replace both AMD and CommonJS. This
 ## Why you might want to create static class members?
 
 Static class members \(properties/methods\) are not tied to a specific instance of a class and have the same value regardless of which instance is referring to it. Static properties are typically configuration variables and static methods are usually pure utility functions which do not depend on the state of the instance.
+
+## Why you might want to create static class members?
+
+Function composition is the process of combining two or more functions to produce a new function. Composing functions together is like snapping together a series of pipes for our data to flow through.
 
 Resources:
 
