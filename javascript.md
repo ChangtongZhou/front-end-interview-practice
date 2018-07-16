@@ -535,9 +535,11 @@ console.log(foo == undefined); // true. Wrong! Don't use this to check!
 
 ### Closure:
 
-* The combination of a function and the lexical environment within which that function was declared.
+* The combination of a function and the lexical environment \(its surrounding state\) within which that function was declared.
 * Closures are functions that have access to the outer \(enclosing\) function's variables - scope chain even after the outer function has returned 
 * The "lexical" = lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. 
+* How to use a closure?
+  * define afunction sinside another function and expose it. To expose a function, 
 * **Why would you use closure?**
   * Data privacy / emulating private methods with closures. Commonly used in the [module pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
   * [Partial applications or currying](https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8):
