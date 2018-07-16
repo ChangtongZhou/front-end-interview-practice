@@ -1179,7 +1179,336 @@ function getFee (isMember) {
 console.log(getFee(true)); // $2.00
 ```
 
-Resources: [https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/questions/coding-questions.md](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/questions/coding-questions.md)
+## Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+
+Every script has access to the global scope, and if everyone uses the global namespace to define their variables, collisions will likely occur. Use the module pattern \(IIFEs\) to encapsulate your variables within a local namespace.
+
+## Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+
+The `load` event fires at the end of the document loading process. At this point, all of the objects in the document are in the DOM, and all the images, scripts, links and sub-frames have finished loading.
+
+#### Disadvantages: 
+
+Need to wait for everything to finish loading
+
+#### Alternatives:
+
+* The DOM event `DOMContentLoaded` will fire after the DOM for the page has been constructed, but do not wait for other resources to finish loading. This is preferred in certain cases when you do not need the full page to be loaded before initializing.
+* Jquery
+
+## Single page app and how to make one SEO-friendly.
+
+### Server-side rendering:
+
+Web apps tend to be highly interactive and dynamic, allowing the user to perform actions and receive a response to their action. Traditionally, the browser receives HTML from the server and renders it. When the user navigates to another URL, a full-page refresh is required and the server sends fresh new HTML to the new page. 
+
+### Single page app:
+
+* Client-side rendering is used
+* The browser loads the initial page from the server, along with the scripts \(frameworks, libraries, app code\) and stylesheets required for the whole app. When the user navigates to other pages, a page refresh is not triggered. The URL of the page is updated via the [HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API). New data required for the new page, usually in JSON format, is retrieved by the browser via [AJAX](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started) requests to the server. The SPA then dynamically updates the page with the data via JavaScript, which it has already downloaded in the initial page load. This model is similar to how native mobile apps work.
+* **Pros:**
+  * The app feels more responsive and users do not see the flash between page navigations due to full-page refreshes.
+  * Fewer HTTP requests are made to the server, as the same assets do not have to be downloaded again for each page load.
+  * Clear separation of the concerns between the client and the server; you can easily build new clients for different platforms \(e.g. mobile, chatbots, smart watches\) without having to modify the server code. You can also modify the technology stack on the client and server independently, as long as the API contract is not broken.
+* **Cons:**
+  * Heavier initial page load due to the loading of framework, app code, and assets required for multiple pages.
+  * There's an additional step to be done on your server which is to configure it to route all requests to a single entry point and allow client-side routing to take over from there.
+  * SPAs are reliant on JavaScript to render content, but not all search engines execute JavaScript during crawling, and they may see empty content on your page. This inadvertently hurts the Search Engine Optimization \(SEO\) of your app. However, most of the time, when you are building apps, SEO is not the most important factor, as not all the content needs to be indexable by search engines. To overcome this, you can either server-side render your app or use services such as [Prerender](https://prerender.io/) to "render your javascript in a browser, save the static HTML, and return that to the crawlers".
+
+## Callback Hell:
+
+Def: long nesting of asynchronous functions in JS
+
+### When \(in what kind of settings\) does the "callback hell problem" occur?
+
+When you have lots of callback functions in your code! It gets harder to work with them the more of them you have in your code and it gets particularly bad when you need to do loops, try-catch blocks and things like that.
+
+### Why does it occur ?
+
+It occurs because in JavaScript the only way to delay a computation so that it runs after the asynchronous call returns is to put the delayed code inside a callback function. You cannot delay code that was written in traditional synchronous style so you end up with nested callbacks everywhere.
+
+### Solution:
+
+* Use promise
+* Use generator:
+  * idea is that the "yield" pauses our for loop until someone calls myGen.next\(\).
+  * e.g.
+
+```javascript
+function fibonacci() {
+  var a = yield 1;
+  yield a * 2;
+}
+
+var it = fibonacci();
+console.log(it);          // "Generator {  }"
+console.log(it.next());   // 1
+console.log(it.send(10)); // 20
+console.log(it.close());  // undefined
+console.log(it.next());   // throws StopIteration (as the generator is now closed)
+```
+
+* Use async/await
+
+## Concurrency vs. Parallelism
+
+### Concurrency:
+
+* Concurrency is the composition of **independently** executing **processes**
+* **Deal** with lots of things at once
+
+### Parallelism:
+
+* The simultaneous \(at the same time\) execution of \(**possibly** related\) computations \(like **threads**\)
+* **Do** lots of things at once
+
+## What is the extent of your experience with Promises and/or their polyfills?
+
+### Promise:
+
+* A promise is an object that may produce a single value sometime in the future: either a resolved value or a reason that it's not resolved \(e.g., a network error occurred\). 
+* A promise may be in one of 3 possible states: fulfilled, rejected, or pending. 
+* Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
+
+### Polyfills of promise: 
+
+* `$.deferred`, Q and Bluebird but not all of them comply with the specification. 
+* ES2015 supports Promises out of the box and polyfills are typically not needed these days.
+
+## Polyfills
+
+A polyfill is a piece of code \(usually JavaScript on the Web\) used to provide modern functionality on older browsers that do not natively support it.
+
+## What are the pros and cons of using Promises instead of callbacks?
+
+**Pros**
+
+* Avoid callback hell which can be unreadable.
+* Makes it easy to write sequential asynchronous code that is readable with `.then()`.
+* Makes it easy to write parallel asynchronous code with `Promise.all()`.
+
+**Cons**
+
+* Slightly more complex code \(debatable\).
+* In older browsers where ES2015 is not supported, you need to load a polyfill in order to use it.
+
+## What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+
+Some examples of languages that compile to JavaScript include CoffeeScript, Elm, ClojureScript, PureScript, and TypeScript.
+
+### Advantages:
+
+* Fixes some of the longstanding problems in JavaScript and discourages JavaScript anti-patterns.
+* Enables you to write shorter code, by providing some syntactic sugar on top of JavaScript, which I think ES5 lacks, but ES2015 is awesome.
+* Static types are awesome \(in the case of TypeScript\) for large projects that need to be maintained over time.
+
+### Disadvantages:
+
+* Require a build/compile process as browsers only run JavaScript and your code will need to be compiled into JavaScript before being served to browsers.
+* Debugging can be a pain if your source maps do not map nicely to your pre-compiled source.
+* Most developers are not familiar with these languages and will need to learn it. There's a ramp up cost involved for your team if you use it for your projects.
+* Smaller community \(depends on the language\), which means resources, tutorials, libraries, and tooling would be harder to find.
+* IDE/editor support might be lacking.
+* These languages will always be behind the latest JavaScript standard.
+* Developers should be cognizant of what their code is being compiled to — because that is what would actually be running, and that is what matters in the end.
+
+## What tools and techniques do you use for debugging JavaScript code?
+
+* React and Redux
+  * [React Devtools](https://github.com/facebook/react-devtools): 
+    * lets you inspect the React component hierarchy, including component props and state.
+  * [Redux Devtools](https://github.com/gaearon/redux-devtools)
+* Angular:
+  * [Augury](https://augury.angular.io/):
+    * Augury helps Angular 2.0 developers visualize the application through component trees, and visual debugging tools. Developers get immediate insight into their application structure, change detection and performance characteristics.
+* Vue
+  * [Vue Devtools](https://github.com/vuejs/vue-devtools)
+* JavaScript
+  * [Chrome Devtools](https://hackernoon.com/twelve-fancy-chrome-devtools-tips-dc1e39d10d9d)
+  * `debugger` statement
+  * Good old `console.log` debugging
+
+## What language constructions do you use for iterating over object properties and array items?
+
+For objects:
+
+* `for` loops - `for (var property in obj) { console.log(property); }`. However, this will also iterate through its inherited properties, and you will add an `obj.hasOwnProperty(property)` check before using it.
+* `Object.keys()` - `Object.keys(obj).forEach(function (property) { ... })`. `Object.keys()` is a static method that will lists all enumerable properties of the object that you pass it.
+* `Object.getOwnPropertyNames()` - `Object.getOwnPropertyNames(obj).forEach(function (property) { ... })`. `Object.getOwnPropertyNames()` is a static method that will lists all enumerable and non-enumerable properties of the object that you pass it.
+
+For arrays:
+
+* `for` loops - `for (var i = 0; i < arr.length; i++)`. The common pitfall here is that `var` is in the function scope and not the block scope and most of the time you would want block scoped iterator variable. ES2015 introduces `let`which has block scope and it is recommended to use that instead. So this becomes: `for (let i = 0; i < arr.length; i++)`.
+* `forEach` - `arr.forEach(function (el, index) { ... })`. This construct can be more convenient at times because you do not have to use the `index` if all you need is the array elements. There are also the `every` and `some` methods which will allow you to terminate the iteration early.
+
+## Synchronous vs. asynchronous functions.
+
+Synchronous functions are blocking while asynchronous functions are not. 
+
+In synchronous functions, statements complete before the next statement is run. In this case, the program is evaluated exactly in order of the statements and execution of the program is paused if one of the statements take a very long time.
+
+Asynchronous functions usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty. Heavy duty operations such as loading data from a web server or querying a database should be done asynchronously so that the main thread can continue executing other operations instead of blocking until that long operation to complete \(in the case of browsers, the UI will freeze\).
+
+## What is event loop? Call stack vs. task queue?
+
+The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the task queue, a function is dequeued and pushed onto the call stack to be executed.
+
+## Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
+
+The former is a **function declaration** while the latter is a **function expression**. The key difference is that function declarations have its body hoisted but the bodies of function expressions are not. If you try to invoke a function expression before it is defined, you will get an `Uncaught TypeError: XXX is not a function` error.
+
+**Function Declaration**
+
+```javascript
+foo(); // 'FOOOOO'
+function foo() {
+  console.log('FOOOOO');
+}
+```
+
+**Function Expression**
+
+```javascript
+foo(); // Uncaught TypeError: foo is not a function
+var foo = function() {
+  console.log('FOOOOO');
+};
+```
+
+## What are the differences between ES6 class and ES5 function constructors?
+
+Let's first look at example of each:
+
+```javascript
+// ES5 Function Constructor
+function Person(name) {
+  this.name = name;
+}
+
+// ES6 Class
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+```
+
+Main difference in the constructor comes when using inheritance. If we want to create a `Student` class that subclasses `Person` and add a `studentId` field, this is what we have to do in addition to the above.
+
+```javascript
+// ES5 Function Constructor
+function Student(name, studentId) {
+  // Call constructor of superclass to initialize superclass-derived members.
+  Person.call(this, name);
+
+  // Initialize subclass's own members.
+  this.studentId = studentId;
+}
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+// ES6 Class
+class Student extends Person {
+  constructor(name, studentId) {
+    super(name);
+    this.studentId = studentId;
+  }
+}
+```
+
+## Destructuring an object or an array
+
+Destructuring is an expression available in ES6 which enables a succinct and convenient way to extract values of Objects or Arrays and place them into distinct variables.
+
+**Array destructuring**
+
+```javascript
+// Variable assignment.
+const foo = ['one', 'two', 'three'];
+
+const [one, two, three] = foo;
+console.log(one); // "one"
+console.log(two); // "two"
+console.log(three); // "three"
+```
+
+```javascript
+// Swapping variables
+let a = 1;
+let b = 3;
+
+[a, b] = [b, a];
+console.log(a); // 3
+console.log(b); // 1
+```
+
+**Object destructuring**
+
+```javascript
+// Variable assignment.
+const o = { p: 42, q: true };
+const { p, q } = o;
+
+console.log(p); // 42
+console.log(q); // true
+```
+
+## What are the benefits of using spread syntax and how is it different from rest syntax?
+
+ES6's **spread syntax** is very useful when coding in a functional paradigm as we can easily create copies of arrays or objects without resorting to `Object.create`, `slice`, or a library function. This language feature is used often in Redux and rx.js projects.
+
+```javascript
+function putDookieInAnyArray(arr) {
+  return [...arr, 'dookie'];
+}
+
+const result = putDookieInAnyArray(['I', 'really', "don't", 'like']); // ["I", "really", "don't", "like", "dookie"]
+
+const person = {
+  name: 'Todd',
+  age: 29,
+};
+
+const copyOfTodd = { ...person };
+```
+
+ES6's **rest syntax** offers a shorthand for including an arbitrary number of arguments to be passed to a function. It is like an inverse of the spread syntax, taking data and stuffing it into an array rather than unpacking an array of data, and it works in function arguments, as well as in array and object destructuring assignments.
+
+```javascript
+function addFiveToABunchOfNumbers(...numbers) {
+  return numbers.map(x => x + 5);
+}
+
+const result = addFiveToABunchOfNumbers(4, 5, 6, 7, 8, 9, 10); // [9, 10, 11, 12, 13, 14, 15]
+
+const [a, b, ...rest] = [1, 2, 3, 4]; // a: 1, b: 2, rest: [3, 4]
+
+const { e, f, ...others } = {
+  e: 1,
+  f: 2,
+  g: 3,
+  h: 4,
+}; // e: 1, f: 2, others: { g: 3, h: 4 }
+```
+
+## How can you share code between files?
+
+This depends on the JavaScript environment.
+
+On the client \(browser environment\), as long as the variables/functions are declared in the global scope \(`window`\), all scripts can refer to them. Alternatively, adopt the Asynchronous Module Definition \(AMD\) via RequireJS for a more modular approach.
+
+On the server \(Node.js\), the common way has been to use CommonJS. Each file is treated as a module and it can export variables and functions by attaching them to the `module.exports` object.
+
+ES2015 defines a module syntax which aims to replace both AMD and CommonJS. This will eventually be supported in both browser and Node environments.
+
+## Why you might want to create static class members?
+
+Static class members \(properties/methods\) are not tied to a specific instance of a class and have the same value regardless of which instance is referring to it. Static properties are typically configuration variables and static methods are usually pure utility functions which do not depend on the state of the instance.
+
+Resources:
+
+[https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/questions/coding-questions.md](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/questions/coding-questions.md)
 
 [https://medium.com/@nupoor\_neha/javascript-front-end-interview-questions-1cbc5e32792b](https://medium.com/@nupoor_neha/javascript-front-end-interview-questions-1cbc5e32792b)
 
