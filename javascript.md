@@ -179,7 +179,7 @@ Pass values into a function, and the function will do some operations and return
 
 * `<Function>.call` is a method that executes the defined function, but with the "this" variable pointing to the first argument, and the rest of the arguments being arguments of the function that is being "called".
 
-## Prototype chain: 
+## Prototype chain:
 
 Javascript object doesn't have a type or a class that it gets its methods from, it has a prototype, including the prototype object. This "chain" goes all the way back until it reaches an object that has no prototype, usually Object's prototype. Prototype's version of "Inheritance" involves adding another link to the end of this prototype chain.
 
@@ -190,13 +190,13 @@ Javascript object doesn't have a type or a class that it gets its methods from, 
 
 ## [Asynchronous design patterns: ](https://medium.com/@stevekonves/three-javascript-async-patterns-1d2e7094860a)
 
-## Callback function: 
+## Callback function:
 
 [http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/](http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/)
 
 ### **Def**
 
-A function that is passed to another function as a parameter, and the callback function is called \(or executed\) inside the other function 
+A function that is passed to another function as a parameter, and the callback function is called \(or executed\) inside the other function
 
 ### How to create a function that accepts callback and calls that callback
 
@@ -222,21 +222,21 @@ In the callback, you can now access `param1` as `this`
 
 ### What are the ways to bus errors through callback
 
-**Code Assignment:** 
+**Code Assignment:**
 
-@13:57 DOM 
+@13:57 DOM
 
-## Event propagation, event model in the browser: 
+## Event propagation, event model in the browser:
 
-### Event propagation: 
+### Event propagation:
 
 Def: Event propagation is a way to describe the “stack” of events that are fired in a web browser
 
 * when an event occurs in an element inside another element, and both elements have registered a handle for that event. The event propagation mode determines in which order the elements receive the event 
 
-### Event bubbling: 
+### Event bubbling:
 
-The event is first captured and handled by the innermost element and then propagated to outer elements. 
+The event is first captured and handled by the innermost element and then propagated to outer elements.
 
 ### Event capturing/ trickling:
 
@@ -247,13 +247,13 @@ We can use the `addEventListener(type, listener, useCapture)`to register event h
 * Event Capturing model: pass the third argument as `true`
 * Event Bubbling mode: pass the third argument as `false`
 
-### How to prevent the browser from doing the default behavior? 
+### How to prevent the browser from doing the default behavior?
 
-Like you click the link, but you don't want the browser to go somewhere 
+Like you click the link, but you don't want the browser to go somewhere
 
 You are submitting the form and you don't want the browser to submit it, in fact you just want to catch that event and do something like maybe put the alert box, but do not send the form itself
 
-## Event Delegation: 
+## Event Delegation:
 
 * Add event listeners to a parent element instead of adding them to the descendant elements \(child elements\) 
 * The listener fires whenever the event is triggered on the descendant elements because of event bubbling up the DOM 
@@ -261,7 +261,7 @@ You are submitting the form and you don't want the browser to submit it, in fact
   * Reduces memory footprint because only 1 handler is needed on the parent element, rather than attaching event handlers on each descendant 
   * No need to unbind the handler from elements that are removed and to bind the event for new elements 
 
-## Explain “This” in JS: 
+## Explain “This” in JS:
 
 * When “`new`” keyword is used for calling the function, “`this`”: a new object inside the function
 * When “`apply`”, “`call`”, “`bind`” are used to call/create a function, “`this`”: the object that is passed in as the argument inside that function 
@@ -271,21 +271,19 @@ You are submitting the form and you don't want the browser to submit it, in fact
 * When multiple of the above rules apply, the higher rule will set the “`this`” value 
 * When the function is an ES2015 arrow function, ignores all the rules above, “`this`”: a value of its surrounding scope at the time it is created 
 
-## `==` Vs. `===`: 
+## `==` Vs. `===`:
 
-### `==`: 
+### `==`:
 
 * is the abstract equality operator 
 * compares value 
 * compares for equality after doing any necessary type conversions 
-* 
-### `===`: 
-
-* is the strict equality operator. 
+* **`===`:**
+* is the strict equality operator.
 * compares data type and value 
 * doesn't do type conversion, so if two values are not the same type, will return `false` 
 
-### Funcky things happen when using `==`: 
+### Funcky things happen when using `==`:
 
 ```javascript
 1 == '1'; // true
@@ -296,7 +294,7 @@ You are submitting the form and you don't want the browser to submit it, in fact
 0 == false; // true
 ```
 
-**Never use `==` operator, except for convenience when comparing against `null` or `undefined`, where `a == null` will return `true` if a is `null` or `undefined`.**
+**Never use** `==` **operator, except for convenience when comparing against** `null` **or** `undefined`**, where** `a == null` **will return** `true` **if a is** `null` **or** `undefined`**.**
 
 ```javascript
 var a = null;
@@ -304,22 +302,22 @@ console.log( a == null); // true
 console.log(a == undefined); // true
 ```
 
-## Prototypal inheritance: 
+## Prototypal inheritance:
 
 * A private property of an object holds a link/reference to another object 
 * When a property of an object is not found, the JavaScript engine looks at the object’s prototype, and the prototype’s prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. It simulates classical inheritance, but it is really more like delegation. Because you are indicating an object to delegate behavior to if that behavior isn’t defined on the object in question. 
 * When is it a good choice? 
   * When you want to create has-a or uses-a or can-do relationships between objects
 
-## Func.prototype: 
+## Func.prototype:
 
 Specifies the prototype to be assigned to all instances of objects created by the given function when used as a constructor
 
-## $scope: 
+## $scope:
 
-### Def: 
+### Def:
 
-Scope is a JS object that refers to the application model \(data available for the current view\) with properties and methods, which are available for both the view and controller. It is the glue between application controller and the view\(HTML\). 
+Scope is a JS object that refers to the application model \(data available for the current view\) with properties and methods, which are available for both the view and controller. It is the glue between application controller and the view\(HTML\).
 
 ### Scope Hierarchies:
 
@@ -358,23 +356,23 @@ angular.module('scopeExample', [])
 
 ## Immutability:
 
-### Def: 
+### Def:
 
 * An immutable object is an object whose state cannot be changed after it is created. 
 * Immutable JS values: numbers and strings. 
 * Mutable JS values: objects, arrays, functions, classes, sets and maps 
 
-### Immutable variable performance: 
+### Immutable variable performance:
 
-Whenever you add something to an immutable object, we need to create a new instance by copying the existing values and add the new value to it. This will certainly be both more memory intensive and more computationally challenging then mutating a single object. However, because immutable objects never change, they can be implemented using a strategy called "structural sharing", which yields much less memory overhead then you might expect. There will still be an overhead compared to built-in arrays and objects, but it will be constant and can typically be dwarfed by other benefits enabled by immutability. In practice, the use of immutable data will in many cases increase the overall performance of your app, even if certain operations in isolation become more expensive. 
+Whenever you add something to an immutable object, we need to create a new instance by copying the existing values and add the new value to it. This will certainly be both more memory intensive and more computationally challenging then mutating a single object. However, because immutable objects never change, they can be implemented using a strategy called "structural sharing", which yields much less memory overhead then you might expect. There will still be an overhead compared to built-in arrays and objects, but it will be constant and can typically be dwarfed by other benefits enabled by immutability. In practice, the use of immutable data will in many cases increase the overall performance of your app, even if certain operations in isolation become more expensive.
 
-### Pros of immutability in JS: 
+### Pros of immutability in JS:
 
 * **Increases predictability**: Mutation hides change, which create \(unexpected\) side effects, which can cause nasty bugs. When you enforce immutability you can keep your application architecture and mental model simple, which makes it easier to reason about your application.
 * **Increases performance \(indirectly\)**: Even though adding values to an immutable Object means that a new instance needs to be created where existing values need to be copied and new values need to be added to the new Object which cost memory, immutable Objects can make use of structural sharing to reduce memory overhead. 
 * **Allows for mutation tracking:** Immutability allows you to optimize your application by making use of reference and value equality. This makes it really easy to see if anything has changed. e.g. a state change in a react component. You can use `shouldComponentUpdate` to check if the state is identical by comparing state Objects and prevent unnecessary rendering. 
 
-### How to implement: 
+### How to implement:
 
 * Use ES6 feature `Object.assign` for adding new element: 
 
@@ -389,7 +387,6 @@ const newPerson = Object.assign({}, person, {
 console.log(newPerson === person) // false
 console.log(person) // { name: 'John', age: 28 }
 console.log(newPerson) // { name: 'John', age: 30 }
-
 ```
 
 * Use reduce for removing an element:
@@ -406,12 +403,11 @@ const newPerson = Object.keys(person).reduce((obj, key) => {
   }
   return obj
 }, {})
-
 ```
 
-## "`use strict;`": 
+## "`use strict;`":
 
-### Def: 
+### Def:
 
 ''use strict" is a statement used to enable strict mode to entire scripts or individual functions. Strict mode is a way to opt into a restricted variant of JS.
 
@@ -431,11 +427,11 @@ const newPerson = Object.keys(person).reduce((obj, key) => {
 * No more access to `function.caller` and `function.arguments`
 * Concatenation of scripts written in different strict modes might cause issues.
 
-## AMD vs. CommonJS: 
+## AMD vs. CommonJS:
 
-### Similarity: 
+### Similarity:
 
-Both implement a module system, which was not natively present in JavaScript until ES2015 came along. 
+Both implement a module system, which was not natively present in JavaScript until ES2015 came along.
 
 ### CommonJS:
 
@@ -454,7 +450,7 @@ Both implement a module system, which was not natively present in JavaScript unt
 
 ### ES2015 \(ES6\):
 
-Support for both synchronous and asynchronous loading 
+Support for both synchronous and asynchronous loading
 
 ## Explain why the following doesn’t work as an IIFE: `function foo(){}();`. What needs to be changed to properly make it an IIFE?
 
@@ -463,9 +459,9 @@ Support for both synchronous and asynchronous loading
 * 2 ways to fix: 
   * **Adding more brackets**: 
     * 1. `(function foo(){ })()` 
-    * 2. `(function foo(){ }())`
+    * 1. `(function foo(){ }())`
     * These functions are not exposed in the global scope and you can even omit its name if you dont need to reference itself within the body 
-  * **Use `void` operator**: 
+  * **Use** `void` **operator**: 
     * `void function foo(){ }();`
       * problem with this approach:
         * The evaluation of given expression is always undefined, so if your IIFE function returns anything, you can't use it, e.g.
@@ -476,7 +472,7 @@ const foo = void function bar() {return 'foo';}();
 console.log(foo); //undefined
 ```
 
-## `null` vs. `undefined` vs. `undeclared`? How do you check for any of these states? 
+## `null` vs. `undefined` vs. `undeclared`? How do you check for any of these states?
 
 ### `Undeclared`:
 
@@ -501,9 +497,8 @@ console.log(x); // 1
 * A variable that has been declared, but not assigned a value 
 * Or a function doesn't return any value as the result of executing it is assigned to a variable, then the variable is undefined
 * How to check `undefined` variable?
-
   * Use strict equality \(`===`\)
-  *  Use `typeof === 'undefined'` 
+  * Use `typeof === 'undefined'` 
   * Note: don't use abstract equality operator to check, because it also return `true` if the value is `null`. 
   * e.g.
 
@@ -518,10 +513,9 @@ console.log(foo == null); // true. Wrong! Don't use this to check!
 function bar() {}
 var bar = bar();
 console.log(baz); //undefined
-
 ```
 
-###  `Null`:
+### `Null`:
 
 * A variable that is `null` will have been explicitly assigned to the `null` value. 
 * It represents no value and is different from `undefined` in the sense that it has been explicitly assigned. 
@@ -537,9 +531,9 @@ console.log(foo === null); // true
 console.log(foo == undefined); // true. Wrong! Don't use this to check!
 ```
 
-## What is a closure, and how/why would you use one? 
+## What is a closure, and how/why would you use one?
 
-### Closure: 
+### Closure:
 
 * The combination of a function and the lexical environment within which that function was declared.
 * Closures are functions that have access to the outer \(enclosing\) function's variables - scope chain even after the outer function has returned 
@@ -562,7 +556,7 @@ function add(x, y) {
             return x + y;
         };
     }
-    
+
     // full application
     return x+y;
 }
@@ -588,9 +582,9 @@ function generic(fn) {
 generic(add, 1, 2, 3)(5, 5); //16
 ```
 
-Resource: [http://www.drdobbs.com/open-source/currying-and-partial-functions-in-javasc/231001821](http://www.drdobbs.com/open-source/currying-and-partial-functions-in-javasc/231001821) 
+Resource: [http://www.drdobbs.com/open-source/currying-and-partial-functions-in-javasc/231001821](http://www.drdobbs.com/open-source/currying-and-partial-functions-in-javasc/231001821)
 
-## `.forEach` loop vs. `.map()` loop, why you would pick one versus the other? 
+## `.forEach` loop vs. `.map()` loop, why you would pick one versus the other?
 
 ### `forEach`:
 
@@ -627,7 +621,7 @@ const doubled = a.map(num => {
 
 ## A typical use case for anonymous functions?
 
-### Module encapsulation: 
+### Module encapsulation:
 
 They can be used in IIFEs to encapsulate some code within a local scope so that variables declared in it do not leak to the global scope.
 
@@ -661,33 +655,33 @@ const double = arr.map(function(element){
 console.log(double); // [2, 4, 6]
 ```
 
-## Reasons/Pros of anonymous functions? 
+## Reasons/Pros of anonymous functions?
 
-If no name is needed because the function is only ever called in one place, then why add a name to whatever namespace you're in. 
+If no name is needed because the function is only ever called in one place, then why add a name to whatever namespace you're in.
 
-Anonymous functions are declared inline and inline functions have advantages in that they can access variables in the parent scopes. Yes, you can put a name on an anonymous function, but that's usually pointless if it's declared inline. So inline has a significant advantage and if you're doing inline, there's little reason to put a name on it. 
+Anonymous functions are declared inline and inline functions have advantages in that they can access variables in the parent scopes. Yes, you can put a name on an anonymous function, but that's usually pointless if it's declared inline. So inline has a significant advantage and if you're doing inline, there's little reason to put a name on it.
 
-The code seems more self-contained and readable when handlers are defined right inside the code that's calling them. You can read the code in almost sequential fashion rather than having to go find the function with that name. 
+The code seems more self-contained and readable when handlers are defined right inside the code that's calling them. You can read the code in almost sequential fashion rather than having to go find the function with that name.
 
-## How do you organize your code? \(Module pattern, classical inheritance\)? 
+## How do you organize your code? \(Module pattern, classical inheritance\)?
 
 **Backbone**: OOP approach, creating Backbone models and attaching methods to them.
 
 **React/Redux**: utilize a single-directional data flow based on Flux architecture. Represent app's models using plain objects and write utility pure functions to manipulate these objects. State is manipulated using actions and reducers like in any other Redux application.
 
-## Host objects vs. Native objects? 
+## Host objects vs. Native objects?
 
-**Host objects**: provided by the runtime environment \(browser or Node\), such as `window`, `XMLHTTPRequest`, etc. 
+**Host objects**: provided by the runtime environment \(browser or Node\), such as `window`, `XMLHTTPRequest`, etc.
 
-**Native objects**: part of the JS language defined by the ECMAScript specification, such as `String`, `Math`, `RegExp`, `Object`, `Function` 
+**Native objects**: part of the JS language defined by the ECMAScript specification, such as `String`, `Math`, `RegExp`, `Object`, `Function`
 
-## Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`? 
+## Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
 Normally, `function Person(){}` is just a normal function declaration. But due to the convention, PascalCase for functions are intended to be used as constructors.
 
-**`var person = Person()`** invokes the `Person` as a function, but not as a constructor. Invoking as such is a mistake if the function is intended to be used as a constructor. Typically, the constructor doesn't return anything. Hence, invoking the constructor like a normal function will return `undefined` and that gets assigned to the variable intended as the instance.
+`var person = Person()` invokes the `Person` as a function, but not as a constructor. Invoking as such is a mistake if the function is intended to be used as a constructor. Typically, the constructor doesn't return anything. Hence, invoking the constructor like a normal function will return `undefined` and that gets assigned to the variable intended as the instance.
 
-**`var person = new Person()`** creates an instance of the `Person` object using the `new` operator, which inherits from `Person.prototype`. An alternative would be to use `Object.create`, such as: `Object.create(Person.prototype)`.
+`var person = new Person()` creates an instance of the `Person` object using the `new` operator, which inherits from `Person.prototype`. An alternative would be to use `Object.create`, such as: `Object.create(Person.prototype)`.
 
 ```javascript
 function Person(name) {
@@ -705,14 +699,14 @@ console.log(person.name); // "John"
 
 ## .call vs. .apply?
 
-**Similarity**: both of them are used to invoke functions and their first parameter will be used as the value of this within the function. 
+**Similarity**: both of them are used to invoke functions and their first parameter will be used as the value of this within the function.
 
-**Difference**: 
+**Difference**:
 
 * `.call`: takes in comma-separated arguments as the next arguments 
 * `.apply` : takes in an array of arguments as the next argument 
 
-**E.g.** 
+**E.g.**
 
 ```javascript
 function add (a, b) {
@@ -723,15 +717,15 @@ console.log(add.call(null, 1, 2));
 console.log(add.apply(null, [1, 2]));
 ```
 
-## Explain Function.prototype.bind. 
+## Explain Function.prototype.bind.
 
-Bind creates a new function that will have this set to the first parameter passed to bind\(\). With a given sequence of arguments preceding any provided when the new function is called 
+Bind creates a new function that will have this set to the first parameter passed to bind\(\). With a given sequence of arguments preceding any provided when the new function is called
 
-### Reuse methods 
+### Reuse methods
 
-### curry a function 
+### curry a function
 
-e.g. 
+e.g.
 
 ```javascript
 x = 9;
@@ -790,13 +784,13 @@ Button.prototype.hookEvent(element) {
 }
 ```
 
-## When would you use document.write\(\)? 
+## When would you use document.write\(\)?
 
 `document.write()` writes a string of text to a document stream opened by `document.open()`. When `document.write()` is executed after the page has loaded, it will call `document.open`which clears the whole document \(`<head>` and `<body>` removed!\) and replaces the contents with the given parameter value. Hence it is usually considered dangerous and prone to misuse.
 
-## Feature detection vs. Feature inference vs. UA string? 
+## Feature detection vs. Feature inference vs. UA string?
 
-### Feature detection: 
+### Feature detection:
 
 Feature detection involves working out whether a browser supports a certain block of code, and running different code depending on whether it does or not, so that the browser can always provide a working experience rather crashing/erroring in some browsers.
 
@@ -812,7 +806,7 @@ if ('geolocation' in navigator) {
 
 Modernizr is a great library to handle feature detection.
 
-### Feature Inference: 
+### Feature Inference:
 
 Feature inference checks for a feature just like feature detection, but uses another function because it assumes it will also exist.
 
@@ -826,34 +820,34 @@ if (document.getElementByTagName) {
 
 This is not really recommended. Feature detection is more foolproof.
 
-## UA String: 
+## UA String:
 
-It is a browser-reported string that allows the network protocol peers to identify the application type, operating system, software vendor or software version of the requesting software user agent. It can be accessed via `navigator.userAgent`. However, the string is tricky to parse and can be spoofed. For example, Chrome reports both as Chrome and Safari. So to detect Safari, you have to check for the Safari string and the absence of the Chrome string. Avoid this method. 
+It is a browser-reported string that allows the network protocol peers to identify the application type, operating system, software vendor or software version of the requesting software user agent. It can be accessed via `navigator.userAgent`. However, the string is tricky to parse and can be spoofed. For example, Chrome reports both as Chrome and Safari. So to detect Safari, you have to check for the Safari string and the absence of the Chrome string. Avoid this method.
 
-## Explain AJAX in as much detail as possible: 
+## Explain AJAX in as much detail as possible:
 
 AJAX \(Asynchronous JavaScript and XML\) is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With Ajax, web applications can send data to and retrieve from a server asynchronously \(in the background\) without interfering with the display and behavior of the existing page. By decoupling the data interchange layer from the presentation layer, **Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page**. In practice, modern implementations commonly substitute use JSON instead of XML, due tot eh advantages of JSON being native to JavaScript.
 
 The XMLHttpRequest API is frequently used for the asynchronous communication or these days, the `fetch` API.
 
-## Advantages and Disadvantages of using AJAX? 
+## Advantages and Disadvantages of using AJAX?
 
-### Advantages: 
+### Advantages:
 
 * Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page. 
 * Reduce connections to the server since scripts and stylesheets only have to be requested once. State can be maintained on a page. JS variables and DOM state will persist because the main container page was not reloaded. 
 * Most of the advantages of an SPA 
 
-### Disadvantages: 
+### Disadvantages:
 
 * Dynamic webpages are harder to bookmark 
 * Does not work if JS has been disabled in the browser 
 * Some webcrawlers don't execute JS and would not see content that has been loaded by JS. 
 * Most of the disadvantages of an SPA. 
 
-## `Fetch()`: 
+## `Fetch()`:
 
-Allows you to make network requests similar to XMLHttpRequest \(XHR\). The main difference is that the Fetch API uses Promises, which enables a simpler and cleaner API, **avoiding callback hell and having to remember the complex API of XMLHttpRequest.** 
+Allows you to make network requests similar to XMLHttpRequest \(XHR\). The main difference is that the Fetch API uses Promises, which enables a simpler and cleaner API, **avoiding callback hell and having to remember the complex API of XMLHttpRequest.**
 
 e.g.1- check response status is 200 and parse the response as JSON
 
@@ -938,23 +932,23 @@ fetch(url, {
 });
 ```
 
-## XMLHttpRequest: 
+## XMLHttpRequest:
 
-Allows you request data from a server 
+Allows you request data from a server
 
-**pros**: 
+**pros**:
 
 * updated a web page without reloading the page 
 * request data from a server - after the page has loaded 
 * receive data from a server - after the page has loaded 
 * send data to a server - in the background 
 
-**cons:** 
+**cons:**
 
 * callback hells 
 * API is complex 
 
-An XMLHttpRequest would need two listeners to be set to handle the success and error cases and a call to open\(\) and send\(\). 
+An XMLHttpRequest would need two listeners to be set to handle the success and error cases and a call to open\(\) and send\(\).
 
 ```javascript
 function reqListener() {
@@ -973,11 +967,11 @@ oReq.open('get', './api/some.json', true);
 oReq.send();
 ```
 
-## Promise: 
+## Promise:
 
 [https://www.youtube.com/watch?v=UGf0fGMxDgE](https://www.youtube.com/watch?v=UGf0fGMxDgE)
 
-**Def**: represents the eventual completion or failure of an asynchronous operation. 
+**Def**: represents the eventual completion or failure of an asynchronous operation.
 
 ### **Basic promise code example**:
 
@@ -1010,7 +1004,6 @@ promise.then(function(result) {
 }, function(err) {
   console.log(err); // Error: "It broke"
 });
-
 ```
 
 ### Callback hell example for asynchronous operations:
@@ -1076,9 +1069,9 @@ async function foo() {
 }
 ```
 
-## Event Listener vs. Promise: 
+## Event Listener vs. Promise:
 
-### Event Listener: 
+### Event Listener:
 
 * represents an object that can handle an event dispatched by en eventTarget object 
 * **pros**: events are great for things that can happen multiple times on the same object 
@@ -1092,7 +1085,7 @@ async function foo() {
 * If a promise has succeeded or failed and you later add a success/failure callback, the correct callback will be called, even though the event took place earlier. 
 * Extremely useful async success/failure, because you're less interested in the exact time something became available, and more interested in reacting to the outcome. 
 
-## How JSONP works \(and how it's not really Ajax\). 
+## How JSONP works \(and how it's not really Ajax\).
 
 JSONP \(JSON with Padding\) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
 
@@ -1120,21 +1113,21 @@ JSONP can be unsafe and has some security implications. As JSONP is really JavaS
 
 These days,[CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)is the recommended approach and JSONP is seen as a hack.
 
-## JS templating? Libraries of JS templating: 
+## JS templating? Libraries of JS templating:
 
 Handlebars, Underscore, Lodash, AngularJS, and JSX. I disliked templating in AngularJS because it made heavy use of strings in the directives and typos would go uncaught. JSX is my new favorite as it is closer to JavaScript and there is barely any syntax to learn. Nowadays, you can even use ES2015 template string literals as a quick way for creating templates without relying on third-party code.
 
 ```jsx
-const template = `<div>My name is: ${name}</div>`; 
+const template = `<div>My name is: ${name}</div>`;
 ```
 
 However, do be aware of a potential XSS in the above approach as the contents are not escaped for you, unlike in templating libraries.
 
-## Attribute vs. Property: 
+## Attribute vs. Property:
 
-**Attribute:** are defined on the HTML markup 
+**Attribute:** are defined on the HTML markup
 
-**Properties**: are defined on the DOM 
+**Properties**: are defined on the DOM
 
 **Difference:**
 
@@ -1159,22 +1152,22 @@ console.log(input.value); // Hello World!
 
 * the value **attribute** specifies the initial value of an input, but the value **property** specifies the current value 
 
-## Why is extending built-in JavaScript objects not a good idea? 
+## Why is extending built-in JavaScript objects not a good idea?
 
-Extending a built-in/native JS object means addling properties/functions to its prototype. It is dangerous in practice. Imagine your code uses a few libraries that both extend the `Array.prototype` by adding the same `contains` method, the implementations will overwrite each other and your code will break if the behavior of these two methods is not the same. 
+Extending a built-in/native JS object means addling properties/functions to its prototype. It is dangerous in practice. Imagine your code uses a few libraries that both extend the `Array.prototype` by adding the same `contains` method, the implementations will overwrite each other and your code will break if the behavior of these two methods is not the same.
 
-The only time you may want to extend a native object is when you want ti create a polyfill, essentially providing your own implementation for a method that is part of the JS specification, but may not exist in the user's browser due to it being an older browser. 
+The only time you may want to extend a native object is when you want ti create a polyfill, essentially providing your own implementation for a method that is part of the JS specification, but may not exist in the user's browser due to it being an older browser.
 
-## Document `load` event VS. `DOMContentLoaded` event: 
+## Document `load` event VS. `DOMContentLoaded` event:
 
 * Window's `load` event is only fired after the DOM and all dependent resources and asses have loaded.
 * `DOMContentLoaded` event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. 
 
-## Same-origin policy with regards to JS: 
+## Same-origin policy with regards to JS:
 
-**Def**: The same-origin policy prevents JS from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port name. This policy prevents a malicious script on one page from getting access to sensitive data on another web page through that page's Document Object Model. 
+**Def**: The same-origin policy prevents JS from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port name. This policy prevents a malicious script on one page from getting access to sensitive data on another web page through that page's Document Object Model.
 
-## Ternary expression, what does the word "Ternary" indicate? 
+## Ternary expression, what does the word "Ternary" indicate?
 
 "Ternary" indicates three A ternary expression takes three operands. The test condition, the "then" expression, and the "else" expression This operator is frequently used as a shortcut for the if statement. e.g.
 
