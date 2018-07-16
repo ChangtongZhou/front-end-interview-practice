@@ -1550,7 +1550,7 @@ ES2015 defines a module syntax which aims to replace both AMD and CommonJS. This
 
 Static class members \(properties/methods\) are not tied to a specific instance of a class and have the same value regardless of which instance is referring to it. Static properties are typically configuration variables and static methods are usually pure utility functions which do not depend on the state of the instance.
 
-## Why you might want to create static class members?
+## Function Composition?
 
 Function composition is the process of combining two or more functions to produce a new function. Composing functions together is like snapping together a series of pipes for our data to flow through.
 
