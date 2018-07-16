@@ -1,4 +1,4 @@
 # Table of contents
 
-* [JavaScript](README.md)
+* [JavaScript](JavaScript.md)
 
