@@ -175,5 +175,11 @@ delete obj.regex;
 delete obj['regex'];
 ```
 
+## `Array.splice()` vs. `Array.slice()`:
+
+* The `splice()` method returns the removed items in an array and `slice()` method returns the selected elements in an array, as a new array object
+* The `splice()` method changes the original array and `slice()` method doesn't change the original array
+* The `splice()` method can take n number of arguments
+
 
 
