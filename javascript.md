@@ -179,15 +179,6 @@ Pass values into a function, and the function will do some operations and return
 
 * `<Function>.call` is a method that executes the defined function, but with the "this" variable pointing to the first argument, and the rest of the arguments being arguments of the function that is being "called".
 
-## Prototype chain:
-
-Javascript object doesn't have a type or a class that it gets its methods from, it has a prototype, including the prototype object. This "chain" goes all the way back until it reaches an object that has no prototype, usually Object's prototype. Prototype's version of "Inheritance" involves adding another link to the end of this prototype chain.
-
-* Check current object's prototype: 
-* `console.log(Object.getPrototypeOf(obj_var));`
-* `<Function>.call` is a method that executes the defined function, but with the "this" variable pointing to the first argument, and the rest of the arguments being arguments of the function that is being "called". 
-* `Object.create(obj)` creates an object with a prototype of the passed in object 
-
 ## [Asynchronous design patterns: ](https://medium.com/@stevekonves/three-javascript-async-patterns-1d2e7094860a)
 
 ## Callback function:
@@ -302,12 +293,153 @@ console.log( a == null); // true
 console.log(a == undefined); // true
 ```
 
-## Prototypal inheritance:
+## Prototype chain:
+
+Javascript object doesn't have a type or a class that it gets its methods from, it has a prototype, including the prototype object. This "chain" goes all the way back until it reaches an object that has no prototype, usually Object's prototype. Prototype's version of "Inheritance" involves adding another link to the end of this prototype chain.
+
+* Check current object's prototype: 
+* `console.log(Object.getPrototypeOf(obj_var));`
+* `<Function>.call` is a method that executes the defined function, but with the "this" variable pointing to the first argument, and the rest of the arguments being arguments of the function that is being "called". 
+* `Object.create(obj)` creates an object with a prototype of the passed in object 
+* e.g.
+*   ```javascript
+  // Let's create an object o from function f with its own properties a and b:
+  let f = function () {
+     this.a = 1;
+     this.b = 2;
+  }
+  let o = new f(); // {a: 1, b: 2}
+
+  // add properties in f function's prototype
+  f.prototype.b = 3;
+  f.prototype.c = 4;
+
+  // do not set the prototype f.prototype = {b:3,c:4}; this will break the prototype chain
+  // o.[[Prototype]] has properties b and c.
+  // o.[[Prototype]].[[Prototype]] is Object.prototype.
+  // Finally, o.[[Prototype]].[[Prototype]].[[Prototype]] is null.
+  // This is the end of the prototype chain, as null,
+  // by definition, has no [[Prototype]].
+  // Thus, the full prototype chain looks like:
+  // {a: 1, b: 2} ---> {b: 3, c: 4} ---> Object.prototype ---> null
+
+  console.log(o.a); // 1
+  // Is there an 'a' own property on o? Yes, and its value is 1.
+
+  console.log(o.b); // 2
+  // Is there a 'b' own property on o? Yes, and its value is 2.
+  // The prototype also has a 'b' property, but it's not visited. 
+  // This is called "property shadowing"/ "method overriding".
+
+  console.log(o.c); // 4
+  // Is there a 'c' own property on o? No, check its prototype.
+  // Is there a 'c' own property on o.[[Prototype]]? Yes, its value is 4.
+
+  console.log(o.d); // undefined
+  // Is there a 'd' own property on o? No, check its prototype.
+  // Is there a 'd' own property on o.[[Prototype]]? No, check its prototype.
+  // o.[[Prototype]].[[Prototype]] is null, stop searching,
+  // no property found, return undefined.
+  ```
+
+## [Prototypal inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain):
 
 * A private property of an object holds a link/reference to another object 
 * When a property of an object is not found, the JavaScript engine looks at the object’s prototype, and the prototype’s prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. It simulates classical inheritance, but it is really more like delegation. Because you are indicating an object to delegate behavior to if that behavior isn’t defined on the object in question. 
 * When is it a good choice? 
   * When you want to create has-a or uses-a or can-do relationships between objects
+  * There is more than one type of prototypal inheritance:
+  * **Delegation Inheritance \(i.e., the prototype chain\)**:
+    * A delegate prototype is an object that serves as a base for another object. When you inherit from a delegate prototype, the new object gets a reference to the prototype.
+    * When you try to access a property on the new object, it checks the object’s own properties first. If it doesn’t find it there, it checks the `[[Prototype]]`, and so on up the prototype chain until it gets back to `Object.prototype`, which is the root delegate for most objects.
+    *   ```javascript
+      class Greeter {
+        constructor (name) {
+          this.name = name || 'John Doe';
+        }
+        hello () {
+          return `Hello, my name is ${ this.name }`;
+        }
+      }
+
+      const george = new Greeter('George');
+      const msg = george.hello();
+      console.log(msg); // Hello, my name is George
+      ```
+  * **Concatenative Inheritance**\(i.e. mixins, `Object.assign()`\):
+    * Concatenative inheritance is the process of copying the properties from one object to another, without retaining a reference between the two objects.
+    * It relies on JavaScript’s dynamic object extension feature. Cloning is a great way to store default state for objects: This process is commonly achieved using [`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign). Prior to ES6, it was common to use similar `.extend()` methods from Lodash, Underscore, or jQuery.
+    *   ```javascript
+      const proto = {
+        hello: function hello() {
+          return `Hello, my name is ${ this.name }`;
+        }
+      };
+
+      const george = Object.assign({}, proto, {name: 'George'});
+      const msg = george.hello();
+      console.log(msg); // Hello, my name is George
+      ```
+  * **Functional Inheritance** in situations where modules don’t provide an obvious solution or when you need to compose objects from multiple sources
+
+    * Functions created for the purpose of extending existing objects are commonly referred to as functional mixins.The primary advantage of using functions for extension is that it allows you to use the function closure to encapsulate private data. In other words, you can enforce private state.
+    * It’s a bit awkward to hang the attributes on a public property where a user could set or get them without calling the proper methods. What we really want to do is hide the attributes in a private closure. It looks something like this:
+    *   ```javascript
+      // import Events from 'eventemitter3';
+
+      const rawMixin = function () {
+        const attrs = {};
+        return Object.assign(this, {
+          set (name, value) {
+            attrs[name] = value;
+            this.emit('change', {
+              prop: name,
+              value: value
+            });
+          },
+          get (name) {
+            return attrs[name];
+          }
+        }, Events.prototype);
+      };
+
+      const mixinModel = (target) => rawMixin.call(target);
+      const george = { name: 'george' };
+      const model = mixinModel(george);
+      model.on('change', data => console.log(data));
+      model.set('name', 'Sam');
+      /*
+      {
+        prop: 'name',
+        value: 'Sam'
+      }
+      */
+      ```
+
+      By moving `attrs` from a public property to a private identifier, we remove all trace of it from the public API. // The only way to use it now is via the privileged methods. Privileged methods are any methods defined within the closure’s function scope, which gives them access to the private data.
+
+      Note in the example above, we have the `mixinModel()` wrapper around the actual functional mixin, `rawMixin()`.  The reason we need that is because we need to set the value of `this` inside the function, which we do with [`Function.prototype.call()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call). We could skip the wrapper and let callers do that instead, but that would be obnoxious.
+
+  * Each type of prototypal inheritance has its own set of use-cases, but all of them are equally useful in their ability to enable composition, which creates has-a or uses-a or can-do relationships as opposed to the is-a relationship created with class inheritance
+* e.g.
+* ECMAScript 5 introduced a new method: [`Object.create()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create). Calling this method creates a new object. The prototype of this object is the first argument of the function:
+
+  ```javascript
+  var a = {a: 1}; 
+  // a ---> Object.prototype ---> null
+
+  var b = Object.create(a);
+  // b ---> a ---> Object.prototype ---> null
+  console.log(b.a); // 1 (inherited)
+
+  var c = Object.create(b);
+  // c ---> b ---> a ---> Object.prototype ---> null
+
+  var d = Object.create(null);
+  // d ---> null
+  console.log(d.hasOwnProperty); 
+  // undefined, because d doesn't inherit from Object.prototype
+  ```
 
 ## Func.prototype:
 
