@@ -181,5 +181,7 @@ delete obj['regex'];
 * The `splice()` method changes the original array and `slice()` method doesn't change the original array
 * The `splice()` method can take n number of arguments
 
+## [Implementation of Native JavaScript Methods \(forEach, Map, Filter, Reduce, Every, Some\)](https://gist.github.com/alexhawkins/28aaf610a3e76d8b8264)
+
 
 
