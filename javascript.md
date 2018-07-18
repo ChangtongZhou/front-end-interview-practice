@@ -1530,7 +1530,7 @@ In **synchronous functions**, statements complete before the next statement is r
 
 **Asynchronous functions** usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty. Heavy duty operations such as loading data from a web server or querying a database should be done asynchronously so that the main thread can continue executing other operations instead of blocking until that long operation to complete \(in the case of browsers, the UI will freeze\).
 
-## What is event loop? Call stack vs. task queue?
+## [What is event loop? Call stack vs. task queue?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
 The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the task queue, a function is dequeued and pushed onto the call stack to be executed.
 
