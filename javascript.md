@@ -187,7 +187,11 @@ Pass values into a function, and the function will do some operations and return
 
 ### **Def**
 
-A function that is passed to another function as a parameter, and the callback function is called \(or executed\) inside the other function
+A function that is passed to another function as a parameter and get executed within that function.
+* A function name is used as input parameter in another function.
+
+### Why do we need the callback function?
+Because JS is an event driven language, instead of waiting for a response before moving on, JS will keep executing while listening for other events, callbacks are a way to make sure certain code doesn't execute until other code has already finished execution. It is good for asynchronous operations.
 
 ### How to create a function that accepts callback and calls that callback
 
@@ -210,6 +214,29 @@ function myFunction(param1, callbackfunction) {
 ```
 
 In the callback, you can now access `param1` as `this`
+
+More example:
+```javascript
+// Creating a callback function
+function doHomework (subject, callback) {
+	console.log(`Starting my ${subject} homework.`);
+	
+	// Calling the callback function
+	callback(subject);
+}
+
+// define a callback function in our function call
+doHomework('Science', function(subject) {
+	console.log(`Finished my ${subject} hw`);
+})
+
+function finished(subject) {
+	console.log(`Finished my ${subject} hw`);
+}
+
+// define a callback in anywhere
+doHomework('Math', finished);
+```
 
 ### What are the ways to bus errors through callback
 
