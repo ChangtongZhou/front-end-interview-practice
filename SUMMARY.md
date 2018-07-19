@@ -6,4 +6,5 @@
 * [CSS](css.md)
 * [HTML](html.md)
 * [Web Basics](web-basics.md)
+* [AngularJS](angularjs.md)
 
