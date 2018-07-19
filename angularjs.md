@@ -121,6 +121,17 @@ The **Angular** templates are enhanced HTML with special **Angular** language \(
 
 While **React** requires knowledge of JavaScript, **Angular** forces you to learn **Angular**-specific syntax.
 
+## Service vs. Factory vs. Provider:
+
+* Service:
+  * When you use Service, it is instantiated with the '**new**' keyword. Because of that, you will add properties to 'this' and the service will return 'this'. When you pass the service into your controller, those properties on 'this' will now be available on that controller through your service.
+  * When declaring serviceName as an injectable argument **you will be provided with an instance of the function**
+* Factory:
+  * When you use a Factory you create an object, add properties to it, then return that same object. When you pass this service into your controller, those properties on the object will be available in that controller through your factory.
+* Provider:
+  * Providers are the only service you can into your .config\(\) function. Use a provider when you want to provide module-wide configuration for your service object before making it available
+  * The biggest thing to remember about Providers is that they’re the only service that you can pass into the app.config portion of your application. This is of huge importance if you’re needing to alter some portion of your service object before it’s available everywhere else in your application.
+
 Resources:
 
 [https://www.w3schools.com/angular/](https://www.w3schools.com/angular/)
