@@ -102,14 +102,7 @@ These days, using `data-` attributes is not encouraged. One reason is that users
 
 All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values as strings.
 
-|  | `cookie` | `localStorage` | `sessionStorage` |
-| --- | --- | --- | --- | --- | --- | --- |
-| Initiator | Client or server. Server can use `Set-Cookie` header | Client | Client |
-| Expiry | Manually set | Forever | On tab close |
-| Persistent across browser sessions | Depends on whether expiration is set | Yes | No |
-| Sent to server with every HTTP request | Cookies are automatically being sent via `Cookie` header | No | No |
-| Capacity \(per domain\) | 4kb | 5MB | 5MB |
-| Accessibility | Any window | Any window | Same tab |
+![](.gitbook/assets/screen-shot-2018-07-19-at-12.14.12-pm.png)
 
 **References**
 
