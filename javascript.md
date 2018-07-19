@@ -188,9 +188,11 @@ Pass values into a function, and the function will do some operations and return
 ### **Def**
 
 A function that is passed to another function as a parameter and get executed within that function.
+
 * A function name is used as input parameter in another function.
 
 ### Why do we need the callback function?
+
 Because JS is an event driven language, instead of waiting for a response before moving on, JS will keep executing while listening for other events, callbacks are a way to make sure certain code doesn't execute until other code has already finished execution. It is good for asynchronous operations.
 
 ### How to create a function that accepts callback and calls that callback
@@ -216,22 +218,23 @@ function myFunction(param1, callbackfunction) {
 In the callback, you can now access `param1` as `this`
 
 More example:
+
 ```javascript
 // Creating a callback function
 function doHomework (subject, callback) {
-	console.log(`Starting my ${subject} homework.`);
-	
-	// Calling the callback function
-	callback(subject);
+    console.log(`Starting my ${subject} homework.`);
+
+    // Calling the callback function
+    callback(subject);
 }
 
 // define a callback function in our function call
 doHomework('Science', function(subject) {
-	console.log(`Finished my ${subject} hw`);
+    console.log(`Finished my ${subject} hw`);
 })
 
 function finished(subject) {
-	console.log(`Finished my ${subject} hw`);
+    console.log(`Finished my ${subject} hw`);
 }
 
 // define a callback in anywhere
@@ -329,11 +332,11 @@ Javascript object doesn't have a type or a class that it gets its methods from, 
 * `<Function>.call` is a method that executes the defined function, but with the "this" variable pointing to the first argument, and the rest of the arguments being arguments of the function that is being "called". 
 * `Object.create(obj)` creates an object with a prototype of the passed in object 
 * e.g.
-*   ```javascript
+* ```javascript
   // Let's create an object o from function f with its own properties a and b:
   let f = function () {
-     this.a = 1;
-     this.b = 2;
+   this.a = 1;
+   this.b = 2;
   }
   let o = new f(); // {a: 1, b: 2}
 
@@ -373,20 +376,20 @@ Javascript object doesn't have a type or a class that it gets its methods from, 
 
 * A private property of an object holds a link/reference to another object 
 * When a property of an object is not found, the JavaScript engine looks at the object’s prototype, and the prototype’s prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. It simulates classical inheritance, but it is really more like delegation. Because you are indicating an object to delegate behavior to if that behavior isn’t defined on the object in question. 
-* When is it a good choice? 
+* When is it a good choice?
   * When you want to create has-a or uses-a or can-do relationships between objects
   * There is more than one type of prototypal inheritance:
   * **Delegation Inheritance \(i.e., the prototype chain\)**:
     * A delegate prototype is an object that serves as a base for another object. When you inherit from a delegate prototype, the new object gets a reference to the prototype.
     * When you try to access a property on the new object, it checks the object’s own properties first. If it doesn’t find it there, it checks the `[[Prototype]]`, and so on up the prototype chain until it gets back to `Object.prototype`, which is the root delegate for most objects.
-    *   ```javascript
+    * ```javascript
       class Greeter {
-        constructor (name) {
-          this.name = name || 'John Doe';
-        }
-        hello () {
-          return `Hello, my name is ${ this.name }`;
-        }
+      constructor (name) {
+        this.name = name || 'John Doe';
+      }
+      hello () {
+        return `Hello, my name is ${ this.name }`;
+      }
       }
 
       const george = new Greeter('George');
@@ -396,11 +399,11 @@ Javascript object doesn't have a type or a class that it gets its methods from, 
   * **Concatenative Inheritance**\(i.e. mixins, `Object.assign()`\):
     * Concatenative inheritance is the process of copying the properties from one object to another, without retaining a reference between the two objects.
     * It relies on JavaScript’s dynamic object extension feature. Cloning is a great way to store default state for objects: This process is commonly achieved using [`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign). Prior to ES6, it was common to use similar `.extend()` methods from Lodash, Underscore, or jQuery.
-    *   ```javascript
+    * ```javascript
       const proto = {
-        hello: function hello() {
-          return `Hello, my name is ${ this.name }`;
-        }
+      hello: function hello() {
+        return `Hello, my name is ${ this.name }`;
+      }
       };
 
       const george = Object.assign({}, proto, {name: 'George'});
@@ -408,26 +411,25 @@ Javascript object doesn't have a type or a class that it gets its methods from, 
       console.log(msg); // Hello, my name is George
       ```
   * **Functional Inheritance** in situations where modules don’t provide an obvious solution or when you need to compose objects from multiple sources
-
     * Functions created for the purpose of extending existing objects are commonly referred to as functional mixins.The primary advantage of using functions for extension is that it allows you to use the function closure to encapsulate private data. In other words, you can enforce private state.
     * It’s a bit awkward to hang the attributes on a public property where a user could set or get them without calling the proper methods. What we really want to do is hide the attributes in a private closure. It looks something like this:
-    *   ```javascript
+    * ```javascript
       // import Events from 'eventemitter3';
 
       const rawMixin = function () {
-        const attrs = {};
-        return Object.assign(this, {
-          set (name, value) {
-            attrs[name] = value;
-            this.emit('change', {
-              prop: name,
-              value: value
-            });
-          },
-          get (name) {
-            return attrs[name];
-          }
-        }, Events.prototype);
+      const attrs = {};
+      return Object.assign(this, {
+        set (name, value) {
+          attrs[name] = value;
+          this.emit('change', {
+            prop: name,
+            value: value
+          });
+        },
+        get (name) {
+          return attrs[name];
+        }
+      }, Events.prototype);
       };
 
       const mixinModel = (target) => rawMixin.call(target);
@@ -437,16 +439,15 @@ Javascript object doesn't have a type or a class that it gets its methods from, 
       model.set('name', 'Sam');
       /*
       {
-        prop: 'name',
-        value: 'Sam'
+      prop: 'name',
+      value: 'Sam'
       }
       */
       ```
 
       By moving `attrs` from a public property to a private identifier, we remove all trace of it from the public API. // The only way to use it now is via the privileged methods. Privileged methods are any methods defined within the closure’s function scope, which gives them access to the private data.
 
-      Note in the example above, we have the `mixinModel()` wrapper around the actual functional mixin, `rawMixin()`.  The reason we need that is because we need to set the value of `this` inside the function, which we do with [`Function.prototype.call()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call). We could skip the wrapper and let callers do that instead, but that would be obnoxious.
-
+      Note in the example above, we have the `mixinModel()` wrapper around the actual functional mixin, `rawMixin()`. The reason we need that is because we need to set the value of `this` inside the function, which we do with [`Function.prototype.call()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call). We could skip the wrapper and let callers do that instead, but that would be obnoxious.
   * Each type of prototypal inheritance has its own set of use-cases, but all of them are equally useful in their ability to enable composition, which creates has-a or uses-a or can-do relationships as opposed to the is-a relationship created with class inheritance
 * e.g.
 * ECMAScript 5 introduced a new method: [`Object.create()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create). Calling this method creates a new object. The prototype of this object is the first argument of the function:
