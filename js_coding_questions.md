@@ -29,9 +29,7 @@ function reverse(arr) {
 }
 ```
 
-{% hint style="info" %}
 The **`map()`** method creates **a new array** with the results of calling a provided function on every element in the calling array.
-{% endhint %}
 
 ## Q3. Remove duplicated value from an array:
 
@@ -43,10 +41,8 @@ function dedupe (arr) {
 dedupe([1, 2, 1, 1, 3, 2]); // [1, 2, 3]
 ```
 
-{% hint style="info" %}
 * The **`filter()`** method creates a new array with all elements that pass the test implemented by the provided function.
 * The **`indexOf()`** method returns the first index at which a given element can be found in the array, or -1 if it is not present.
-{% endhint %}
 
 ## Q4. Get the first unique char in string:
 
@@ -72,9 +68,8 @@ function firstUnique (str) {
 console.log(firstUnique("bbcffcge")); // g
 ```
 
-{% hint style="info" %}
-The **`forEach()`** method executes a provided function once for each array element. \(mutate array in-place\)
-{% endhint %}
+The **`forEach()`** method executes a provided function once for each array element. (mutate array in-place)
+
 
 ## How to check if an object is an array type?
 
@@ -92,14 +87,12 @@ arr.splice(-1, 1)
 arr.length = arr.length - 1;
 ```
 
-{% hint style="info" %}
 * **`array.splice()`**:
 
   * changes the contents of an array by removing existing elements and/or adding new elements
   * `array.splice(start[, deleteCount[, item1[, item2[, ...]]]])`
   * e.g.
-    * \`\`
-
+    
       ```javascript
       var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
       var removed = myFish.splice(3, 1);
@@ -121,12 +114,11 @@ arr.length = arr.length - 1;
       ```
   * A negative index can be used, indicating an offset from the end of the sequence. `slice(-2)` extracts the last two elements in the sequence.
 
-  \`\`
-
-* **`array.slice()`**`:`
+* **`array.slice()`**:
   * returns a shallow copy of a portion of any array into a new array object selected from begin to end \(end not included\). The original array will not be modified.
   * `arr.slice([begin[,, end])`
-  *   ```javascript
+  *   
+    ```javascript
     // Using slice, create newCar from myCar.
     var myHonda = { color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } };
     var myCar = [myHonda, 2, 'cherry condition', 'purchased 1997'];
@@ -146,10 +138,12 @@ arr.length = arr.length - 1;
     // Display the color of myHonda referenced from both arrays.
     console.log('myCar[0].color = ' + myCar[0].color);
     console.log('newCar[0].color = ' + newCar[0].color);
+    
     ```
 
   * The above script writes:
-  *   ```javascript
+  *   
+    ```javascript
     myCar = [{color: 'red', wheels: 4, engine: {cylinders: 4, size: 2.2}}, 2,
              'cherry condition', 'purchased 1997']
     newCar = [{color: 'red', wheels: 4, engine: {cylinders: 4, size: 2.2}}, 2]
@@ -159,7 +153,6 @@ arr.length = arr.length - 1;
     myCar[0].color = purple
     newCar[0].color = purple
     ```
-{% endhint %}
 
 ## Remove a property from object:
 
