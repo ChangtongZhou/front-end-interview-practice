@@ -584,7 +584,7 @@ const newPerson = Object.keys(person).reduce((obj, key) => {
 
 ### Def:
 
-''use strict" is a statement used to enable strict mode to entire scripts or individual functions. Strict mode is a way to opt into a restricted variant of JS.
+''use strict" is a statement used to enable strict mode to entire scripts or individual functions. Strict mode is a way to opt into a restricted variant of JS. It helps you write safer JS code by throwing an error if a global variable is created by mistake.
 
 ### Pros:
 
@@ -941,6 +941,21 @@ console.log(add.apply(null, [1, 2]));
 ## Explain Function.prototype.bind.
 
 Bind creates a new function that will have this set to the first parameter passed to bind\(\). With a given sequence of arguments preceding any provided when the new function is called
+
+### Why do you use bind function?
+When you have a particular function that you want to call with a specific `this` value. You can use `bind` to pass a specific object to a function that uses a `this` reference.
+
+e.g.
+```javascript
+function fullName() {
+  return `Hello, this is ${this.first} ${this.last}`;
+}
+console.log(fullName()); // Hello this is undefined undefined;
+
+// create a person object and pass its values to the fullName function
+let person = {first: "Foo", lastname: "Bar"};
+console.log(fullName.bind(person)()); // Hello this is Foo Bar
+```
 
 ### Reuse methods
 
