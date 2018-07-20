@@ -1,6 +1,15 @@
 # 2018\_Frontend\_collections
 
+## Common Array functions:
+
+  
+[https://coderbyte.com/algorithm/map-reduce-filter-javascript-functional-programming](https://coderbyte.com/algorithm/map-reduce-filter-javascript-functional-programming)
+
 {% embed data="{\"url\":\"https://www.coderbyte.com/algorithm/3-common-javascript-closure-questions\#\",\"type\":\"link\",\"title\":\"Coderbyte\",\"description\":\"Coderbyte is a web application that helps you practice your programming skills, prepare for coding bootcamps, and prepare for job interviews with our collection of interview questions, videos, and solutions.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://www.coderbyte.com/favicon.ico\",\"aspectRatio\":0}}" %}
+
+## 10 Common JS questions:
+
+{% embed data="{\"url\":\"https://coderbyte.com/algorithm/10-common-javascript-interview-questions\",\"type\":\"link\",\"title\":\"Coderbyte\",\"description\":\"Coderbyte is a web application that helps you practice your programming skills, prepare for coding bootcamps, and prepare for job interviews with our collection of interview questions, videos, and solutions.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://coderbyte.com/favicon.ico\",\"aspectRatio\":0}}" %}
 
 {% embed data="{\"url\":\"https://www.interviewcake.com/javascript-interview-questions\",\"type\":\"link\",\"title\":\"JavaScript Interview Questions \| Coding Interview Help \| Interview Cake\",\"description\":\"Closures, JS scope, hoisting, the JS object model, and more. JavaScript interview questions and answers. We\'ve helped engineers get jobs at Google, Facebook and ...\",\"icon\":{\"type\":\"icon\",\"url\":\"https://www.interviewcake.com/images/cake\_white\_on\_blue\_128\_128\_unrounded.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://www.interviewcake.com/static/images/cake\_white\_on\_blue\_600\_600\_unrounded.png?bust=186\",\"width\":600,\"height\":600,\"aspectRatio\":1}}" %}
 
