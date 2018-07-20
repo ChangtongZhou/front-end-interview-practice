@@ -7,4 +7,5 @@
 * [HTML](html.md)
 * [Web Basics](web-basics.md)
 * [AngularJS](angularjs.md)
+* [2018\_Frontend\_collections](2018_frontend_collections.md)
 

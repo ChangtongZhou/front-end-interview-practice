@@ -660,9 +660,11 @@ Both implement a module system, which was not natively present in JavaScript unt
 Support for both synchronous and asynchronous loading
 
 ## IIFE:
+
 Immediately-invoked function expressions can be used to avoid variable hoisting from within blocks, protect against polluting the global environment and simultaneously allow public access to methods while retaining privacy for variables defined within the function. This concept has been referred to as a **self-executing anonymous function**.
 
 e.g.
+
 ```javascript
 (function () { /* ... */ })();
 (function () { /* ... */ }());
