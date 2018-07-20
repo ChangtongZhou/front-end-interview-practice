@@ -752,8 +752,8 @@ console.log(foo == undefined); // true. Wrong! Don't use this to check!
 
 ### Closure:
 
+* A JavaScript closure is when an inner function has access to its outer enclosing function's variables and properties even after the outer function has returned.
 * The combination of a function and the lexical environment \(its surrounding state\) within which that function was declared.
-* Closures are functions that have access to the outer \(enclosing\) function's variables - scope chain even after the outer function has returned 
 * The "lexical" = lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. 
 * **How to use a closure?**
   * define a function inside another function and expose it. To expose a function, return it or pass it to another function.
