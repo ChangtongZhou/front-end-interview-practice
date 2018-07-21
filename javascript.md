@@ -943,9 +943,11 @@ console.log(add.apply(null, [1, 2]));
 Bind creates a new function that will have this set to the first parameter passed to bind\(\). With a given sequence of arguments preceding any provided when the new function is called
 
 ### Why do you use bind function?
+
 When you have a particular function that you want to call with a specific `this` value. You can use `bind` to pass a specific object to a function that uses a `this` reference.
 
 e.g.
+
 ```javascript
 function fullName() {
   return `Hello, this is ${this.first} ${this.last}`;

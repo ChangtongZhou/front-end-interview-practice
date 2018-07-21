@@ -169,3 +169,27 @@ delete obj['regex'];
 
 ## [Implementation of Native JavaScript Methods \(forEach, Map, Filter, Reduce, Every, Some\)](https://gist.github.com/alexhawkins/28aaf610a3e76d8b8264)
 
+```javascript
+Array.prototype.myFilter = function(callback) {
+    let res = [];
+    for (let ele of this) {
+        if (callback(ele)) {
+            res.push(ele);
+        }
+    }
+    return res;
+}
+
+console.log([1, 2, 3, 6, 1].myFilter((ele) => {
+    return ele > 3;
+}));
+```
+
+## Regex: 
+
+[https://regexr.com/](https://regexr.com/)
+
+## 
+
+
+
