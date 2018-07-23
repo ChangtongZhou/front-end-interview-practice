@@ -189,7 +189,43 @@ console.log([1, 2, 3, 6, 1].myFilter((ele) => {
 
 [https://regexr.com/](https://regexr.com/)
 
-## 
+## SetTimeout:
+
+```javascript
+// interviewer: what will the following code output?
+for (var i = 0; i < 4; i++) {
+  setTimeout(function() {
+    console.log(i);
+  }, 500);
+}
+// Output:
+// 4
+// 4
+// 4
+// 4
+```
+
+```javascript
+// Ans: way1
+for (var i = 0; i < 4; i++) {
+  (function (i) {
+    setTimeout(() => console.log(i), 500)
+  })(i)
+}
+
+// way2
+for (var i = 0; i < 4; i++) {
+  setTimeout(function(i_local) {
+    return function() { console.log(i_local); }
+  }(i), 500);
+}
+
+// Output:
+// 0
+// 1
+// 2
+// 3
+```
 
 
 
