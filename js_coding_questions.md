@@ -206,7 +206,7 @@ for (var i = 0; i < 4; i++) {
 ```
 
 ```javascript
-// Ans: way1
+// Ans: way1 (recommended)
 for (var i = 0; i < 4; i++) {
   (function (i) {
     setTimeout(() => console.log(i), 500)
