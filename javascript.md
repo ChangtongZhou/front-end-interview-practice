@@ -1550,6 +1550,13 @@ Some examples of languages that compile to JavaScript include CoffeeScript, Elm,
 * These languages will always be behind the latest JavaScript standard.
 * Developers should be cognizant of what their code is being compiled to — because that is what would actually be running, and that is what matters in the end.
 
+## Webpack and Babel used in React?
+**Webpack**:
+* It is a modern Web developmenet tool that transforms React components to Javascript code so that browsers can understand.
+
+**Babel**:
+* It is a transpiler that complies JS ES6 code down to ES5
+
 ## What tools and techniques do you use for debugging JavaScript code?
 
 * React and Redux
