@@ -227,5 +227,11 @@ for (var i = 0; i < 4; i++) {
 // 3
 ```
 
+## `Array.prototype.slice.call()`
 
+{% embed data="{\"url\":\"https://stackoverflow.com/questions/7056925/how-does-array-prototype-slice-call-work\",\"type\":\"link\",\"title\":\"how does Array.prototype.slice.call\(\) work?\",\"description\":\"I know it is used to make arguments a real array, but I don\'t understand what happens when using Array.prototype.slice.call\(arguments\)\",\"icon\":{\"type\":\"icon\",\"url\":\"https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded\",\"width\":316,\"height\":316,\"aspectRatio\":1}}" %}
+
+* This method treats array-like stuff \(especially object\) like an array, so that array functions can be applied, e.g.`.slice`, because `.slice` only works for array type.
+
+[https://github.com/paddingme/Front-end-Web-Development-Interview-Question/blob/master/interview/1.md](https://github.com/paddingme/Front-end-Web-Development-Interview-Question/blob/master/interview/1.md)
 

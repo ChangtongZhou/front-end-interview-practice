@@ -17,3 +17,7 @@
 
 {% embed data="{\"url\":\"https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers\",\"type\":\"link\",\"title\":\"markyun/My-blog\",\"description\":\"My-blog - 马云云在Github的学习片段\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars1.githubusercontent.com/u/2833137?s=400&v=4\",\"width\":400,\"height\":400,\"aspectRatio\":1}}" %}
 
+## 学习前端的经验之谈:
+
+{% embed data="{\"url\":\"http://www.w3cplus.com/front-end-trip-on-road.html\",\"type\":\"link\",\"title\":\"前端路上的旅行\_总结 教程\_w3cplus\",\"description\":\"从步入社会算起到今天，风风雨雨走过了15个年头，望着天空，掐指一算，从事前端已近五个年头。也算三分之一的时间在做前端，也是从事过时间最久的一份工作。问我为什么能做这么久？其实我也时常问自己，怎么就进前端这个行当，怎么就整了五年。正如网上所言，一入前端深似海。玩了五年，或许后面还会有一个五年，两个五年，或许...... 未来的路，谁与说不清楚，我只想每天走好自己想走的路。\",\"icon\":{\"type\":\"icon\",\"url\":\"https://www.w3cplus.com/sites/all/themes/w3cplusV2/favicon.ico\",\"aspectRatio\":0}}" %}
+

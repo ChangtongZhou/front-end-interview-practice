@@ -1553,24 +1553,29 @@ Some examples of languages that compile to JavaScript include CoffeeScript, Elm,
 ## Webpack and Babel used in React?
 
 **Webpack**:
+
 * It is a module bundler that transforms React components to Javascript code so that browsers can understand.H
 * Combines multiple/all js files into one giant bundled js file, minimize your js code, reduce the length of all your variables.
 * pro:
   * Makes your source code unreadable
   * reduce your load when downloading js files
-  
+
 **Babel**:
+
 * It is a transpiler that transfer JS ES6 code down to ES5
 
 ## Task Runner
+
 * Grunt, gulp
   * command line utitlities
-  
+
 ## Development cycle:
-* coding -> write test code (auto testing) -> run test
+
+* coding -&gt; write test code \(auto testing\) -&gt; run test
 
 ## Auto Testing:
-* Server: PostMan (HTTP request server testing)
+
+* Server: PostMan \(HTTP request server testing\)
 * Client: Karma, Jasmine
 
 ## What tools and techniques do you use for debugging JavaScript code?
