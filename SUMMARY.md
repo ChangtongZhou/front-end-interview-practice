@@ -9,4 +9,6 @@
 * [AngularJS](angularjs.md)
 * [2018\_Frontend\_collections](2018_frontend_collections.md)
 * [L家](l-jia.md)
+* [Interview Prep 1](interview-prep-1.md)
+* [React and Redux](react-and-redux.md)
 
