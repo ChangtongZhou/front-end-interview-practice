@@ -67,7 +67,7 @@ route: takes a url and redirect to a React Component.
 
 It helps you route to different pages based on url. Routing is the processing that decides what should be render on the web page for each url.
 
-## **Redux?**
+## \*\*\*\*[**Redux?**](https://redux.js.org/faq/general)\*\*\*\*
 
 Redux is a predictable state container for JavaScript apps. It contains store, reducers and action.
 
@@ -88,6 +88,24 @@ Redux is a predictable state container for JavaScript apps. It contains store, r
 
 1. we manually use store.subscribe\(\) function to register the render function
 2. react-redux library, connect\(\), pass in a mapStateToProps function to it.
+
+### [Immutability:](https://redux.js.org/faq/immutabledata)
+
+#### What are the benefits of immutability?
+
+* Bring increased performance to your app
+* Leads to simpler programming and debugging, as data that never changes is easier to reason about than data that is free to be changed arbitrarily throughout your app.
+* In web app context, it enables  sophisticated change detection techniques to be implemented simply and cheaply, ensuring the computationally expensive process of updating the DOM occurs only when it absolutely has to 
+
+#### Why is immutability required by Reudx?
+
+* Both Redux and React-Redux employ shallow equality checking:
+  * Redux's `combineReducers` utility [shallowly checks for reference changes](https://redux.js.org/faq/immutabledata#how-redux-uses-shallow-checking) caused by the reducers that it calls.
+  * React-Redux's `connect` method generates components that [shallowly check reference changes to the root state](https://redux.js.org/faq/immutabledata#how-react-redux-uses-shallow-checking), and the return values from the `mapStateToProps` function to see if the wrapped components actually need to re-render.
+
+    Such [shallow checking requires immutability](https://redux.js.org/faq/immutabledata#redux-shallow-checking-requires-immutability) to function correctly.
+* Immutable data management ultimately makes data handling safer
+* Time-travel debugging requires that reducers be pure functions with on side effects, so that you can correctly jump bet
 
 ### Reducer?
 
