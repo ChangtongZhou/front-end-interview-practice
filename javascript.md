@@ -1,7 +1,5 @@
 # JavaScript
 
-## Describe your work flow when you create a web page?
-
 ## Why JavaScript?
 
 * JavaScript is a very flexible language allowing developers to write the style of code they prefer but it doesn’t isolate them from other coding styles and their side effects
