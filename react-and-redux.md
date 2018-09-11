@@ -1,6 +1,6 @@
 # React and Redux
 
-## **React:**
+## \*\*\*\*[**React**](https://reactjs.org/docs/faq-ajax.html)**:**
 
 ### **What is React ?**
 
@@ -106,6 +106,12 @@ Redux is a predictable state container for JavaScript apps. It contains store, r
     Such [shallow checking requires immutability](https://redux.js.org/faq/immutabledata#redux-shallow-checking-requires-immutability) to function correctly.
 * Immutable data management ultimately makes data handling safer
 * Time-travel debugging requires that reducers be pure functions with on side effects, so that you can correctly jump bet
+
+### Shallow equality checking:
+
+Shallow equality checking \(or _reference equality_\) simply checks that two different _variables_ reference the same object.
+
+A shallow equality check is therefore as simple \(and as fast\) as `a === b`
 
 ### Reducer?
 
