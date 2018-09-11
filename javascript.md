@@ -1,20 +1,23 @@
 # JavaScript
 
+## Describe your work flow when you create a web page?
+
 ## Why JavaScript?
+
 * JavaScript is a very flexible language allowing developers to write the style of code they prefer but it doesn’t isolate them from other coding styles and their side effects
 * You can write code that BEST SUITS THE SITUATION
 * JavaScript probably isn’t perfect but it definitely isn’t the worst thing in the world and it’s getting better and better rapidly!
 * Works really well with web applications/browsers, because browsers support Javascript, and JavaScript benefits from being part of HTML5.
-* Now Javascript can be used in both frontend (UI frameworks React, Angular) and backend (Node.js)
+* Now Javascript can be used in both frontend \(UI frameworks React, Angular\) and backend \(Node.js\)
 * JavaScript has the most active community out there, new things are constantly tested out and adopted in a flash, shifting the entire mindset of the community overnight, that level of flexibility in a dev community is unparalleled!
 * The Web, the platform in which JavaScript is a vital part is becoming increasingly important and with it JavaScript as well.
 * JavaScript is supported and important to a lot of very large tech and non-tech companies.
 * JavaScript simply can do everything, choosing JavaScript as your primary programming language leaves you open to switch to whichever platform: web, desktop, smartphone etc.
 
 ## Why Frontend?
+
 * Creativity. Front-end web development is all about creativity and creative problem-solving. As a front-end web developer, I can develop skills to build customized websites to create the best possible user experience.
 * It is a constantly evolving field. Front-end web development is an exciting career because it’s always evolving and constantly changing. This means I will always have the opportunity to interact with new tools and learn new skills, keeping me engaged in your career. It’s a field that provides many opportunities for hands-on learning.
-
 
 ## Describe your work flow when you create a web page?
 
