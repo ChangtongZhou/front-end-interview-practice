@@ -233,5 +233,62 @@ for (var i = 0; i < 4; i++) {
 
 * This method treats array-like stuff \(especially object\) like an array, so that array functions can be applied, e.g.`.slice`, because `.slice` only works for array type.
 
-[https://github.com/paddingme/Front-end-Web-Development-Interview-Question/blob/master/interview/1.md](https://github.com/paddingme/Front-end-Web-Development-Interview-Question/blob/master/interview/1.md)
+{% embed data="{\"url\":\"https://github.com/paddingme/Front-end-Web-Development-Interview-Question/blob/master/interview/1.md\",\"type\":\"link\",\"title\":\"paddingme/Front-end-Web-Development-Interview-Question\",\"description\":\"前端开发面试题大收集，前端面试集锦 :heart: :gift\_heart: :cupid:. Contribute to paddingme/Front-end-Web-Development-Interview-Question development by creating an account on GitHub.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars1.githubusercontent.com/u/5771087?s=400&v=4\",\"width\":180,\"height\":180,\"aspectRatio\":1}}" %}
+
+## JS Callbacks:
+
+When you click on a button below, a new entry should appear in the list below with a corresponding number.
+
+E.g. Clicking on A should create an entry 1, B should create an entry 2 and etc. You should only edit the code within the designated zone!
+
+Given:
+
+```css
+button {
+    margin: 10px;
+    cursor: pointer;
+}
+```
+
+```markup
+<p>When you click on a button below, a new entry should appear in the list below with a coresponding number.</p>
+
+<p><b>For example:</b> Clicking on <b>A</b> should create an entry <b>1</b>, <b>B</b> should create an entry <b>2</b> and etc.</p>
+
+<p>You should only edit the code withing the designated zone!</p>
+
+<button>A</button>
+<button>B</button>
+<button>C</button>
+
+<ul></ul>
+```
+
+To do: in Jquery
+
+```javascript
+$(document).ready( function() {
+  var buttons = $('button');
+
+  for( var i = 0; i < buttons.length; ++i ) {
+    buttons.eq(i).click(
+    	// ONLY EDIT THE CODE BELOW THIS LINE
+      (function(i_local) {
+      	return function() {
+        	i_local++;
+        	$('ul').append('<li>' + i_local + '</li>')
+        }
+      })(i)
+    )
+  }
+});
+
+// Used IFFE
+```
+
+Output:
+
+![](.gitbook/assets/screen-shot-2018-09-13-at-8.09.08-pm.png)
+
+
 
