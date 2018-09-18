@@ -275,7 +275,7 @@ $(document).ready( function() {
     	// ONLY EDIT THE CODE BELOW THIS LINE
     	(
         	function(i) {
-          	++i;
+            i++;
             return function() {
             	$('ul').append('<li>' + i + '</li>')
             }
