@@ -4,33 +4,107 @@
 
 ### Data types in JS:
 
-* Map, Set, promise
+* Primitives:
+  * Boolean
+  * Null
+  * Undefined
+  * Number
+  * String
+  * Symbol \(in EC6\)
+* Object
+  * Array
+  * Date
+  * RegExp
+  * Map and WeakMap
+  * Set and WeakSet
+  * Function
 
 ### Scoping:
 
-* module scoping/global scoping
-* block scoping
-* functional scoping
+When and where variables, constants, and arguments are considered to be defined/visible/available
+
+* module scoping/global scoping:
+  * Objects declared outside of any function 
+  * Visible everywhere in a JS program
+  * Use it without declaring - not allowed under 'strict' mode
+* block scoping:
+  * Objects declare inside a block are visible only to code that appears inside that block
+  * keywords 'let' and 'const'
+* functional scoping:
+  * Objects declared inside a function are visible only to code that appears inside that function
+  * keywords 'var'
 
 ### Difference var vs. let:
 
 * var: function scoping
-* let: block scoping
+* let: block scoping, not hoisted, when a let variable is accessed out of its scope, a ReferenceError is thrown with message "name is not defined"
 
 ### What is hoisting
 
-### what is strict mode
+* Move all declarations to the top of the current scope \(to the top of the current script or the current function\)
+* Only hoists declarations, not initializations
+* Only works for function scope
+
+### What is strict mode \(use strict\)
+
+* A literal expression that is used to indicate the code should be executed in "strict mode"
+* With strict mode, you cannot use undeclared/global variables 
+* Function parameter names need to be unique
+* It helps you write safer JS code by throwing an error
 
 ### How many ways you can declare a function:
 
-* function expression
-* function as methods
+* function expression:
+  * looks like a normal variable assignment
+  * Behaves almost the same as function declaration, but no hoisting
+
+```javascript
+Let functionName = function (arg0, arg1, arg2) {
+    // function body
+}
+```
+
+* function as methods:
+  * A property of an object
+
+```javascript
+const o = {
+    name: "Wallace",
+    bark: function (){
+        return "Woof!"
+    },
+}
+```
+
+### Deep copy vs. Shallow copy:
+
+* Deep copy:
+  * Makes a copy of all the members of A, allocates memory in a different location for B and then assigns the copied members to B 
+  * Data types: number, string, boolean
+* Shallow copy:
+  * Makes only a copy of the references to A into B. It is a copy of A's memory address 
+  * shallow copy: array, object, and function
 
 ### Call vs. Apply functions:
 
 * they both execute function
 
-### Have a function name as a variable vs. calling a function 
+### Have a function name as a variable \(Referencing\) vs. Calling a function 
+
+```javascript
+function getGreeting() {
+    return "Hello world!";
+}
+
+getGreeting(); // "Hello World!"
+getGreeting; // function getGreeting()
+
+const func = getGreeting; // Function referencing
+func(); // "Hello World!"
+```
+
+* Have a function name as variable: referencing the function
+* Call a function: execute the function ASAP, and get the returned result.
 
 ### Spread operator:
 
