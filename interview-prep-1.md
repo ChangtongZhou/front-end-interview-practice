@@ -132,6 +132,10 @@ What are the rules:
 * Can't change `this`
 * No duplicate named parameters
 
+Why do we use arrow function?
+
+* They are more compact and offer a concise syntax for writing function expressions
+
 ### What is callback function:
 
 A function that is passed to another function as a parameter and get executed within that function.
@@ -165,11 +169,21 @@ button.addEventListener("click", clickMaker());
 
 ### How to define class in es6
 
+* Use class keyword
+* Define constructor and methods inside 
+  * one constructor function per class
+* Just syntax sugar over existing existing prototypal inheritance mechanism
+  * creates a constructor function with same name as class
+  * adds methods to prototype
+* Subclass:
+  * inherit with extends keyword
+  * In subclasses, constructor must call super\(args\) and it must be before this is accessed
+    * because the highest superclass creates the object
+
 ### Prototype in JS
 
-property of a function
-
-for sharing instances/properties
+* An object containing properties and functions that should be available to all instances of a particular reference class
+* for sharing instances/properties
 
 ### Destructing Assignment:
 
@@ -186,17 +200,60 @@ d; // 4
 
 ### Regular Expression:
 
-A pattern that allows you to search in a string
+* A pattern that allows you to match a substring within a string and optionally replace it.
+* `/^HTML/      //mathes the letters H T M L at the start of a string`
+* `/[1-9][0-9]*/     //mathes a non-zero digit, followed by any # of digits`
+* `/\bjavascript\b/I     //maches "javascript" as a word, case-insensitive`
 
 ### What is promise
 
-Object that holds execution of async operations, returns the state of pending, \(either resolved, not resolved\), give success callback in success, give fail callback in fail
+* Represents the eventual completion of an async operation
+* An Object that holds execution of async operations, returns the state of pending, \(either resolved, not resolved\), give success callback in success, give fail callback in fail
 
-## React:
+### What is JSON?
+
+* Javascript Object Notation
+* A simplified form of XML and lightweight, it is syntactically identical to the code for creating JavaScript objects, easy to convert to and from JavaScript objects
+* Used to transport data:
+  * especially between a server and its clients
+* Used to store data:
+  * such as in NoSQL databases
+
+### Module:
+
+* A single, entire JS file and can be imported by another
+* Export values to be shared with other files
+* Used in large complex applications and large dev teams
+* It is more sharing, less conflict
+* More efficient
+* Horizontal scalability from day one
+
+## [React](https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541):
+
+### What is React?
+
+A Javascript library for building user interface. It builds the UI based on components, and uses state to store the data for component, and props to pass the data among components from top to bottom.
 
 ### What is component:
 
+* A Javascript class that requires the render function to be declared
+* Component takes care of a block of view in the React. It split the UI into independent, reusable pieces, and think about each piece independently
+* Two types of components:
+  * Stateful:
+    * are always class components
+    * have a state that gets initialized in the constructor
+    * have lifecycle hooks
+  * Stateless:
+    * can be a function or a class
+    * Easy to write, understand and test
+    * Can avoid the `this` keyword
+    * Can't have lifecycle hooks
+    * Refs are not supported
+
 ### What is state:
+
+* A place to store data inside the component
+* A predefined object, owned by component, can only changed by calling setState, immutable
 
 ### State vs. Props:
 
@@ -206,24 +263,152 @@ state: is immutable data within the component itself
 
 ### class component vs. functional component:
 
+* Functional components are just JavaScript functions, they take in an optional input which is props
+* Class components offer more features and with more features comes more baggage. They have state
+
+### Container Components vs. Presentational Components:
+
+* Presentational components:
+  * are coupled with the view or how things look. 
+  * accept props from their container counterpart and render them.
+  * Everything that has to do with describing the UI should go here. 
+  * reusable and should stay decoupled from the behavioral layer.
+  * Functional components should be your first choice for writing presentational components unless a state is required
+  * doesn't interact with the Redux store or make API calls. 
+* Container components:
+
+  * deal with the behavioral part. A container component tells the presentational component what should be rendered using props.
+  *  If you're using Redux, a container component contains the code that dispatches an action to a store. 
+  * This is the place where you should place your API calls and store the result into the component's state. 
+
+  The usual structure is that there is a container component at the top that passes down the data to its child presentational components as props. 
+
+### **JSX ?**
+
+It is a syntax extension to JavaScript. It is similar with HTML syntax but you can embed javascript expression into JSX.
+
+### Component ?
+
+Component takes care of a block of view in the React. It split the UI into independent, reusable pieces. We have two different kinds of component, one is stateful another one is stateless component.
+
+### HOC \(High Order Component\)?
+
+It is a function takes a component and return a new component. It is a technique for reusing component logic
+
+### Controlled component?
+
+For form and input tag in HTML, we need a handler for each tag. So when we type in a new text, we can change the corresponding state by calling setstate. Usually, we call this kind of component as controlled component.
+
+### State/props ?
+
+* props: being passed from parent component to child component, read-only, one way
+* state: is a predefined object, owned by component, can only changed by calling setState, mutable,
+
+### Lifecycle ?
+
+There are a bunch of functions that can let you run code at a specific time while the component is rendering.
+
+componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentDidUpdate, componentWillUnmount
+
+### Mounting ?
+
+is the process of outputting the virtual representation of a component into the final UI representation.
+
+### Handling Event ?
+
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differences:
+
+* React events are named using camelCase, rather than lowercase.
+* With JSX you pass a function as the event handler, rather than a string.
+
+### Refs:
+
+Refs provide a way to access DOM nodes or React elements created in the render method.
+
+#### When to use Refs {#when-to-use-refs}
+
+There are a few good use cases for refs:
+
+* Managing focus, text selection, or media playback.
+* Triggering imperative animations.
+* Integrating with third-party DOM libraries.
+
+**Avoid using refs for anything that can be done declaratively.**
+
+> Note: refer more in React and Redux section
+
 ## Redux:
 
 ### What is redux?
 
-Predictable state management
+Redux is a predictable state container for JavaScript apps. It contains store, reducers and action.
+
+### **When to use Redux?**
+
+* When you want to share the same state with multiple container components that don’t have direct relationships
+* When there are too many props are being passed through multiple parent-and-child components
+* When you want to separate state out of components for a better code structure
 
 ### Key concept in Redux:
 
-Action: **A plain JS object describing the change.**
+* state read only, changes are only made by pure function, single source of truth
+  * **single source of truth:** the entire state of the application will be represented by \(one store \)one JavaScript object.
+  * **state read only:** The only way to change the state is to emit an action
+  * **Reducers must be pure function**: Pure functions are those whose return values depend only upon the values of their arguments
 
 ### What is action
 
+A plain JS object describing the change.
+
 ### What is action creator?
+
+* Action creator is functions that create actions.
+* For most of the case in React and Redux, we dispatch an action using the action creator:
 
 ### Why do you use action creator:
 
 * Pass parameters into you action creator
 * It can be plugged in middleware
+
+```javascript
+function addTodo(text) {
+  return {
+    type: 'ADD_TODO',
+    text,
+  };
+}
+dispatch(addTodo(text));
+```
+
+Instead of:
+
+```javascript
+dispatch({type: 'ADD_TODO', text: text});
+```
+
+Why using action creator:
+
+* Basic abstraction: Rather than writing action type strings in every component that needs to create the same type of action, put the logic for creating that action in one place
+* Documentation: The parameters of the function act as a guide for what data is needed to go into the action.
+* Code separation: Consistently using action creators means that a component doesn't have to know any of the details of creating and dispatching the action.
+
+### Reducer?
+
+A pure function that takes the previous state of the app and the action being dispatched, then returns the next state of the app.
+
+### Store?
+
+The store binds together the 3 principles of Redux:
+
+* Holds the current application state object
+* Allows you to dispatch actions
+* When you create it, you need to specify the reducer that tells how state is updated with actions.
+
+### Pure Functions?
+
+* Functions that return values depend only upon the values of their arguments.
+* Pure functions don’t have side effects like network or database calls.
+* Pure functions also do not override the values of anything
 
 ### How do you use react-redux package
 
@@ -231,28 +416,73 @@ Action: **A plain JS object describing the change.**
 2. provider
 3. call connect function in container component
 
-### Container component vs. Representational component
+### Thunk:
 
-### Thunk
+* It is used to handle async actions
+* Allows you to write action creators that return a function instead of an action, which give you the access to store.getState\(\) and store.dispatch\(\) inside the function
+* Without Thunk, inside an action creator, there is no way we can have the access to store to dispatch other actions during async actions.
+* Benefits:
+  * Components aren’t aware of how action creators are implemented, and whether they care about Redux state, whether they are synchronous or asynchronous, and whether or not they call other action creators.
 
 ### How do you use thunk
 
 * use async action creator
 
+> Note: refer more in React and Redux section
+
 ## Nodejs
 
-### What is nodejs
+### What is nodejs:
+
+* Server side Javascript
+* Built on Google's V8
+* Provide an easy way to develop scalable network servers
+* **An environment to develop high performance web services**
+* Using event-driven, asynchronous I/O to minimize overhead and maximize scalability
+* Async Execution for V8 Javascript
 
 ### What is express.js
 
+* A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications
+* creates a robust API quickly and easily with HTTP utility methods \(e.g. request and response\) and middleware
+* provides a thin layer of fundamental web application features, without obscuring Node.js features 
+
 ### What is mongoDB
+
+* A cross-platform, document oriented database that provides, high performance, high availability and easy scalability. 
+* Works on concept of collection and document
+* **Database**:
+  * a physical container for collections. A single MongoDB server has multiple databases
+* **Collection**:
+  * A group of MongoDB documents. 
+  * A collection exists within a single database
+  * All documents in a collection are of similar or related purpose
+* **Document**:
+  * A set of key-value pairs.
+  * Has dynamic schema, i.e. documents in the same collection do not need to have the same set of fields or structure, and common fields in a collection's documents may hold different types of data
+
+### Why use MongoDB:
+
+* It enables companies build applications faster, handle highly diverse data types, and manage applications more efficiently at scale
+* Development is simplified as MongoDB documents map naturally to modern, object-oriented programming languages
+* MongoDB can be easily scaled within and across multiple distributed data centers
+* Working with data as flexible JSON documents, rather an as rigid rows and columns, is proven to help developers move faster.
 
 ### Mongoose:
 
-* ORM
-* Provide access for mongoDB
+* An ODM \(Object Data Modeling\) for MongoDB and Node.js. 
+* It manages relationships between data, provides schema validation and query API to help you interact with your MongoDB database
+* An intermediate between mongoDB and server side language like NodeJS
 
-### Restful API
+### Restful API:
+
+* An application program interface \(API\) that uses HTTP requests to GET, PUT, POST and DELETE data
+* Why is it amazing?
+  * Clients \(browser\) and servers can interact in complex ways without the client knowing anything beforehand about the server and the resources it holds.
+  * Flexible:
+    * Data is not tied to resources or methods, Rest can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia.
+
+
 
 
 
