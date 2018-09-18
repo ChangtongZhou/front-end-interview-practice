@@ -273,16 +273,19 @@ $(document).ready( function() {
   for( var i = 0; i < buttons.length; ++i ) {
     buttons.eq(i).click(
     	// ONLY EDIT THE CODE BELOW THIS LINE
-      (function(i_local) {
-      	return function() {
-        	i_local++;
-        	$('ul').append('<li>' + i_local + '</li>')
-        }
-      })(i)
-    )
+    	(
+        	function(i) {
+          	++i;
+            return function() {
+            	$('ul').append('<li>' + i + '</li>')
+            }
+          }
+        )(i)
+      
+    	// ONLY EDIT THE CODE ABOVE THIS LINE
+    );
   }
 });
-
 // Used IFFE
 ```
 
