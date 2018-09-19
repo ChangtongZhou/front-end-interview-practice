@@ -297,7 +297,13 @@ It is a function takes a component and return a new component. It is a technique
 
 ### Controlled component?
 
-For form and input tag in HTML, we need a handler for each tag. So when we type in a new text, we can change the corresponding state by calling setstate. Usually, we call this kind of component as controlled component.
+one that takes its current value through `props` and notifies changes through callbacks like `onChange`. A parent component "controls" it by handling the callback and managing its own state and passing the new values as props to the controlled component. You could also call this a "dumb component".
+
+e.g. For form and input tag in HTML, we need a handler for each tag. So when we type in a new text, we can change the corresponding state by calling setstate. Usually, we call this kind of component as controlled component.
+
+### Uncontrolled component?
+
+one that stores its own state internally, and you query the DOM using a `ref` to find its current value when you need it. This is a bit more like traditional HTML.
 
 ### State/props ?
 
