@@ -1,6 +1,6 @@
 # JavaScript
 
-## Why JavaScript?
+## Why JavaScript
 
 * JavaScript is a very flexible language allowing developers to write the style of code they prefer but it doesn’t isolate them from other coding styles and their side effects
 * You can write code that BEST SUITS THE SITUATION
