@@ -40,7 +40,7 @@ For form and input tag in HTML, we need a handler for each tag. So when we type 
 
 **props**: being passed from parent component to child component read-only, one way
 
-**state**: is a predefined object, owned by component, can only changed by calling setState, mutable,
+**state**: is a predefined object, owned by component, can only changed by calling setState, immutable. It is private and fully controlled by the component.
 
 ### Lifecycle ?
 
