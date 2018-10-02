@@ -234,6 +234,18 @@ d; // 4
 
 A Javascript library for building user interface. It builds the UI based on components, and uses state to store the data for component, and props to pass the data among components from top to bottom.
 
+* features:
+  virtual DOM, fast, component based, one way data binding, free and open source
+  
+### Virtual DOM:
+A virtual DOM object is a representation of a DOM object, like a lightweight copy. In React, for every DOM object, there is a corresponding "virtual DOM object." 
+
+Every time a virtual DOM Object updated, React will compare the previous virtual DOM and updated virtual DOM Object, then update the corresponding DOM Object.
+
+React operates on the concept of a “virtual DOM.” It maintains this virtual DOM in memory, and any time a change is made to the DOM, React does a quick diff of the changes, batches them all into one update and hits the actual DOM all at once.
+
+First and foremost, performance-wise, you’re not constantly doing DOM updates, as with many of the other JavaScript frameworks. The DOM is a huge bottleneck with front-end performance. The second ramification is that React can render on the server just as easily as it can on the client.
+
 ### What is component:
 
 * A Javascript class that requires the render function to be declared
@@ -257,9 +269,9 @@ A Javascript library for building user interface. It builds the UI based on comp
 
 ### State vs. Props:
 
-props: is read-only, the data passed from parent to children
+props: is read-only, the data passed from parent to children, one way
 
-state: is immutable data within the component itself
+state: is immutable data within the component itself, a predefined object, owned by component, can only changed by calling setState, immutable. It is private and fully controlled by the component.
 
 ### class component vs. functional component:
 
@@ -340,6 +352,13 @@ Handling events with React elements is very similar to handling events on DOM el
     * It increases response time and it can be worse if the server is busy
     * It increases response size, the page takes longer to render
     * Non-rich site interactions
+  * When to use:
+    * You need SEO
+    * You already have a working React app, need the best possible performance, and are willing to pay for the extra server resources
+  * Don't use when:
+    * Your React app isn't finished yet
+    * SEO on goole is good enough
+    * Server resources are scarce, perhaps due to a low budget or inability to scale
   
 * Client side rendering:
   * Description: Your browser downloads a minimal HTML page, then renders the JS and fills the content into it.
@@ -370,6 +389,14 @@ There are a few good use cases for refs:
 
 > Note: refer more in React and Redux section
 
+### Router:
+
+router: is a library to help you route to different component based on Endpoints.
+
+route: takes a url and redirect to a React Component.
+
+It helps you route to different pages based on url. Routing is the processing that decides what should be render on the web page for each url.
+
 ## Redux:
 
 ### What is redux?
@@ -388,6 +415,11 @@ Redux is a predictable state container for JavaScript apps. It contains store, r
   * **single source of truth:** the entire state of the application will be represented by \(one store \)one JavaScript object.
   * **state read only:** The only way to change the state is to emit an action
   * **Reducers must be pure function**: Pure functions are those whose return values depend only upon the values of their arguments
+
+### How to connect?
+
+* we manually use store.subscribe() function to register the render function
+* react-redux library, connect(), pass in a mapStateToProps function to it.
 
 ### What is action
 
@@ -443,11 +475,37 @@ The store binds together the 3 principles of Redux:
 * Pure functions don’t have side effects like network or database calls.
 * Pure functions also do not override the values of anything
 
+### Immutability:
+
+#### What are the benefits of immutability?
+
+* Bring increased performance to your app
+* Leads to simpler programming and debugging, as data that never changes is easier to reason about than data that is free to be changed arbitrarily throughout your app.
+* In web app context, it enables sophisticated change detection techniques to be implemented simply and cheaply, ensuring the computationally expensive process of updating the DOM occurs only when it absolutely has to
+
+#### Why is immutability required by Redux?
+
+* Both Redux and React-Redux employ shallow equality checking:
+  * Redux's combineReducers utility shallowly checks for reference changes caused by the reducers that it calls.
+  * React-Redux's connect method generates components that shallowly check reference changes to the root state, and the return values from the mapStateToProps function to see if the wrapped components actually need to re-render.
+
+    *Such shallow checking requires immutability to function correctly.
+
+* Immutable data management ultimately makes data handling safer
+* Time-travel debugging requires that reducers be pure functions with on side effects, so that you can correctly jump bet
+
+### Shallow equality checking:
+
+Shallow equality checking (or reference equality) simply checks that two different variables reference the same object.
+
+A shallow equality check is therefore as simple (and as fast) as a === b
+
 ### How do you use react-redux package
 
 1. install react-redux package
 2. provider
 3. call connect function in container component
+
 
 ### Thunk:
 
@@ -462,6 +520,19 @@ The store binds together the 3 principles of Redux:
 * use async action creator
 
 > Note: refer more in React and Redux section
+
+### Middleware:
+
+Middleware is some code you can put between the framework receiving a request, and the framework generating a response.
+
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
+
+### Flux vs. Redux?
+
+* Flux is a pattern and Redux is a library.·
+* Action: Flux is a javascript object, Redux can be function or promise using middleware.
+* Store: flux has multiple stores, each of them is a singleton object. Can only have one dispatcher.
+* Redux store expose a dispatch API, it is not a independent object.
 
 ## Nodejs
 
