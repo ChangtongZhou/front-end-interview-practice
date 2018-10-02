@@ -73,7 +73,7 @@ The `forEach()` method executes a provided function once for each array element.
 ## How to check if an object is an array type?
 
 ```javascript
-Object.prototype.toString.call(arr);
+Object.prototype.toString.call(arr) === '[object Array]';
 // OR
 Array.isArray(arr);
 ```
