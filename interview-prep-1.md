@@ -331,27 +331,27 @@ Handling events with React elements is very similar to handling events on DOM el
 * Server side rendering:
   * Description: It is the ability of a front-end framework to render markup while running on a back-end system. It fully renders the React component on the server, then outputs HTML contents.
   * pros: 
-   * The initial page load is relatively faster
-   * It is good for SEO to understand, because search engine crawlers do not understand JS yet, your content is present before you get it, so search engines can index it and crawl it.
-   * It can improve performance if your application is small
-   * It is great for static sites
+    * The initial page load is relatively faster
+    * It is good for SEO to understand, because search engine crawlers do not understand JS yet, your content is present before you get it, so search engines can index it and crawl it.
+    * It can improve performance if your application is small
+    * It is great for static sites
   * cons: 
-   * Frequent server requests, slows down the performance
-   * It increases response time and it can be worse if the server is busy
-   * It increases response size, the page takes longer to render
-   * Non-rich site interactions
+    * Frequent server requests, slows down the performance
+    * It increases response time and it can be worse if the server is busy
+    * It increases response size, the page takes longer to render
+    * Non-rich site interactions
   
 * Client side rendering:
   * Description: Your browser downloads a minimal HTML page, then renders the JS and fills the content into it.
   * pros: 
-   * Rich site interactions
-   * Fast website rendering after the initial load
-   * Great for web applications
-   * Robust seletion of JS libraries
+    * Rich site interactions
+    * Fast website rendering after the initial load
+    * Great for web applications
+    * Robust seletion of JS libraries
   * cons: 
-   * the initial page load is going to be slow, because communicating over the network is slow, and it takes two round trips to the server before you can start displaying content to the user.
-   * Low SEO if not implemeneted correctly
-   * In most cases, requires an external library
+    * the initial page load is going to be slow, because communicating over the network is slow, and it takes two round trips to the server before you can start displaying content to the user.
+    * Low SEO if not implemeneted correctly
+    * In most cases, requires an external library
 
 
 ### Refs:
