@@ -580,13 +580,26 @@ Middleware functions are functions that have access to the request object (req),
 
 ### Restful API:
 
-* An application program interface \(API\) that uses HTTP requests to GET, PUT, POST and DELETE data
+* An application program interface \(API\) that uses HTTP requests to GET, PUT, POST and DELETE server side objects/resources
+* It is an architecture style for designing networked applciations, relies on a stateless, client-server communication protocol.
 * Why is it amazing?
   * Clients \(browser\) and servers can interact in complex ways without the client knowing anything beforehand about the server and the resources it holds.
   * Flexible:
     * Data is not tied to resources or methods, Rest can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia.
 
+### HTTP Methods:
 
+* GET: Retreive data from a specified resource
+* POST: Submit data to be processed to a specified resource (e.g. web form)
+* PUT: Update a specified resource
+* DELETE: Delete a specified resource
+
+* HEAD: Same as get but does not return a body
+* OPTIONS: Returns the supported HTTP methods of a server
+* PATCH: Update partial resources
+
+### Endpoints:
+The URI/URL where api/service can be accessed by a client application
 
 
 
