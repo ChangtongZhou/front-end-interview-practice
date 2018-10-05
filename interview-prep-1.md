@@ -603,7 +603,7 @@ The URI/URL where api/service can be accessed by a client application
 
 ## CSS:
 
-### [Preprocessor (SASS)] (https://sass-lang.com/guide)
+### [Preprocessor (SASS)](https://sass-lang.com/guide)
 
 * It is a CSS pre-processor with syntax advancements. Style sheets in the advanced syntax are processed by the program, and turned into regular CSS style sheets. However, they do not extend the CSS standard itself.
 * It’s intended for people who prefer conciseness over similarity to CSS. Instead of brackets and semicolons, it uses the indentation of lines to specify blocks. Files in the indented syntax use the extension .sass
