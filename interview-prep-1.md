@@ -601,5 +601,20 @@ Middleware functions are functions that have access to the request object (req),
 ### Endpoints:
 The URI/URL where api/service can be accessed by a client application
 
+## CSS:
+
+### Preprocessor (SASS):
+
+* It is a CSS pre-processor with syntax advancements. Style sheets in the advanced syntax are processed by the program, and turned into regular CSS style sheets. However, they do not extend the CSS standard itself.
+* It’s intended for people who prefer conciseness over similarity to CSS. Instead of brackets and semicolons, it uses the indentation of lines to specify blocks. Files in the indented syntax use the extension .sass
+* Features of SASS:
+ * Inline comments
+ * Local and global variables: 
+  * global: e.g. creation of color names and semantics uses for those colors ($color_success)
+ * Nesting: SASS let you nest your CSS selectors in a way that follows the same visual hierachy of your HTML
+ * Extend/Inheritance:
+  * SASS allows you to use `@extend` to share a set of CSS properties from one selector to another
+
+
 
 
