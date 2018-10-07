@@ -1859,3 +1859,34 @@ Resources:
     * Flexible:
       * Data is not tied to resources or methods, Rest can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia.
 
+## Agile:
+
+* Agile software development is an approach to software development under which requirements and solutions evolve through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s)
+* Scrum: an agile process that allows us to focus on delivering the highest business value in the shortest time
+* It allows us to rapidly and repeatedly inspect actual working software (every two weeks to one month)
+* The business sets the priorities. Teams self-organize to determine the best way to deliver highest priority features
+* Every two weeks to a month anyone can see real working software and decide to release it as is or continue to enhance it for another sprint
+
+## Testing:
+
+**Jest** (Unit testing):
+
+* A javascript unit testing framework. It is provided and used by Facebook themselves
+* Pros:
+    * This testing framework is well maintained, it is really close to the ReactJS philosophy
+    * It is simple, standard and standalone.
+    * Zero configuration
+* Top Features:
+    * Automatically finds tests
+    * Automatically mocks dependencies
+    * Runs your tests with a fake DOM implementation
+    * Runs tests in parallel process
+    
+**Postman**:
+
+Server apis testing
+
+**Other**:
+* Karma
+* Jasmine
+
