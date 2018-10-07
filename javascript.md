@@ -1820,3 +1820,42 @@ Resources:
 
 [https://medium.com/@nupoor\_neha/javascript-front-end-interview-questions-1cbc5e32792b](https://medium.com/@nupoor_neha/javascript-front-end-interview-questions-1cbc5e32792b)
 
+## Flux:
+
+* Takes Model part in the MVC architecture. It is a pattern
+* It is the architecture responsible for creating data layers in JavaScript applications and building client-side web applications. 
+    * 4 main parts:
+    * Dispatcher
+    * Stores
+    * Views
+    * Action 
+* Follows the unidirectional data flow
+* Pros:
+    * It is easier to maintain and reason about when it gets more complex
+    * Flux is consistent and repeatable, making it very logical to work with, while creating an “action”.
+    * It is easier when you want the “store” to know how to handle the “action”, store data and activate change event.
+    
+## MVC:
+
+* Model View Controller software architecture pattern, used to implement user interfaces for web applications
+* It separates out the application logic into three parts, promoting modularity and eas of collaboration and reuse
+* Pros:
+    * Faster development process
+    * Ability to provide multiple views
+    * Support for asynchronous technique
+    * Modification doesn’t affect the entire model
+    * Returns data without formatting
+    * SEO friendly development platform 
+* Cons:
+    * Code navigability — The framework navigation can be complex because it introduces new layers of abstraction and requires users to adapt to the decomposition criteria of MVC.
+    * Multiple Representations — Decomposing a feature into three artifacts causes scattering. Thus, requiring developers to maintain the consistency of multiple representations at once.
+    
+## Restful API:
+
+* An application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE server side objects/resources
+* It is an architecture style for designing networked applications, relies on a stateless, client-server communication protocol.
+* Why is it amazing?
+    * Clients (browser) and servers can interact in complex ways without the client knowing anything beforehand about the server and the resources it holds.
+    * Flexible:
+      * Data is not tied to resources or methods, Rest can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia.
+
