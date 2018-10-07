@@ -1584,7 +1584,16 @@ Some examples of languages that compile to JavaScript include CoffeeScript, Elm,
 ## Task Runner
 
 * Grunt, gulp
-  * command line utitlities
+    * command line utitlities
+    * A task runner that automates the development workflow
+    * Automate tasks:
+      * Bundling and minifying libraries and stylesheets
+      * Refreshing your browser when you save a file
+      * Quickly running unit tests
+      * Running code analysis
+      * Compiling Less/Sass to CSS
+      * Copying modified files to an output directory
+
   
 ## [Reduce webpack bundle size for production](https://hackernoon.com/reduce-webpack-bundle-size-for-production-880bb6b2c72f)
 
