@@ -1586,7 +1586,7 @@ Some examples of languages that compile to JavaScript include CoffeeScript, Elm,
 * Grunt, gulp
   * command line utitlities
   
-**[Reduce webpack bundle size for production](https://hackernoon.com/reduce-webpack-bundle-size-for-production-880bb6b2c72f)**
+## [Reduce webpack bundle size for production](https://hackernoon.com/reduce-webpack-bundle-size-for-production-880bb6b2c72f)
 
 * Use the right environment variable, change to production
 * Use production parameter
