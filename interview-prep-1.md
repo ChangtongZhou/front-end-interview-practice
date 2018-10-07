@@ -397,6 +397,18 @@ route: takes a url and redirect to a React Component.
 
 It helps you route to different pages based on url. Routing is the processing that decides what should be render on the web page for each url.
 
+### [React Render Props Pattern](https://www.robinwieruch.de/react-render-props-pattern/):
+
+**Def**
+A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic. 
+
+A render prop is a function prop that a component uses to know what to render.
+
+This technique makes the behavior that we need to share extremely portable. 
+
+**Detail**
+It is also called children as a function. The render prop pattern enhances React's patterns for compositions. You pass components as a function which renders them. It gives you a way to pass data from the wrapping component to its inner composed components. You can use the children prop within the render prop component. The children prop becomes a children as a funciton.
+
 ## Redux:
 
 ### What is redux?
