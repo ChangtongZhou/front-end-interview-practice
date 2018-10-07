@@ -1599,6 +1599,19 @@ Some examples of languages that compile to JavaScript include CoffeeScript, Elm,
       * This feature allows you to split your code into various bundles which can then be loaded on demand or in parallel. It can be used to achieve smaller bundles and control resource load prioritization which, if used correctly, can have a major impact on load time.
   * react-code-splitting
 
+## [React Render Props Pattern](https://www.robinwieruch.de/react-render-props-pattern/):
+
+**Def**
+A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic. 
+
+A render prop is a function prop that a component uses to know what to render.
+
+This technique makes the behavior that we need to share extremely portable. 
+
+**Detail**
+It is also called children as a function. The render prop pattern enhances React's patterns for compositions. You pass components as a function which renders them. It gives you a way to pass data from the wrapping component to its inner composed components. You can use the children prop within the render prop component. The children prop becomes a children as a funciton.
+
+
 ## Development cycle:
 
 * coding -&gt; write test code \(auto testing\) -&gt; run test
