@@ -1585,6 +1585,19 @@ Some examples of languages that compile to JavaScript include CoffeeScript, Elm,
 
 * Grunt, gulp
   * command line utitlities
+  
+**[Reduce webpack bundle size for production](https://hackernoon.com/reduce-webpack-bundle-size-for-production-880bb6b2c72f)**
+
+* Use the right environment variable, change to production
+* Use production parameter
+* Advaced uglificaction from webpack plugins
+* Optimizing dependencies import, instead of import the full dependency, just import what you really need
+* Use bundle analyzer to figure out what increases the size
+* extract vendors out of your bundle
+* code split by routes:
+   * Webpack:
+      * This feature allows you to split your code into various bundles which can then be loaded on demand or in parallel. It can be used to achieve smaller bundles and control resource load prioritization which, if used correctly, can have a major impact on load time.
+  * react-code-splitting
 
 ## Development cycle:
 
