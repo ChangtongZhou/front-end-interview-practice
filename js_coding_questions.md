@@ -294,4 +294,19 @@ Output:
 ![](.gitbook/assets/screen-shot-2018-09-13-at-8.09.08-pm.png)
 
 
+## Curry a function
 
+```javascript
+// Write a sum function which will work properly when invoked using either syntax below.
+function sum(x, y) {
+  if (typeof y === "undefined") {
+    return function(y) {
+      return x+y;
+    };
+  }
+  return x+y;
+
+}
+// console.log(sum(2,3));   // Outputs 5
+// console.log(sum(2)(3)(4));  // Outputs 5
+```
