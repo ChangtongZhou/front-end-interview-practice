@@ -228,6 +228,10 @@ d; // 4
 * More efficient
 * Horizontal scalability from day one
 
+## BOM vs. DOM:
+* BOM (Browser Object Model) consists of the objects navigator, history, screen, location and document which are children of window. 
+* DOM (Document Object Model), the document object model, which represents the contents of the page. You can manipulate it using javascript.
+
 ## [React](https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541):
 
 ### What is React?
@@ -245,6 +249,11 @@ Every time a virtual DOM Object updated, React will compare the previous virtual
 React operates on the concept of a “virtual DOM.” It maintains this virtual DOM in memory, and any time a change is made to the DOM, React does a quick diff of the changes, batches them all into one update and hits the actual DOM all at once.
 
 First and foremost, performance-wise, you’re not constantly doing DOM updates, as with many of the other JavaScript frameworks. The DOM is a huge bottleneck with front-end performance. The second ramification is that React can render on the server just as easily as it can on the client.
+
+### Virtual DOM vs. Real DOM:
+A virtual DOM object has the same properties as a real DOM object, but it lacks the real thing's power to directly change what's on the screen.
+
+Manipulating the DOM is slow. Manipulating the virtual DOM is much faster, because nothing gets drawn onscreen. Think of manipulating the virtual DOM as editing a blueprint, as opposed to moving rooms in an actual house.
 
 ### What is component:
 
