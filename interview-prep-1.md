@@ -273,6 +273,11 @@ props: is read-only, the data passed from parent to children, one way
 
 state: is immutable data within the component itself, a predefined object, owned by component, can only changed by calling setState, immutable. It is private and fully controlled by the component.
 
+### [SetState](https://reactjs.org/docs/faq-state.html):
+
+* setState() schedules an update to a component’s state object. When state changes, the component responds by re-rendering.
+* Calls to setState are asynchronous - don’t rely on this.state to reflect the new value immediately after calling setState.  Pass an updater function instead of an object if you need to compute values based on the current state
+
 ### class component vs. functional component:
 
 * Functional components are just JavaScript functions, they take in an optional input which is props
@@ -316,11 +321,6 @@ e.g. For form and input tag in HTML, we need a handler for each tag. So when we 
 ### Uncontrolled component?
 
 one that stores its own state internally, and you query the DOM using a `ref` to find its current value when you need it. This is a bit more like traditional HTML.
-
-### State/props ?
-
-* props: being passed from parent component to child component, read-only, one way
-* state: is a predefined object, owned by component, can only changed by calling setState, mutable,
 
 ### Lifecycle ?
 
