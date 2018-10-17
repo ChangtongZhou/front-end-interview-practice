@@ -560,11 +560,48 @@ Middleware functions are functions that have access to the request object (req),
 ### What is nodejs:
 
 * Server side Javascript
-* Built on Google's V8
+* Built on Google's V8, use V8 Javascript Enginne to convert Javascript code to C++
 * Provide an easy way to develop scalable network servers
 * **An environment to develop high performance web services**
 * Using event-driven, asynchronous I/O to minimize overhead and maximize scalability
 * Async Execution for V8 Javascript
+
+### CLI:
+* Description: Comand line interface. A utility/program on your computer where users type commands to perform actions or run scripts rather than clicking on the screen.
+* Different types:
+  * Bash on Linux
+  * Terminal of Mac
+  * Commpand prompt / powershell on Windows
+  * Shell/Command line/terminal on Unix and Ubuntu
+  
+### [JWT (JSON Web Tokens)](https://medium.com/vandium-software/5-easy-steps-to-understanding-json-web-tokens-jwt-1164c0adfcec)
+* A JSON object that is a safe way to represent a set of information between two parties. 
+* The token is composed of a header, a payload, and a signature
+* A JWT is signed by the HS256 algorithem where only the authentication server and the application server know the secret key. The application server receives the secret key from the authentication server when the application sets up its authentication process. When the user makes a JWT-attached API call to the applciation, the application can perform the same signature algorithm on the JWT. The application can then verify that the signature obtained from it's own hashing operation matches the signature on the JWT itself. If the signatures match, then the JWT is valid which indicates that the API call is coming from an authentic source.
+* Process steps:
+  1. Create the Header
+  2. Create the Payload
+  3. Create the Signature
+  4. Put all three JWT components together
+  5. Verify the JWT
+* Why use JWT?
+  * It is used to prove that the sent data was actually created by an authentic source
+  * The data inside a JWT is encoded and signed, the purpose of encoding data is to transform the data's structure. Signing data allows the data receiver to verify the authenticity of the source of the data.
+
+
+```javascript
+ firebase.auth()
+ .signInWithEmailAndPassword('j@j.com', '12341234')
+ .then(user => {
+   return user.getToken() 
+ })
+ .then(token => {
+   this.props.setUserJWTToken(token)
+ })
+ .catch(err => {
+   console.error(err)
+ });
+```
 
 ### What is express.js
 
