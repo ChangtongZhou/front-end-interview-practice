@@ -333,9 +333,20 @@ one that stores its own state internally, and you query the DOM using a `ref` to
 
 ### Lifecycle ?
 
-There are a bunch of functions that can let you run code at a specific time while the component is rendering.
-
-componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentDidUpdate, componentWillUnmount
+* There are a bunch of functions that can let you run code at a specific time while the component is rendering.
+* e.g. componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentDidUpdate, componentWillUnmount
+* 3 life cycle: mount, update, unmount
+* Lifecycle events are special methods each component can have that allow us to run customer behavior during certain times of the component's life. Times like when a component is being created and inserted into the DOM when a component receives new props and a few others.
+  * constructor
+  * componentWillMount
+  * render
+  * componentDidMount
+  * componentWillReceiveProps
+  * shouldComponentUpdate
+  * componentWillUpdate
+  * render
+  * componentDidUpdate
+  * componentWillUnmount
 
 ### Mounting ?
 
