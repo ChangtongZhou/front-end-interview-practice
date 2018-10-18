@@ -603,6 +603,55 @@ Middleware functions are functions that have access to the request object (req),
  });
 ```
 
+### How to debug your application in Node.js?
+
+* Use Node.js debugging utility called `debugger`
+  * Enable it: start the Node.js with the `debug` argument followed by the path to the script to debug
+  * Insert debugger: insert the statement `debugger` into the source code of a script will enable a breakpoint at that  
+    position in the code
+    e.g.
+    ```javascript
+    x = 5;
+    setTimeout(() => {
+      debugger;
+      console.log('world');
+    }, 1000);
+    ```
+
+### Difference between `setImmediate()` vs `setTimeout()`?
+
+* `setImmediate()` is designed to execute a script once the current poll (event loop) phase completes, it excutes before `setTimeout` and `setInterval`. It doesn't follow cycle of callbacks in event loop.
+* `setTimeout()` schedules a script to be run after delay has finished/ wait a set amount of time before a function is executed. It is not executed immediately, but queued so that it is executed after all the executing and currently queued eventhandlers finish first.
+
+### `setInterval`:
+
+* It schedules repeated execution of `callback` every `delay` milliseconds
+
+### What is `process.nextTick()`
+
+* It is not part of the event loop. Instead
+* `nextTick` callbacks are always fired immediately after the current code is done executing and before going back to the event loop
+
+### [What is Stream in Node.js?](https://medium.com/@vigowebs/frequently-asked-node-js-interview-questions-and-answers-b74fa1f20678)
+
+* Streams are pipes that let you easily read data from a source and pipe it to a destination.
+* Based on the methods implemented, a stream becomes readable, writable, or duplex (both readable and writable).
+* Types of streams: Readable, Writable, Duplex and Transform.
+* e.g. Read data: listen to data event and attach a callback. When a chunck of data is available, the readable stream emits a data event and your callback executes.
+```javascript
+let fs = require('fs');
+let readableStream = fs.createReadStream('textFile.text');
+let fileData = '';
+
+readableStream.on('data', (chunk) => {
+  fileData += chunk;
+});
+
+readableStream.on('end', () => {
+  console.log(data);
+})
+```
+
 ### What is express.js
 
 * A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications
