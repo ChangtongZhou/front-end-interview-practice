@@ -19,6 +19,17 @@
   * Set and WeakSet
   * Function
 
+### Falsy / Truthy Value:
+
+* Falsy:
+  * undefined
+  * null
+  * NaN
+  * 0
+  * Empty String: '', ``, ""
+  * false
+* Truthy: All values are truthy value unless they are defined as falsy
+
 ### Scoping:
 
 When and where variables, constants, and arguments are considered to be defined/visible/available
