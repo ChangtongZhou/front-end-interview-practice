@@ -296,6 +296,21 @@ Be aware of which CSS properties trigger reflow, repaint, and compositing. Avoid
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/css-questions.md#css-questions)
 
+### Less
+
+* A CSS preprocessor that generates CSS
+* A backwards-compatible language extension for CSS
+* Pros:
+ * It saves time from typing and makes things more portable/templateable and adds functionality to CSS previously unavailable.
+ * It allows you to be more programmatic in your writing.
+ * It allows you to use variables to avoid redundant code, and allow you change the value of a variable.
+ * Good features:
+  * Variables
+  * Mixins: treat classes and ids as function which can be invoked inside of other classes and ids. You can include full css description by just typing the name of the class/id and putting(); after it.
+  * Functions
+  * Importing: breaks your CSS into smaller files and import them as needed
+  * Nested Directives: allows @media to be nested inside of a class just like selectors can. It saves having to write so many redundant grouping of classes for different media queries
+
 #### Describe what you like and dislike about the CSS preprocessors you have used.
 
 **Likes:**
