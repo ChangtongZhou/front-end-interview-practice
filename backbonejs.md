@@ -8,15 +8,19 @@
 
 ### Backbone.js uses:
 
-* Models
-* Collections (sets of models)
-* Views
-* Routers
+* Models: Represents basic data in the framework, they are used for data storage and business logic
+* Collections (sets of models): Listens to event changes on model and its views
+* Views: monitor changes in the applications sate (data changes to models, user interactions, etc.) and update the view     
+  accordingly. The view doesn't know anything about the HTML and CSS and each view can be updated independently when the model changes without reloading the whole page. It represents the logical chunck of the UI in the DOM.
+* Routers: Decide what application state to be sent to based on user's request, used for routing the client side applications and connects them to actions and events using URL's.
+* Events: bind objects and trigger custom events, also contains built-in events such as add, remove, destroy to manage your     collection
 
 ### Pros:
 
 * Easy, fast and lightweight framework, very easy to understand the documentation and codes, which explains how it will work.
 * Very easy to build your own framework into no time.
+* If you want a better design with less code, then it is better to use the BackboneJS library that provides good functionality, is well organized and in a structured manner for developing your application.
+* BackboneJS communicates via events; this ensures that you do not mess up the application. Your code will be cleaner, nicer and easy to maintain.
 
 ### Cons:
 
@@ -65,10 +69,14 @@ you store that data. or when you want ot perform layout in JS and react to chang
     }
   });
   ```
+  * Data binding in React can be achieved by using a `controlled input`. A controlled input is achieved by binding the value   
+    to a `state variable` and a `onChange` event to change the state as the input value changes.
+  
+  * Another example: https://medium.com/front-end-hacking/tutorial-react-two-way-data-binding-2018-b935cb200964
 
 ## MVC
 
-## How does MVC work?
+### How does MVC work?
 * The user interacts with the application system through the controller. 
   The controller perceives user actions, interprets them and informs the model of changes required in accordance with the actions.
 * The model is in charge of providing access to the data available in the system, receives a change request from the controller, and executes it.
@@ -78,3 +86,11 @@ you store that data. or when you want ot perform layout in JS and react to chang
 
 The pattern sets no fixed relationship between the data and their presentation. That is, the same data can be displayed, 
 for example, in the form of text, a table, a diagram – depending on the user’s action and the way controller interprets them.
+
+## Kraken.js
+
+### What is Kraken:
+
+* A secure and scalable layer that extends express by providing structure and convention. 
+* Keeps your code organized by splitting up the configuration, content + temples and routing logic into different places so that it is easy to keep track of everything and to easily swap out components.
+
