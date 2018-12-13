@@ -665,7 +665,7 @@ readableStream.on('end', () => {
 
 ### What is express.js
 
-* A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications
+* A minimal and flexible Node.js web application server-side framework that provides a robust set of features for web and mobile applications
 * creates a robust API quickly and easily with HTTP utility methods \(e.g. request and response\) and middleware
 * provides a thin layer of fundamental web application features, without obscuring Node.js features 
 
