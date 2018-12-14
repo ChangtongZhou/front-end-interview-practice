@@ -404,13 +404,29 @@ TODO
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/css-questions.md#css-questions)
 
-#### What's the difference between `inline` and `inline-block`?
+#### What's the difference between `inline` and `inline-block`?(https://medium.com/@DaphneWatson/css-display-properties-block-inline-and-inline-block-how-to-tell-the-difference-7d3a1e6e3051)
 
 ## I shall throw in a comparison with `block` for good measure.
 
 ![](.gitbook/assets/screen-shot-2018-07-19-at-12.13.56-pm.png)
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/css-questions.md#css-questions)
+
+### Block:
+* Always starts on a new line, and fills up the horizontal space left and right on the web page.
+* Can add margins and padding on all four sides of any block element
+* e.g. `<div>` and `p` tags
+
+### Inline Element:
+* Don't start on a new line, appear on the same line as the content and tags beside them.
+* Can only add margins and padding to the left and right on an inline element, cannot add height to the top/bottom padding
+  or marging
+* e.g. `<span>`, `<strong>`, and `<img>` tags.
+
+### Inline Block:
+* Similar to inline elements, but they can have padding and margins added on all four sides
+* You have to declare display: inline-block in your CSS code.
+* Usage: create navigation links horizontally
 
 ## What's the difference between a `relative`, `fixed`, `absolute` and `static`ally positioned element?
 
