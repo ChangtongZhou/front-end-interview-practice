@@ -425,8 +425,10 @@ TODO
 
 ### Inline Block:
 * Similar to inline elements, but they can have padding and margins added on all four sides
-* You have to declare display: inline-block in your CSS code.
+* You have to declare display: `inline-block` in your CSS code.
 * Usage: create navigation links horizontally
+
+Note: We can center inline-block elements using `text-align: center`
 
 ## What's the difference between a `relative`, `fixed`, `absolute` and `static`ally positioned element?
 
