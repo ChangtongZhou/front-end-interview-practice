@@ -67,6 +67,38 @@ route: takes a url and redirect to a React Component.
 
 It helps you route to different pages based on url. Routing is the processing that decides what should be render on the web page for each url.
 
+### `Props.children`:
+
+* According to React docs, props.children on components represent 'generic boxes' and that don't know their children ahead of time
+* It is used to display whatever you include between the opening and closing tags when invoking a component.
+* Why do we use `props.children`?
+  * It decouples the invoking component from its content and makes it more reusable.
+* e.g.
+```javascript
+//Picture.js
+const Picture = props => {
+ return (
+  <div>
+   <img src={props.src}/>
+   {props.children}
+  </div>
+ )
+}
+```
+
+```javascript
+// App.js
+render() {
+ return (
+  <Picture key={picture.id} src={picture.src}>
+    // What is placed here is passed as props.children
+  </Picture>
+ )
+}
+```
+  * instead of invoking the component with a self-closing tag `<Picture />` if you invoke it with full opening and closing
+  tags `<Picture></Picture>` you can then place more code between it.
+
 ## \*\*\*\*[**Redux?**](https://redux.js.org/faq/general)\*\*\*\*
 
 Redux is a predictable state container for JavaScript apps. It contains store, reducers and action.
@@ -156,4 +188,7 @@ Middleware functions are functions that have access to the [request object](http
 * Store: flux has multiple stores, each of them is a singleton object. Can only have one dispatcher.
 * Redux store expose a dispatch API, it is not a independent object.
 * FLUX has no reducers: [https://edgecoders.com/the-difference-between-flux-and-redux-71d31b118c1](https://edgecoders.com/the-difference-between-flux-and-redux-71d31b118c1) 
+
+## Good Resources:
+* https://tylermcginnis.com/react-interview-questions/
 
