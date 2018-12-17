@@ -1,6 +1,6 @@
 # React and Redux
 
-## \*\*\*\*[**React**](https://reactjs.org/docs/faq-ajax.html)**:**
+## [React](https://reactjs.org/docs/faq-ajax.html):
 
 ### **What is React ?**
 
@@ -99,7 +99,7 @@ render() {
   * instead of invoking the component with a self-closing tag `<Picture />` if you invoke it with full opening and closing
   tags `<Picture></Picture>` you can then place more code between it.
 
-## \*\*\*\*[**Redux?**](https://redux.js.org/faq/general)\*\*\*\*
+## [Redux?](https://redux.js.org/faq/general)
 
 Redux is a predictable state container for JavaScript apps. It contains store, reducers and action.
 
