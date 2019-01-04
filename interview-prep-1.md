@@ -745,5 +745,7 @@ The URI/URL where api/service can be accessed by a client application
    * SASS allows you to use `@extend` to share a set of CSS properties from one selector to another
 
 
-
+## Good Resource:
+* https://medium.freecodecamp.org/cracking-the-front-end-interview-9a34cd46237
+* https://www.interviewcake.com/javascript-interview-questions
 
