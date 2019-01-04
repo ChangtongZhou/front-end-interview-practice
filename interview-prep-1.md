@@ -749,3 +749,4 @@ The URI/URL where api/service can be accessed by a client application
 * https://medium.freecodecamp.org/cracking-the-front-end-interview-9a34cd46237
 * https://www.interviewcake.com/javascript-interview-questions
 * https://frontendmasters.com/books/front-end-handbook/2018/practice/interview-q.html
+* https://github.com/MaximAbramchuck/awesome-interview-questions#css
