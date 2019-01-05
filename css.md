@@ -245,9 +245,52 @@ e.g.
 ```
 Now we can leverage percentages for the widths of the columns. This allows the columns to scalre upwards and downwards within different viewports while maintaining the structure.
 
+### Creating Gutters:
+* Gutters help to create separation between columns for greater legibility and aesthetics.
+* 2 ways:
+  1. defining paddings within each column 
+  2. Using a percentage-based left margin for each column (recommended, because it is more responsive to different viewport)
+    e.g.
+    ```css
+    .column + .column {
+     margin-left: 1.6%;
+    }
+    ```
+    Above will create a left margin (1.6%) for every column except the first one.
+
 ## Have you used or implemented media queries or mobile-specific layouts/CSS?
 
-Yes. An example would be transforming a stacked pill navigation into a fixed-bottom tab navigation beyond a certain breakpoint.
+Yes. 
+e.g.1
+```css
+@media only screen and (max-width: 550px) {
+    .column-1, 
+    .column-2, 
+    .column-3, 
+    .column-4, 
+    .column-5, 
+    .column-6, 
+    .column-7, 
+    .column-8, 
+    .column-9, 
+    .column-10, 
+    .column-11, 
+    .column-12 {
+        width: auto;
+        float: none;
+    }
+
+    .column + .column {
+        margin-left: 0;
+    }
+}
+
+```
+Above tells the grid to allow every column to take up the full width of its container for devices with a smaller than 550px wide. Since gutters are no longer needded here, we remote those too
+
+e.g.2
+Another example would be transforming a stacked pill navigation into a fixed-bottom tab navigation beyond a certain breakpoint.
+
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/css-questions.md#css-questions)
 
