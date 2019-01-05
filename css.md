@@ -217,6 +217,34 @@ I like the `float`-based grid system because it still has the most browser suppo
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/css-questions.md#css-questions)
 
+## Grid System:
+
+### What is a grid system?
+
+It is a structure that allows for content to be stacked both vertically and horizontally in a consistent and easily manageable way.
+
+### Benefits of a grid system?
+
+* They increase productivity: provide simple and predictable layout for HTML desgin.
+* They are versatile: the layouts can be adaptable in different combinations of rows and columns. They support nested grids for complex use cases.
+* They are ideal for responsive layouts.
+
+### Primary Compoments of grid system:
+* rows: accommodate the columns
+* columns: make up the final structure and contain the actual content.
+* some grid systems will additionally include containers, which serve as wrappers for the layout
+
+### Resetting the box model on grid system:
+By default, the browser doesnt include the padding and border within the declared width and height of an element, this is not good for responsiveness. Hence, we can set the `box-sizing` property to `border-box` for both rows and columns
+
+e.g.
+```CSS
+.row, .column {
+ box-sizing: border-box;
+}
+```
+Now we can leverage percentages for the widths of the columns. This allows the columns to scalre upwards and downwards within different viewports while maintaining the structure.
+
 ## Have you used or implemented media queries or mobile-specific layouts/CSS?
 
 Yes. An example would be transforming a stacked pill navigation into a fixed-bottom tab navigation beyond a certain breakpoint.
