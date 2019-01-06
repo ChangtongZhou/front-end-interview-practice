@@ -750,3 +750,4 @@ The URI/URL where api/service can be accessed by a client application
 * https://www.interviewcake.com/javascript-interview-questions
 * https://frontendmasters.com/books/front-end-handbook/2018/practice/interview-q.html
 * https://github.com/MaximAbramchuck/awesome-interview-questions#css
+* https://docs.google.com/document/d/1q0JcH6hxIV-9WMWAb9j0lDAxF5-SBwxtxL342leedbU/edit
