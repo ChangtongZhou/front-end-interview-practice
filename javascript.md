@@ -340,7 +340,7 @@ console.log( a == null); // true
 console.log(a == undefined); // true
 ```
 
-## Prototype chain:
+## [Prototype chain:](https://javascript.info/promise-chaining)
 
 Javascript object doesn't have a type or a class that it gets its methods from, it has a prototype, including the prototype object. This "chain" goes all the way back until it reaches an object that has no prototype, usually Object's prototype. Prototype's version of "Inheritance" involves adding another link to the end of this prototype chain.
 
@@ -1339,6 +1339,11 @@ async function foo() {
 * A promise can only succeed or fail once. It cannot succeed or fail twice, neither can it switch from success to failure or vice versa. 
 * If a promise has succeeded or failed and you later add a success/failure callback, the correct callback will be called, even though the event took place earlier. 
 * Extremely useful async success/failure, because you're less interested in the exact time something became available, and more interested in reacting to the outcome. 
+
+### [Async/await:](https://javascript.info/async-await)
+
+* async: makes a function become a promise
+* await: makes javascript to wait/pause for the current function, but countiue other excutions and comes back when the promise is settled.
 
 ## How JSONP works \(and how it's not really Ajax\).
 
