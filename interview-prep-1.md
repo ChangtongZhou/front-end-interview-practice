@@ -744,6 +744,12 @@ The URI/URL where api/service can be accessed by a client application
   * Extend/Inheritance:
    * SASS allows you to use `@extend` to share a set of CSS properties from one selector to another
 
+## [Design Pattern:](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
+
+* Module pattern
+* Observer pattern
+* Singleton pattern
+* Prototype pattern
 
 ## Good Resource:
 * https://medium.freecodecamp.org/cracking-the-front-end-interview-9a34cd46237
