@@ -748,7 +748,7 @@ The URI/URL where api/service can be accessed by a client application
 
 * Module pattern
 * Observer pattern
-* Singleton pattern
+* Singleton pattern: Ensures a class has only one instance and provides a global point of access to it.
 * Prototype pattern
 
 ## Good Resource:
