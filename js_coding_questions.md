@@ -310,3 +310,6 @@ function sum(x, y) {
 // console.log(sum(2,3));   // Outputs 5
 // console.log(sum(2)(3)(4));  // Outputs 5
 ```
+
+## Good Resources for Tricky JS Coding Questions:
+* https://www.toptal.com/javascript/interview-questions
