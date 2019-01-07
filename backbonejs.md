@@ -94,3 +94,9 @@ for example, in the form of text, a table, a diagram â€“ depending on the userâ€
 * A secure and scalable layer that extends express by providing structure and convention. 
 * Keeps your code organized by splitting up the configuration, content + temples and routing logic into different places so that it is easy to keep track of everything and to easily swap out components.
 
+## Why Choose React Over Backbone?
+
+* Backbone has no two way data binging, and doesn't store state of components as React does
+* Backbone is barebone, it doesn't provide structure, relies on developers' choices
+* Backbone's views manipulate DOM directly (slows down the page performance), but React uses Virtual DOM instead
+* Backbone doesn't have lifecycle, but React has.
