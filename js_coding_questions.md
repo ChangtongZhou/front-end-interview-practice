@@ -68,7 +68,7 @@ function firstUnique (str) {
 console.log(firstUnique("bbcffcge")); // g
 ```
 
-The `forEach()` method executes a provided function once for each array element. \(mutate array in-place\)
+The `forEach()` method executes a provided function once for each array element. (mutate array in-place)
 
 ## How to check if an object is an array type?
 
@@ -89,30 +89,29 @@ arr.length = arr.length - 1;
 * `array.splice()`:
   * changes the contents of an array by removing existing elements and/or adding new elements
   * `array.splice(start[, deleteCount[, item1[, item2[, ...]]]])`
-  * e.g.
+  *   e.g.
 
-    ```javascript
-      var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
-      var removed = myFish.splice(3, 1);
+      ```javascript
+        var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
+        var removed = myFish.splice(3, 1);
 
-      // removed is ["mandarin"]
-      // myFish is ["angel", "clown", "drum", "sturgeon"]
+        // removed is ["mandarin"]
+        // myFish is ["angel", "clown", "drum", "sturgeon"]
 
-      var months = ['Jan', 'March', 'April', 'June'];
-      months.splice(1, 0, 'Feb');
-      // inserts at 1st index position
-      console.log(months);
-      // expected output: Array ['Jan', 'Feb', 'March', 'April', 'June']
+        var months = ['Jan', 'March', 'April', 'June'];
+        months.splice(1, 0, 'Feb');
+        // inserts at 1st index position
+        console.log(months);
+        // expected output: Array ['Jan', 'Feb', 'March', 'April', 'June']
 
-      months.splice(4, 1, 'May');
-      // replaces 1 element at 4th index
-      console.log(months);
-      // expected output: Array ['Jan', 'Feb', 'March', 'April', 'May']
-    ```
-
+        months.splice(4, 1, 'May');
+        // replaces 1 element at 4th index
+        console.log(months);
+        // expected output: Array ['Jan', 'Feb', 'March', 'April', 'May']
+      ```
   * A negative index can be used, indicating an offset from the end of the sequence. `slice(-2)` extracts the last two elements in the sequence.
 * `array.slice()`:
-  * returns a shallow copy of a portion of any array into a new array object selected from begin to end \(end not included\). The original array will not be modified.
+  * returns a shallow copy of a portion of any array into a new array object selected from begin to end (end not included). The original array will not be modified.
   * `arr.slice([begin[,, end])`
   * ```javascript
     // Using slice, create newCar from myCar.
@@ -167,7 +166,7 @@ delete obj['regex'];
 * The `splice()` method changes the original array and `slice()` method doesn't change the original array
 * The `splice()` method can take n number of arguments
 
-## [Implementation of Native JavaScript Methods \(forEach, Map, Filter, Reduce, Every, Some\)](https://gist.github.com/alexhawkins/28aaf610a3e76d8b8264)
+## [Implementation of Native JavaScript Methods (forEach, Map, Filter, Reduce, Every, Some)](https://gist.github.com/alexhawkins/28aaf610a3e76d8b8264)
 
 ```javascript
 Array.prototype.myFilter = function(callback) {
@@ -185,9 +184,9 @@ console.log([1, 2, 3, 6, 1].myFilter((ele) => {
 }));
 ```
 
-## Regex: 
+## Regex:
 
-[https://regexr.com/](https://regexr.com/)
+[https://regexr.com/](https://regexr.com)
 
 ## SetTimeout:
 
@@ -229,11 +228,11 @@ for (var i = 0; i < 4; i++) {
 
 ## `Array.prototype.slice.call()`
 
-{% embed data="{\"url\":\"https://stackoverflow.com/questions/7056925/how-does-array-prototype-slice-call-work\",\"type\":\"link\",\"title\":\"how does Array.prototype.slice.call\(\) work?\",\"description\":\"I know it is used to make arguments a real array, but I don\'t understand what happens when using Array.prototype.slice.call\(arguments\)\",\"icon\":{\"type\":\"icon\",\"url\":\"https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded\",\"width\":316,\"height\":316,\"aspectRatio\":1}}" %}
+{% embed url="https://stackoverflow.com/questions/7056925/how-does-array-prototype-slice-call-work" %}
 
-* This method treats array-like stuff \(especially object\) like an array, so that array functions can be applied, e.g.`.slice`, because `.slice` only works for array type.
+* This method treats array-like stuff (especially object) like an array, so that array functions can be applied, e.g.`.slice`, because `.slice` only works for array type.
 
-{% embed data="{\"url\":\"https://github.com/paddingme/Front-end-Web-Development-Interview-Question/blob/master/interview/1.md\",\"type\":\"link\",\"title\":\"paddingme/Front-end-Web-Development-Interview-Question\",\"description\":\"前端开发面试题大收集，前端面试集锦 :heart: :gift\_heart: :cupid:. Contribute to paddingme/Front-end-Web-Development-Interview-Question development by creating an account on GitHub.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars1.githubusercontent.com/u/5771087?s=400&v=4\",\"width\":180,\"height\":180,\"aspectRatio\":1}}" %}
+{% embed url="https://github.com/paddingme/Front-end-Web-Development-Interview-Question/blob/master/interview/1.md" %}
 
 ## JS Callbacks:
 
@@ -272,17 +271,17 @@ $(document).ready( function() {
 
   for( var i = 0; i < buttons.length; ++i ) {
     buttons.eq(i).click(
-    	// ONLY EDIT THE CODE BELOW THIS LINE
-    	(
-        	function(i) {
+        // ONLY EDIT THE CODE BELOW THIS LINE
+        (
+            function(i) {
             i++;
             return function() {
-            	$('ul').append('<li>' + i + '</li>')
+                $('ul').append('<li>' + i + '</li>')
             }
           }
         )(i)
-      
-    	// ONLY EDIT THE CODE ABOVE THIS LINE
+
+        // ONLY EDIT THE CODE ABOVE THIS LINE
     );
   }
 });
@@ -292,7 +291,6 @@ $(document).ready( function() {
 Output:
 
 ![](.gitbook/assets/screen-shot-2018-09-13-at-8.09.08-pm.png)
-
 
 ## Curry a function
 
@@ -312,4 +310,5 @@ function sum(x, y) {
 ```
 
 ## Good Resources for Tricky JS Coding Questions:
-* https://www.toptal.com/javascript/interview-questions
+
+* [https://www.toptal.com/javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)

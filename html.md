@@ -8,19 +8,19 @@
 * Flawless Content Editing
 * Canvas
 * Article and Section
-  * The HTML5 is provided with two semantic tags **&lt;article&gt;** and **&lt;section&gt;** to help you increase your search engine visibility. Users can now compose an article into multiple section, and integrate multiple articles into a single section.
+  * The HTML5 is provided with two semantic tags **\<article>** and **\<section>** to help you increase your search engine visibility. Users can now compose an article into multiple section, and integrate multiple articles into a single section.
 
 Resource:
 
 [http://www.softxml.com/2987/CSS3-and-HTML5-Awesome-Features](http://www.softxml.com/2987/CSS3-and-HTML5-Awesome-Features)
 
-## !DOCTYE html : 
+## !DOCTYE html :
 
 * Tells a browser it is the latest version of HTML
 
-## Document.write\(\):
+## Document.write():
 
-* Related to DOM \(Document Object Model\), tree structure of web components in browser
+* Related to DOM (Document Object Model), tree structure of web components in browser
 * Document is a pointer to your DOM structure
 
 ## What does a `DOCTYPE` do?
@@ -33,7 +33,7 @@ Moral of the story - just add `<!DOCTYPE html>` at the start of your page.
 
 * [https://stackoverflow.com/questions/7695044/what-does-doctype-html-do](https://stackoverflow.com/questions/7695044/what-does-doctype-html-do)
 * [https://www.w3.org/QA/Tips/Doctype](https://www.w3.org/QA/Tips/Doctype)
-* [https://quirks.spec.whatwg.org/\#history](https://quirks.spec.whatwg.org/#history)
+* [https://quirks.spec.whatwg.org/#history](https://quirks.spec.whatwg.org/#history)
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/html-questions.md#html-questions)
 
@@ -77,7 +77,7 @@ These days, using `data-` attributes is not encouraged. One reason is that users
 **References**
 
 * [http://html5doctor.com/html5-custom-data-attributes/](http://html5doctor.com/html5-custom-data-attributes/)
-* [https://www.w3.org/TR/html5/dom.html\#embedding-custom-non-visible-data-with-the-data-\*-attributes](https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes)
+* [https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-\*-attributes](https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-\*-attributes)
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/html-questions.md#html-questions)
 
@@ -114,7 +114,7 @@ All the above-mentioned technologies are key-value storage mechanisms on the cli
 ## Describe the difference between `<script>`, `<script async>` and `<script defer>`.
 
 * `<script>` - HTML parsing is blocked, the script is fetched and executed immediately, HTML parsing resumes after the script is executed.
-* `<script async>` - The script will be fetched in parallel to HTML parsing and executed as soon as it is available \(potentially before HTML parsing completes\). Use `async` when the script is independent of any other scripts on the page, for example, analytics.
+* `<script async>` - The script will be fetched in parallel to HTML parsing and executed as soon as it is available (potentially before HTML parsing completes). Use `async` when the script is independent of any other scripts on the page, for example, analytics.
 * `<script defer>` - The script will be fetched in parallel to HTML parsing and executed when the page has finished parsing. If there are multiple of them, each deferred script is executed in the order they were encoun­tered in the document. If a script relies on a fully-parsed DOM, the `defer` attribute will be useful in ensuring that the HTML is fully parsed before executing. There's not much difference in putting a normal `<script>` at the end of `<body>`. A deferred script must not contain `document.write`.
 
 Note: The `async` and `defer` attrib­utes are ignored for scripts that have no `src` attribute.
@@ -129,11 +129,11 @@ Note: The `async` and `defer` attrib­utes are ignored for scripts that have no 
 
 ## Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
 
-**Placing `<link>`s in the `<head>`**
+**Placing** `<link>`**s in the** `<head>`
 
 Putting `<link>`s in the head is part of the specification. Besides that, placing at the top allows the page to render progressively which improves the user experience. The problem with putting stylesheets near the bottom of the document is that it prohibits progressive rendering in many browsers, including Internet Explorer. Some browsers block rendering to avoid having to repaint elements of the page if their styles change. The user is stuck viewing a blank white page. It prevents the flash of unstyled contents.
 
-**Placing `<script>`s just before `</body>`**
+**Placing** `<script>`**s just before** `</body>`
 
 `<script>`s block HTML parsing while they are being downloaded and executed. Downloading the scripts at the bottom will allow the HTML to be parsed and displayed to the user first.
 
@@ -141,20 +141,20 @@ An exception for positioning of `<script>`s at the bottom is when your script co
 
 **References**
 
-* [https://developer.yahoo.com/performance/rules.html\#css\_top](https://developer.yahoo.com/performance/rules.html#css_top)
+* [https://developer.yahoo.com/performance/rules.html#css\_top](https://developer.yahoo.com/performance/rules.html#css\_top)
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/html-questions.md#html-questions)
 
 ## What is progressive rendering?
 
-Progressive rendering is the name given to techniques used to improve the performance of a webpage \(in particular, improve perceived load time\) to render content for display as quickly as possible.
+Progressive rendering is the name given to techniques used to improve the performance of a webpage (in particular, improve perceived load time) to render content for display as quickly as possible.
 
-It used to be much more prevalent in the days before broadband internet but it is still used in modern development as mobile data connections are becoming increasingly popular \(and unreliable\)!
+It used to be much more prevalent in the days before broadband internet but it is still used in modern development as mobile data connections are becoming increasingly popular (and unreliable)!
 
 Examples of such techniques:
 
 * Lazy loading of images - Images on the page are not loaded all at once. JavaScript will be used to load an image when the user scrolls into the part of the page that displays the image.
-* Prioritizing visible content \(or above-the-fold rendering\) - Include only the minimum CSS/content/scripts necessary for the amount of page that would be rendered in the users browser first to display as quickly as possible, you can then use deferred scripts or listen for the `DOMContentLoaded`/`load` event to load in other resources and content.
+* Prioritizing visible content (or above-the-fold rendering) - Include only the minimum CSS/content/scripts necessary for the amount of page that would be rendered in the users browser first to display as quickly as possible, you can then use deferred scripts or listen for the `DOMContentLoaded`/`load` event to load in other resources and content.
 * Async HTML fragments - Flushing parts of the HTML to the browser as the page is constructed on the back end. More details on the technique can be found [here](http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/).
 
 **References**
@@ -166,7 +166,7 @@ Examples of such techniques:
 
 ## Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
 
-You would use the `srcset` attribute when you want to serve different images to users depending on their device display width - serve higher quality images to devices with retina display enhances the user experience while serving lower resolution images to low-end devices increase performance and decrease data wastage \(because serving a larger image will not have any visible difference\). For example: `<img srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 2000w" src="..." alt="">` tells the browser to display the small, medium or large `.jpg` graphic depending on the client's resolution. The first value is the image name and the second is the width of the image in pixels. For a device width of 320px, the following calculations are made:
+You would use the `srcset` attribute when you want to serve different images to users depending on their device display width - serve higher quality images to devices with retina display enhances the user experience while serving lower resolution images to low-end devices increase performance and decrease data wastage (because serving a larger image will not have any visible difference). For example: `<img srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 2000w" src="..." alt="">` tells the browser to display the small, medium or large `.jpg` graphic depending on the client's resolution. The first value is the image name and the second is the width of the image in pixels. For a device width of 320px, the following calculations are made:
 
 * 500 / 320 = 1.5625
 * 1000 / 320 = 3.125
@@ -174,26 +174,25 @@ You would use the `srcset` attribute when you want to serve different images to 
 
 If the client's resolution is 1x, 1.5625 is the closest, and `500w` corresponding to `small.jpg` will be selected by the browser.
 
-If the resolution is retina \(2x\), the browser will use the closest resolution above the minimum. Meaning it will not choose the 500w \(1.5625\) because it is greater than 1 and the image might look bad. The browser would then choose the image with a resulting ratio closer to 2 which is 1000w \(3.125\).
+If the resolution is retina (2x), the browser will use the closest resolution above the minimum. Meaning it will not choose the 500w (1.5625) because it is greater than 1 and the image might look bad. The browser would then choose the image with a resulting ratio closer to 2 which is 1000w (3.125).
 
 `srcset`s solve the problem whereby you want to serve smaller image files to narrow screen devices, as they don't need huge images like desktop displays do — and also optionally that you want to serve different resolution images to high density/low-density screens.
 
 **References**
 
-* [https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia\_and\_embedding/Responsive\_images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+* [https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia\_and\_embedding/Responsive\_images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia\_and\_embedding/Responsive\_images)
 * [https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/](https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/)
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/html-questions.md#html-questions)
 
 ## Have you used different HTML templating languages before?
 
-Yes, Pug \(formerly Jade\), ERB, Slim, Handlebars, Jinja, Liquid, just to name a few. In my opinion, they are more or less the same and provide similar functionality of escaping content and helpful filters for manipulating the data to be displayed. Most templating engines will also allow you to inject your own filters in the event you need custom processing before display.
+Yes, Pug (formerly Jade), ERB, Slim, Handlebars, Jinja, Liquid, just to name a few. In my opinion, they are more or less the same and provide similar functionality of escaping content and helpful filters for manipulating the data to be displayed. Most templating engines will also allow you to inject your own filters in the event you need custom processing before display.
 
 [\[↑\] Back to top](https://github.com/ChangtongZhou/front-end-interview-handbook/blob/master/questions/html-questions.md#html-questions)
 
-#### Other Answers
+### Other Answers
 
 * [https://github.com/ChangtongZhou/front-end-interview-handbook](https://github.com/ChangtongZhou/front-end-interview-handbook)
 * [https://neal.codes/blog/front-end-interview-questions-html/](https://neal.codes/blog/front-end-interview-questions-html/)
 * [http://peterdoes.it/2015/12/03/a-personal-exercise-front-end-job-interview-questions-and-my-answers-all/](http://peterdoes.it/2015/12/03/a-personal-exercise-front-end-job-interview-questions-and-my-answers-all/)
-

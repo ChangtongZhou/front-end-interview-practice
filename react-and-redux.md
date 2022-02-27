@@ -12,7 +12,7 @@ virtual DOM, fast, component based, one way data binding, free and open source
 
 ### virtual DOM?
 
-In React, for every [DOM object](http://eloquentjavascript.net/13_dom.html), there is a corresponding "virtual DOM object." A virtual DOM object is a representation of a DOM object, like a lightweight copy.
+In React, for every [DOM object](http://eloquentjavascript.net/13\_dom.html), there is a corresponding "virtual DOM object." A virtual DOM object is a representation of a DOM object, like a lightweight copy.
 
 Every time a virtual DOM Object updated, React will compare the previous virtual DOM and updated virtual DOM Object, then update the corresponding DOM Object.
 
@@ -28,7 +28,7 @@ It is a syntax extension to JavaScript. It is similar with HTML syntax but you c
 
 Component takes care of a block of view in the React. It split the UI into independent, reusable pieces. We have two different kinds of component, one is stateful another one is stateless component.
 
-### HOC \(High Order Component\)?
+### HOC (High Order Component)?
 
 It is a function takes a component and return a new component. It is a technique for reusing component logic
 
@@ -73,18 +73,19 @@ It helps you route to different pages based on url. Routing is the processing th
 * It is used to display whatever you include between the opening and closing tags when invoking a component.
 * Why do we use `props.children`?
   * It decouples the invoking component from its content and makes it more reusable.
-* e.g.
-```javascript
-//Picture.js
-const Picture = props => {
- return (
-  <div>
-   <img src={props.src}/>
-   {props.children}
-  </div>
- )
-}
-```
+*   e.g.
+
+    ```javascript
+    //Picture.js
+    const Picture = props => {
+    return (
+    <div>
+     <img src={props.src}/>
+     {props.children}
+    </div>
+    )
+    }
+    ```
 
 ```javascript
 // App.js
@@ -96,8 +97,10 @@ render() {
  )
 }
 ```
-  * instead of invoking the component with a self-closing tag `<Picture />` if you invoke it with full opening and closing
-  tags `<Picture></Picture>` you can then place more code between it.
+
+*   instead of invoking the component with a self-closing tag `<Picture />` if you invoke it with full opening and closing
+
+    tags `<Picture></Picture>` you can then place more code between it.
 
 ## [Redux?](https://redux.js.org/faq/general)
 
@@ -112,14 +115,14 @@ Redux is a predictable state container for JavaScript apps. It contains store, r
 ### 3 principal ?
 
 * state read only, changes are only made by pure function, single source of truth
-  * **single source of truth:** the entire state of the application will be represented by \(one store \)one JavaScript object.
+  * **single source of truth:** the entire state of the application will be represented by (one store )one JavaScript object.
   * **state read only:** The only way to change the state is to emit an action
   * **Reducers must be pure function**: Pure functions are those whose return values depend only upon the values of their arguments
 
 ### How to connect ?
 
-1. we manually use store.subscribe\(\) function to register the render function
-2. react-redux library, connect\(\), pass in a mapStateToProps function to it.
+1. we manually use store.subscribe() function to register the render function
+2. react-redux library, connect(), pass in a mapStateToProps function to it.
 
 ### [Immutability:](https://redux.js.org/faq/immutabledata)
 
@@ -127,23 +130,23 @@ Redux is a predictable state container for JavaScript apps. It contains store, r
 
 * Bring increased performance to your app
 * Leads to simpler programming and debugging, as data that never changes is easier to reason about than data that is free to be changed arbitrarily throughout your app.
-* In web app context, it enables  sophisticated change detection techniques to be implemented simply and cheaply, ensuring the computationally expensive process of updating the DOM occurs only when it absolutely has to 
+* In web app context, it enables  sophisticated change detection techniques to be implemented simply and cheaply, ensuring the computationally expensive process of updating the DOM occurs only when it absolutely has to&#x20;
 
 #### Why is immutability required by Reudx?
 
 * Both Redux and React-Redux employ shallow equality checking:
   * Redux's `combineReducers` utility [shallowly checks for reference changes](https://redux.js.org/faq/immutabledata#how-redux-uses-shallow-checking) caused by the reducers that it calls.
-  * React-Redux's `connect` method generates components that [shallowly check reference changes to the root state](https://redux.js.org/faq/immutabledata#how-react-redux-uses-shallow-checking), and the return values from the `mapStateToProps` function to see if the wrapped components actually need to re-render.
+  *   React-Redux's `connect` method generates components that [shallowly check reference changes to the root state](https://redux.js.org/faq/immutabledata#how-react-redux-uses-shallow-checking), and the return values from the `mapStateToProps` function to see if the wrapped components actually need to re-render.
 
-    Such [shallow checking requires immutability](https://redux.js.org/faq/immutabledata#redux-shallow-checking-requires-immutability) to function correctly.
+      Such [shallow checking requires immutability](https://redux.js.org/faq/immutabledata#redux-shallow-checking-requires-immutability) to function correctly.
 * Immutable data management ultimately makes data handling safer
 * Time-travel debugging requires that reducers be pure functions with on side effects, so that you can correctly jump bet
 
 ### Shallow equality checking:
 
-Shallow equality checking \(or _reference equality_\) simply checks that two different _variables_ reference the same object.
+Shallow equality checking (or _reference equality_) simply checks that two different _variables_ reference the same object.
 
-A shallow equality check is therefore as simple \(and as fast\) as `a === b`
+A shallow equality check is therefore as simple (and as fast) as `a === b`
 
 ### Reducer?
 
@@ -170,7 +173,7 @@ The store binds together the 3 principles of Redux:
 ### Thunk?
 
 * It is used to handle async actions
-* Allows you to write action creators that return a function instead of an action, which give you the access to store.getState\(\) and store.dispatch\(\) inside the function
+* Allows you to write action creators that return a function instead of an action, which give you the access to store.getState() and store.dispatch() inside the function
 * Without Thunk, inside an action creator, there is no way we can have the access to store to dispatch other actions during async actions.
 * Benefits:
   * Components aren’t aware of how action creators are implemented, and whether they care about Redux state, whether they are synchronous or asynchronous, and whether or not they call other action creators.
@@ -179,7 +182,7 @@ The store binds together the 3 principles of Redux:
 
 Middleware is some code you can put between the framework receiving a request, and the framework generating a response.
 
-Middleware functions are functions that have access to the [request object](https://expressjs.com/en/4x/api.html#req) \(req\), the [response object](https://expressjs.com/en/4x/api.html#res) \(res\), and the next middleware function in the application’s request-response cycle.
+Middleware functions are functions that have access to the [request object](https://expressjs.com/en/4x/api.html#req) (req), the [response object](https://expressjs.com/en/4x/api.html#res) (res), and the next middleware function in the application’s request-response cycle.
 
 ### FLUX VS REDUX ?
 
@@ -187,9 +190,10 @@ Middleware functions are functions that have access to the [request object](http
 * Action: Flux is a javascript object, Redux can be function or promise using middleware.
 * Store: flux has multiple stores, each of them is a singleton object. Can only have one dispatcher.
 * Redux store expose a dispatch API, it is not a independent object.
-* FLUX has no reducers: [https://edgecoders.com/the-difference-between-flux-and-redux-71d31b118c1](https://edgecoders.com/the-difference-between-flux-and-redux-71d31b118c1) 
+* FLUX has no reducers: [https://edgecoders.com/the-difference-between-flux-and-redux-71d31b118c1](https://edgecoders.com/the-difference-between-flux-and-redux-71d31b118c1)&#x20;
 
 ## Good Resources:
-* https://tylermcginnis.com/react-interview-questions/
-* https://www.codementor.io/blog/5-essential-reactjs-interview-questions-du1084ym1
-* https://www.edureka.co/blog/interview-questions/react-interview-questions/
+
+* [https://tylermcginnis.com/react-interview-questions/](https://tylermcginnis.com/react-interview-questions/)
+* [https://www.codementor.io/blog/5-essential-reactjs-interview-questions-du1084ym1](https://www.codementor.io/blog/5-essential-reactjs-interview-questions-du1084ym1)
+* [https://www.edureka.co/blog/interview-questions/react-interview-questions/](https://www.edureka.co/blog/interview-questions/react-interview-questions/)

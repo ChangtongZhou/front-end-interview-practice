@@ -10,7 +10,7 @@
   * Undefined
   * Number
   * String
-  * Symbol \(in EC6\)
+  * Symbol (in EC6)
 * Object
   * Array
   * Date
@@ -26,7 +26,7 @@
   * null
   * NaN
   * 0
-  * Empty String: '', ``, ""
+  * Empty String: '', \`\`, ""
   * false
 * Truthy: All values are truthy value unless they are defined as falsy
 
@@ -35,7 +35,7 @@
 When and where variables, constants, and arguments are considered to be defined/visible/available
 
 * module scoping/global scoping:
-  * Objects declared outside of any function 
+  * Objects declared outside of any function&#x20;
   * Visible everywhere in a JS program
   * Use it without declaring - not allowed under 'strict' mode
 * block scoping:
@@ -52,14 +52,14 @@ When and where variables, constants, and arguments are considered to be defined/
 
 ### What is hoisting
 
-* Move all declarations to the top of the current scope \(to the top of the current script or the current function\)
+* Move all declarations to the top of the current scope (to the top of the current script or the current function)
 * Only hoists declarations, not initializations
 * Only works for function scope
 
-### What is strict mode \(use strict\)
+### What is strict mode (use strict)
 
 * A literal expression that is used to indicate the code should be executed in "strict mode"
-* With strict mode, you cannot use undeclared/global variables 
+* With strict mode, you cannot use undeclared/global variables&#x20;
 * Function parameter names need to be unique
 * It helps you write safer JS code by throwing an error
 
@@ -90,19 +90,19 @@ const o = {
 ### Deep copy vs. Shallow copy:
 
 * Deep copy:
-  * Makes a copy of all the members of A, allocates memory in a different location for B and then assigns the copied members to B 
+  * Makes a copy of all the members of A, allocates memory in a different location for B and then assigns the copied members to B&#x20;
   * Data types: number, string, boolean
 * Shallow copy:
-  * Makes only a copy of the references to A into B. It is a copy of A's memory address 
+  * Makes only a copy of the references to A into B. It is a copy of A's memory address&#x20;
   * shallow copy: array, object, and function
 
 ### Call vs. Apply functions:
 
 * Both of them are used to invoke a function explicitly
-* call\(\) requires the parameters be listed individually with a coma
-* apply\(\) requires an argument array as the 2nd parameter
+* call() requires the parameters be listed individually with a coma
+* apply() requires an argument array as the 2nd parameter
 
-### Have a function name as a variable \(Referencing\) vs. Calling a function 
+### Have a function name as a variable (Referencing) vs. Calling a function
 
 ```javascript
 function getGreeting() {
@@ -136,7 +136,7 @@ arr2; // [1, 2, 3, 4]
 
 What are the rules:
 
-* Cannot be called with `new`, do not have a \[\[Construct\]\] method
+* Cannot be called with `new`, do not have a \[\[Construct]] method
 * No function keyword
 * Anomynous function without function name
 * No prototype
@@ -181,14 +181,14 @@ button.addEventListener("click", clickMaker());
 ### How to define class in es6
 
 * Use class keyword
-* Define constructor and methods inside 
+* Define constructor and methods inside&#x20;
   * one constructor function per class
 * Just syntax sugar over existing existing prototypal inheritance mechanism
   * creates a constructor function with same name as class
   * adds methods to prototype
 * Subclass:
   * inherit with extends keyword
-  * In subclasses, constructor must call super\(args\) and it must be before this is accessed
+  * In subclasses, constructor must call super(args) and it must be before this is accessed
     * because the highest superclass creates the object
 
 ### Prototype in JS
@@ -219,7 +219,7 @@ d; // 4
 ### What is promise
 
 * Represents the eventual completion of an async operation
-* An Object that holds execution of async operations, returns the state of pending, \(either resolved, not resolved\), give success callback in success, give fail callback in fail
+* An Object that holds execution of async operations, returns the state of pending, (either resolved, not resolved), give success callback in success, give fail callback in fail
 
 ### What is JSON?
 
@@ -240,7 +240,8 @@ d; // 4
 * Horizontal scalability from day one
 
 ## BOM vs. DOM:
-* BOM (Browser Object Model) consists of the objects navigator, history, screen, location and document which are children of window. 
+
+* BOM (Browser Object Model) consists of the objects navigator, history, screen, location and document which are children of window.&#x20;
 * DOM (Document Object Model), the document object model, which represents the contents of the page. You can manipulate it using javascript.
 
 ## [React](https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541):
@@ -249,11 +250,13 @@ d; // 4
 
 A Javascript library for building user interface. It builds the UI based on components, and uses state to store the data for component, and props to pass the data among components from top to bottom.
 
-* features:
-  virtual DOM, fast, component based, one way data binding, free and open source
-  
+*   features:
+
+    virtual DOM, fast, component based, one way data binding, free and open source
+
 ### Virtual DOM:
-A virtual DOM object is a representation of a DOM object, like a lightweight copy. In React, for every DOM object, there is a corresponding "virtual DOM object." 
+
+A virtual DOM object is a representation of a DOM object, like a lightweight copy. In React, for every DOM object, there is a corresponding "virtual DOM object."
 
 Every time a virtual DOM Object updated, React will compare the previous virtual DOM and updated virtual DOM Object, then update the corresponding DOM Object.
 
@@ -262,6 +265,7 @@ React operates on the concept of a “virtual DOM.” It maintains this virtual 
 First and foremost, performance-wise, you’re not constantly doing DOM updates, as with many of the other JavaScript frameworks. The DOM is a huge bottleneck with front-end performance. The second ramification is that React can render on the server just as easily as it can on the client.
 
 ### Virtual DOM vs. Real DOM:
+
 A virtual DOM object has the same properties as a real DOM object, but it lacks the real thing's power to directly change what's on the screen.
 
 Manipulating the DOM is slow. Manipulating the virtual DOM is much faster, because nothing gets drawn onscreen. Think of manipulating the virtual DOM as editing a blueprint, as opposed to moving rooms in an actual house.
@@ -306,19 +310,19 @@ state: is immutable data within the component itself, a predefined object, owned
 ### Container Components vs. Presentational Components:
 
 * Presentational components:
-  * are coupled with the view or how things look. 
+  * are coupled with the view or how things look.&#x20;
   * accept props from their container counterpart and render them.
-  * Everything that has to do with describing the UI should go here. 
+  * Everything that has to do with describing the UI should go here.&#x20;
   * reusable and should stay decoupled from the behavioral layer.
   * Functional components should be your first choice for writing presentational components unless a state is required
-  * doesn't interact with the Redux store or make API calls. 
-* Container components:
+  * doesn't interact with the Redux store or make API calls.&#x20;
+*   Container components:
 
-  * deal with the behavioral part. A container component tells the presentational component what should be rendered using props.
-  *  If you're using Redux, a container component contains the code that dispatches an action to a store. 
-  * This is the place where you should place your API calls and store the result into the component's state. 
+    * deal with the behavioral part. A container component tells the presentational component what should be rendered using props.
+    * If you're using Redux, a container component contains the code that dispatches an action to a store.&#x20;
+    * This is the place where you should place your API calls and store the result into the component's state.&#x20;
 
-  The usual structure is that there is a container component at the top that passes down the data to its child presentational components as props. 
+    The usual structure is that there is a container component at the top that passes down the data to its child presentational components as props.
 
 ### **JSX ?**
 
@@ -328,7 +332,7 @@ It is a syntax extension to JavaScript. It is similar with HTML syntax but you c
 
 Component takes care of a block of view in the React. It split the UI into independent, reusable pieces. We have two different kinds of component, one is stateful another one is stateless component.
 
-### HOC \(High Order Component\)?
+### HOC (High Order Component)?
 
 It is a function takes a component and return a new component. It is a technique for reusing component logic
 
@@ -371,14 +375,15 @@ Handling events with React elements is very similar to handling events on DOM el
 * With JSX you pass a function as the event handler, rather than a string.
 
 ### Server side rendering vs. Client side rendering:
+
 * Server side rendering:
   * Description: It is the ability of a front-end framework to render markup while running on a back-end system. It fully renders the React component on the server, then outputs HTML contents.
-  * pros: 
+  * pros:&#x20;
     * The initial page load is relatively faster
     * It is good for SEO to understand, because search engine crawlers do not understand JS yet, your content is present before you get it, so search engines can index it and crawl it.
     * It can improve performance if your application is small
     * It is great for static sites
-  * cons: 
+  * cons:&#x20;
     * Frequent server requests, slows down the performance
     * It increases response time and it can be worse if the server is busy
     * It increases response size, the page takes longer to render
@@ -390,25 +395,23 @@ Handling events with React elements is very similar to handling events on DOM el
     * Your React app isn't finished yet
     * SEO on goole is good enough
     * Server resources are scarce, perhaps due to a low budget or inability to scale
-  
 * Client side rendering:
   * Description: Your browser downloads a minimal HTML page, then renders the JS and fills the content into it.
-  * pros: 
+  * pros:&#x20;
     * Rich site interactions
     * Fast website rendering after the initial load
     * Great for web applications
     * Robust seletion of JS libraries
-  * cons: 
+  * cons:&#x20;
     * the initial page load is going to be slow, because communicating over the network is slow, and it takes two round trips to the server before you can start displaying content to the user.
     * Low SEO if not implemeneted correctly
     * In most cases, requires an external library
-
 
 ### Refs:
 
 Refs provide a way to access DOM nodes or React elements created in the render method.
 
-#### When to use Refs {#when-to-use-refs}
+#### When to use Refs <a href="#when-to-use-refs" id="when-to-use-refs"></a>
 
 There are a few good use cases for refs:
 
@@ -430,15 +433,13 @@ It helps you route to different pages based on url. Routing is the processing th
 
 ### [React Render Props Pattern](https://www.robinwieruch.de/react-render-props-pattern/):
 
-**Def**
-A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic. 
+**Def** A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic.
 
 A render prop is a function prop that a component uses to know what to render.
 
-This technique makes the behavior that we need to share extremely portable. 
+This technique makes the behavior that we need to share extremely portable.
 
-**Detail**
-It is also called children as a function. The render prop pattern enhances React's patterns for compositions. You pass components as a function which renders them. It gives you a way to pass data from the wrapping component to its inner composed components. You can use the children prop within the render prop component. The children prop becomes a children as a funciton.
+**Detail** It is also called children as a function. The render prop pattern enhances React's patterns for compositions. You pass components as a function which renders them. It gives you a way to pass data from the wrapping component to its inner composed components. You can use the children prop within the render prop component. The children prop becomes a children as a funciton.
 
 ## Redux:
 
@@ -455,7 +456,7 @@ Redux is a predictable state container for JavaScript apps. It contains store, r
 ### Key concept in Redux:
 
 * state read only, changes are only made by pure function, single source of truth
-  * **single source of truth:** the entire state of the application will be represented by \(one store \)one JavaScript object.
+  * **single source of truth:** the entire state of the application will be represented by (one store )one JavaScript object.
   * **state read only:** The only way to change the state is to emit an action
   * **Reducers must be pure function**: Pure functions are those whose return values depend only upon the values of their arguments
 
@@ -530,10 +531,9 @@ The store binds together the 3 principles of Redux:
 
 * Both Redux and React-Redux employ shallow equality checking:
   * Redux's combineReducers utility shallowly checks for reference changes caused by the reducers that it calls.
-  * React-Redux's connect method generates components that shallowly check reference changes to the root state, and the return values from the mapStateToProps function to see if the wrapped components actually need to re-render.
+  *   React-Redux's connect method generates components that shallowly check reference changes to the root state, and the return values from the mapStateToProps function to see if the wrapped components actually need to re-render.
 
-    *Such shallow checking requires immutability to function correctly.
-
+      \*Such shallow checking requires immutability to function correctly.
 * Immutable data management ultimately makes data handling safer
 * Time-travel debugging requires that reducers be pure functions with on side effects, so that you can correctly jump bet
 
@@ -549,11 +549,10 @@ A shallow equality check is therefore as simple (and as fast) as a === b
 2. provider
 3. call connect function in container component
 
-
 ### Thunk:
 
 * It is used to handle async actions
-* Allows you to write action creators that return a function instead of an action, which give you the access to store.getState\(\) and store.dispatch\(\) inside the function
+* Allows you to write action creators that return a function instead of an action, which give you the access to store.getState() and store.dispatch() inside the function
 * Without Thunk, inside an action creator, there is no way we can have the access to store to dispatch other actions during async actions.
 * Benefits:
   * Components aren’t aware of how action creators are implemented, and whether they care about Redux state, whether they are synchronous or asynchronous, and whether or not they call other action creators.
@@ -589,15 +588,17 @@ Middleware functions are functions that have access to the request object (req),
 * Async Execution for V8 Javascript
 
 ### CLI:
+
 * Description: Comand line interface. A utility/program on your computer where users type commands to perform actions or run scripts rather than clicking on the screen.
 * Different types:
   * Bash on Linux
   * Terminal of Mac
   * Commpand prompt / powershell on Windows
   * Shell/Command line/terminal on Unix and Ubuntu
-  
+
 ### [JWT (JSON Web Tokens)](https://medium.com/vandium-software/5-easy-steps-to-understanding-json-web-tokens-jwt-1164c0adfcec)
-* A JSON object that is a safe way to represent a set of information between two parties. 
+
+* A JSON object that is a safe way to represent a set of information between two parties.&#x20;
 * The token is composed of a header, a payload, and a signature
 * A JWT is signed by the HS256 algorithem where only the authentication server and the application server know the secret key. The application server receives the secret key from the authentication server when the application sets up its authentication process. When the user makes a JWT-attached API call to the applciation, the application can perform the same signature algorithm on the JWT. The application can then verify that the signature obtained from it's own hashing operation matches the signature on the JWT itself. If the signatures match, then the JWT is valid which indicates that the API call is coming from an authentic source.
 * Process steps:
@@ -609,7 +610,6 @@ Middleware functions are functions that have access to the request object (req),
 * Why use JWT?
   * It is used to prove that the sent data was actually created by an authentic source
   * The data inside a JWT is encoded and signed, the purpose of encoding data is to transform the data's structure. Signing data allows the data receiver to verify the authenticity of the source of the data.
-
 
 ```javascript
  firebase.auth()
@@ -629,16 +629,19 @@ Middleware functions are functions that have access to the request object (req),
 
 * Use Node.js debugging utility called `debugger`
   * Enable it: start the Node.js with the `debug` argument followed by the path to the script to debug
-  * Insert debugger: insert the statement `debugger` into the source code of a script will enable a breakpoint at that  
-    position in the code
-    e.g.
-    ```javascript
-    x = 5;
-    setTimeout(() => {
-      debugger;
-      console.log('world');
-    }, 1000);
-    ```
+  *   Insert debugger: insert the statement `debugger` into the source code of a script will enable a breakpoint at that &#x20;
+
+      position in the code
+
+      e.g.
+
+      ```javascript
+      x = 5;
+      setTimeout(() => {
+        debugger;
+        console.log('world');
+      }, 1000);
+      ```
 
 ### Difference between `setImmediate()` vs `setTimeout()`?
 
@@ -659,35 +662,36 @@ Middleware functions are functions that have access to the request object (req),
 * Streams are pipes that let you easily read data from a source and pipe it to a destination.
 * Based on the methods implemented, a stream becomes readable, writable, or duplex (both readable and writable).
 * Types of streams: Readable, Writable, Duplex and Transform.
-* e.g. Read data: listen to data event and attach a callback. When a chunck of data is available, the readable stream emits a data event and your callback executes.
-```javascript
-let fs = require('fs');
-let readableStream = fs.createReadStream('textFile.text');
-let fileData = '';
+*   e.g. Read data: listen to data event and attach a callback. When a chunck of data is available, the readable stream emits a data event and your callback executes.
 
-readableStream.on('data', (chunk) => {
-  fileData += chunk;
-});
+    \`\`\`javascript
 
-readableStream.on('end', () => {
-  console.log(data);
-})
-```
+    let fs = require('fs');
+
+    let readableStream = fs.createReadStream('textFile.text');
+
+    let fileData = '';
+
+readableStream.on('data', (chunk) => { fileData += chunk; });
+
+readableStream.on('end', () => { console.log(data); })
+
+\`\`\`
 
 ### What is express.js
 
 * A minimal and flexible Node.js web application server-side framework that provides a robust set of features for web and mobile applications
-* creates a robust API quickly and easily with HTTP utility methods \(e.g. request and response\) and middleware
-* provides a thin layer of fundamental web application features, without obscuring Node.js features 
+* creates a robust API quickly and easily with HTTP utility methods (e.g. request and response) and middleware
+* provides a thin layer of fundamental web application features, without obscuring Node.js features&#x20;
 
 ### What is mongoDB
 
-* A cross-platform, document oriented database that provides, high performance, high availability and easy scalability. 
+* A cross-platform, document oriented database that provides, high performance, high availability and easy scalability.&#x20;
 * Works on concept of collection and document
 * **Database**:
   * a physical container for collections. A single MongoDB server has multiple databases
 * **Collection**:
-  * A group of MongoDB documents. 
+  * A group of MongoDB documents.&#x20;
   * A collection exists within a single database
   * All documents in a collection are of similar or related purpose
 * **Document**:
@@ -703,16 +707,16 @@ readableStream.on('end', () => {
 
 ### Mongoose:
 
-* An ODM \(Object Data Modeling\) for MongoDB and Node.js. 
+* An ODM (Object Data Modeling) for MongoDB and Node.js.&#x20;
 * It manages relationships between data, provides schema validation and query API to help you interact with your MongoDB database
 * An intermediate between mongoDB and server side language like NodeJS
 
 ### Restful API:
 
-* An application program interface \(API\) that uses HTTP requests to GET, PUT, POST and DELETE server side objects/resources
+* An application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE server side objects/resources
 * It is an architecture style for designing networked applciations, relies on a stateless, client-server communication protocol.
 * Why is it amazing?
-  * Clients \(browser\) and servers can interact in complex ways without the client knowing anything beforehand about the server and the resources it holds.
+  * Clients (browser) and servers can interact in complex ways without the client knowing anything beforehand about the server and the resources it holds.
   * Flexible:
     * Data is not tied to resources or methods, Rest can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia.
 
@@ -722,12 +726,12 @@ readableStream.on('end', () => {
 * POST: Submit data to be processed to a specified resource (e.g. web form)
 * PUT: Update a specified resource
 * DELETE: Delete a specified resource
-
 * HEAD: Same as get but does not return a body
 * OPTIONS: Returns the supported HTTP methods of a server
 * PATCH: Update partial resources
 
 ### Endpoints:
+
 The URI/URL where api/service can be accessed by a client application
 
 ## CSS:
@@ -738,11 +742,11 @@ The URI/URL where api/service can be accessed by a client application
 * It’s intended for people who prefer conciseness over similarity to CSS. Instead of brackets and semicolons, it uses the indentation of lines to specify blocks. Files in the indented syntax use the extension .sass
 * Features of SASS:
   * Inline comments
-  * Local and global variables: 
-    * global: e.g. creation of color names and semantics uses for those colors ($color_success)
+  * Local and global variables:&#x20;
+    * global: e.g. creation of color names and semantics uses for those colors ($color\_success)
   * Nesting: SASS let you nest your CSS selectors in a way that follows the same visual hierachy of your HTML
   * Extend/Inheritance:
-   * SASS allows you to use `@extend` to share a set of CSS properties from one selector to another
+    * SASS allows you to use `@extend` to share a set of CSS properties from one selector to another
 
 ## [Design Pattern:](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
 
@@ -752,8 +756,9 @@ The URI/URL where api/service can be accessed by a client application
 * Prototype pattern
 
 ## Good Resource:
-* https://medium.freecodecamp.org/cracking-the-front-end-interview-9a34cd46237
-* https://www.interviewcake.com/javascript-interview-questions
-* https://frontendmasters.com/books/front-end-handbook/2018/practice/interview-q.html
-* https://github.com/MaximAbramchuck/awesome-interview-questions#css
-* https://docs.google.com/document/d/1q0JcH6hxIV-9WMWAb9j0lDAxF5-SBwxtxL342leedbU/edit
+
+* [https://medium.freecodecamp.org/cracking-the-front-end-interview-9a34cd46237](https://medium.freecodecamp.org/cracking-the-front-end-interview-9a34cd46237)
+* [https://www.interviewcake.com/javascript-interview-questions](https://www.interviewcake.com/javascript-interview-questions)
+* [https://frontendmasters.com/books/front-end-handbook/2018/practice/interview-q.html](https://frontendmasters.com/books/front-end-handbook/2018/practice/interview-q.html)
+* [https://github.com/MaximAbramchuck/awesome-interview-questions#css](https://github.com/MaximAbramchuck/awesome-interview-questions#css)
+* [https://docs.google.com/document/d/1q0JcH6hxIV-9WMWAb9j0lDAxF5-SBwxtxL342leedbU/edit](https://docs.google.com/document/d/1q0JcH6hxIV-9WMWAb9j0lDAxF5-SBwxtxL342leedbU/edit)

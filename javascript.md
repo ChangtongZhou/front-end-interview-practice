@@ -6,7 +6,7 @@
 * You can write code that BEST SUITS THE SITUATION
 * JavaScript probably isn’t perfect but it definitely isn’t the worst thing in the world and it’s getting better and better rapidly!
 * Works really well with web applications/browsers, because browsers support Javascript, and JavaScript benefits from being part of HTML5.
-* Now Javascript can be used in both frontend \(UI frameworks React, Angular\) and backend \(Node.js\)
+* Now Javascript can be used in both frontend (UI frameworks React, Angular) and backend (Node.js)
 * JavaScript has the most active community out there, new things are constantly tested out and adopted in a flash, shifting the entire mindset of the community overnight, that level of flexibility in a dev community is unparalleled!
 * The Web, the platform in which JavaScript is a vital part is becoming increasingly important and with it JavaScript as well.
 * JavaScript is supported and important to a lot of very large tech and non-tech companies.
@@ -19,7 +19,7 @@
 
 ## Describe your work flow when you create a web page?
 
-* Start with visual design \(like photoshop mockup\)
+* Start with visual design (like photoshop mockup)
 * Start code up mockups with HTML and add CSS styling in ATOM/Sublime
 * Use JavaScript needed, put JavaScript in the bottom of the page, so the page can load faster
 * Make sure my images are optimized, so they are not too big to slow down the page
@@ -30,8 +30,8 @@
 
 ## Differences between variables created using `let`, `var` or `const`?
 
-* Variable declarations using `var` are scoped to the function in which they are created, i.e. treated as if they are at the top of the function \(or global scope, if declared outside of a function\) regardless of where the actual declaration occurs; this is called **hoisting**.
-* `let` and `const` are block scoped, meaning they are only accessible within the nearest set of curly braces \(function, if-else block, or for-loop\).
+* Variable declarations using `var` are scoped to the function in which they are created, i.e. treated as if they are at the top of the function (or global scope, if declared outside of a function) regardless of where the actual declaration occurs; this is called **hoisting**.
+* `let` and `const` are block scoped, meaning they are only accessible within the nearest set of curly braces (function, if-else block, or for-loop).
 
 ```javascript
 function foo() {
@@ -104,7 +104,7 @@ let bar = 2;
 console.log(bar); // 2
 ```
 
-* Function declarations have the body hoisted while the function expressions \(written in the form of variable declarations\) only has the variable declaration hoisted.
+* Function declarations have the body hoisted while the function expressions (written in the form of variable declarations) only has the variable declaration hoisted.
 
 ```javascript
 // Function Declaration
@@ -128,7 +128,7 @@ console.log(bar); // [Function: bar]
 
 * Def: An arrow function expression has a shorter syntax and lexically binds its `this` value
 * No `this`, `super`, `arguments`, and `new.target` bindings - The value of this, super, arguments, and new.target inside of the function is by the closest containing nonarrow function.
-* Cannot be called with `new` - Arrow functions do not have a \[\[Construct\]\] method and therefore cannot be used as constructors. Arrow functions throw an error when used with new.
+* Cannot be called with `new` - Arrow functions do not have a \[\[Construct]] method and therefore cannot be used as constructors. Arrow functions throw an error when used with new.
 * No prototype - since you can’t use new on an arrow function, there’s no need for a prototype. The prototype property of an arrow function doesn’t exist.
 * Can’t change `this` - The value of this inside of the function can’t be changed. It remains the same throughout the entire lifecycle of the function.
 * No arguments object - Since arrow functions have no arguments binding, you must rely on named and rest parameters to access function arguments.
@@ -182,7 +182,7 @@ run(); // React
 
 ### [Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions):
 
-A function is composed of a sequence of statements \(function body\). In JS, functions are first-class objects, because they can have properties and methods just like any other object. What distinguishes them from other objects is that functions can be called.
+A function is composed of a sequence of statements (function body). In JS, functions are first-class objects, because they can have properties and methods just like any other object. What distinguishes them from other objects is that functions can be called.
 
 ### Passing a function VS. Calling a function:
 
@@ -270,7 +270,7 @@ doHomework('Math', finished);
 
 Def: Event propagation is a way to describe the “stack” of events that are fired in a web browser
 
-* when an event occurs in an element inside another element, and both elements have registered a handle for that event. The event propagation mode determines in which order the elements receive the event 
+* when an event occurs in an element inside another element, and both elements have registered a handle for that event. The event propagation mode determines in which order the elements receive the event&#x20;
 
 ### Event bubbling:
 
@@ -278,9 +278,9 @@ The event is first captured and handled by the innermost element and then propag
 
 ### Event capturing/ trickling:
 
-* The event is first captured by the outermost element and propagated to the inner elements. 
+* The event is first captured by the outermost element and propagated to the inner elements.&#x20;
 
-We can use the `addEventListener(type, listener, useCapture)`to register event handlers for in either bubbling \(default\) or capturing mode.
+We can use the `addEventListener(type, listener, useCapture)`to register event handlers for in either bubbling (default) or capturing mode.
 
 * Event Capturing model: pass the third argument as `true`
 * Event Bubbling mode: pass the third argument as `false`
@@ -293,33 +293,33 @@ You are submitting the form and you don't want the browser to submit it, in fact
 
 ## Event Delegation:
 
-* Add event listeners to a parent element instead of adding them to the descendant elements \(child elements\) 
-* The listener fires whenever the event is triggered on the descendant elements because of event bubbling up the DOM 
-* Benefits: 
-  * Reduces memory footprint because only 1 handler is needed on the parent element, rather than attaching event handlers on each descendant 
-  * No need to unbind the handler from elements that are removed and to bind the event for new elements 
+* Add event listeners to a parent element instead of adding them to the descendant elements (child elements)&#x20;
+* The listener fires whenever the event is triggered on the descendant elements because of event bubbling up the DOM&#x20;
+* Benefits:&#x20;
+  * Reduces memory footprint because only 1 handler is needed on the parent element, rather than attaching event handlers on each descendant&#x20;
+  * No need to unbind the handler from elements that are removed and to bind the event for new elements&#x20;
 
 ## Explain “This” in JS:
 
 * When “`new`” keyword is used for calling the function, “`this`”: a new object inside the function
-* When “`apply`”, “`call`”, “`bind`” are used to call/create a function, “`this`”: the object that is passed in as the argument inside that function 
+* When “`apply`”, “`call`”, “`bind`” are used to call/create a function, “`this`”: the object that is passed in as the argument inside that function&#x20;
 * When a function is called as a method, like `obj.method()`, “`this`”: the object of that function
-* When a free function invocation happens, i.e. a function was invoked without any of the conditions present above, “`this`”: a global object 
-  * In a browser, it is the “`window`” object. If in strict mode \(‘`use strict`’\), “`this`”: undefined
-* When multiple of the above rules apply, the higher rule will set the “`this`” value 
-* When the function is an ES2015 arrow function, ignores all the rules above, “`this`”: a value of its surrounding scope at the time it is created 
+* When a free function invocation happens, i.e. a function was invoked without any of the conditions present above, “`this`”: a global object&#x20;
+  * In a browser, it is the “`window`” object. If in strict mode (‘`use strict`’), “`this`”: undefined
+* When multiple of the above rules apply, the higher rule will set the “`this`” value&#x20;
+* When the function is an ES2015 arrow function, ignores all the rules above, “`this`”: a value of its surrounding scope at the time it is created&#x20;
 
 ## `==` Vs. `===`:
 
 ### `==`:
 
-* is the abstract equality operator 
-* compares value 
-* compares for equality after doing any necessary type conversions 
+* is the abstract equality operator&#x20;
+* compares value&#x20;
+* compares for equality after doing any necessary type conversions&#x20;
 * `===`**:**
 * is the strict equality operator.
-* compares data type and value 
-* doesn't do type conversion, so if two values are not the same type, will return `false` 
+* compares data type and value&#x20;
+* doesn't do type conversion, so if two values are not the same type, will return `false`&#x20;
 
 ### Funcky things happen when using `==`:
 
@@ -344,10 +344,10 @@ console.log(a == undefined); // true
 
 Javascript object doesn't have a type or a class that it gets its methods from, it has a prototype, including the prototype object. This "chain" goes all the way back until it reaches an object that has no prototype, usually Object's prototype. Prototype's version of "Inheritance" involves adding another link to the end of this prototype chain.
 
-* Check current object's prototype: 
+* Check current object's prototype:&#x20;
 * `console.log(Object.getPrototypeOf(obj_var));`
-* `<Function>.call` is a method that executes the defined function, but with the "this" variable pointing to the first argument, and the rest of the arguments being arguments of the function that is being "called". 
-* `Object.create(obj)` creates an object with a prototype of the passed in object 
+* `<Function>.call` is a method that executes the defined function, but with the "this" variable pointing to the first argument, and the rest of the arguments being arguments of the function that is being "called".&#x20;
+* `Object.create(obj)` creates an object with a prototype of the passed in object&#x20;
 * e.g.
 * ```javascript
   // Let's create an object o from function f with its own properties a and b:
@@ -389,14 +389,14 @@ Javascript object doesn't have a type or a class that it gets its methods from, 
   // no property found, return undefined.
   ```
 
-## [Prototypal inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain):
+## [Prototypal inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance\_and\_the\_prototype\_chain):
 
-* A private property of an object holds a link/reference to another object 
-* When a property of an object is not found, the JavaScript engine looks at the object’s prototype, and the prototype’s prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. It simulates classical inheritance, but it is really more like delegation. Because you are indicating an object to delegate behavior to if that behavior isn’t defined on the object in question. 
+* A private property of an object holds a link/reference to another object&#x20;
+* When a property of an object is not found, the JavaScript engine looks at the object’s prototype, and the prototype’s prototype and so on, until it finds the property defined on one of the prototypes or until it reaches the end of the prototype chain. It simulates classical inheritance, but it is really more like delegation. Because you are indicating an object to delegate behavior to if that behavior isn’t defined on the object in question.&#x20;
 * When is it a good choice?
   * When you want to create has-a or uses-a or can-do relationships between objects
   * There is more than one type of prototypal inheritance:
-  * **Delegation Inheritance \(i.e., the prototype chain\)**:
+  * **Delegation Inheritance (i.e., the prototype chain)**:
     * A delegate prototype is an object that serves as a base for another object. When you inherit from a delegate prototype, the new object gets a reference to the prototype.
     * When you try to access a property on the new object, it checks the object’s own properties first. If it doesn’t find it there, it checks the `[[Prototype]]`, and so on up the prototype chain until it gets back to `Object.prototype`, which is the root delegate for most objects.
     * ```javascript
@@ -413,9 +413,9 @@ Javascript object doesn't have a type or a class that it gets its methods from, 
       const msg = george.hello();
       console.log(msg); // Hello, my name is George
       ```
-  * **Concatenative Inheritance**\(i.e. mixins, `Object.assign()`\):
+  * **Concatenative Inheritance**(i.e. mixins, `Object.assign()`):
     * Concatenative inheritance is the process of copying the properties from one object to another, without retaining a reference between the two objects.
-    * It relies on JavaScript’s dynamic object extension feature. Cloning is a great way to store default state for objects: This process is commonly achieved using [`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign). Prior to ES6, it was common to use similar `.extend()` methods from Lodash, Underscore, or jQuery.
+    * It relies on JavaScript’s dynamic object extension feature. Cloning is a great way to store default state for objects: This process is commonly achieved using [`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Object/assign). Prior to ES6, it was common to use similar `.extend()` methods from Lodash, Underscore, or jQuery.
     * ```javascript
       const proto = {
       hello: function hello() {
@@ -430,61 +430,61 @@ Javascript object doesn't have a type or a class that it gets its methods from, 
   * **Functional Inheritance** in situations where modules don’t provide an obvious solution or when you need to compose objects from multiple sources
     * Functions created for the purpose of extending existing objects are commonly referred to as functional mixins.The primary advantage of using functions for extension is that it allows you to use the function closure to encapsulate private data. In other words, you can enforce private state.
     * It’s a bit awkward to hang the attributes on a public property where a user could set or get them without calling the proper methods. What we really want to do is hide the attributes in a private closure. It looks something like this:
-    * ```javascript
-      // import Events from 'eventemitter3';
+    *   ```javascript
+        // import Events from 'eventemitter3';
 
-      const rawMixin = function () {
-      const attrs = {};
-      return Object.assign(this, {
-        set (name, value) {
-          attrs[name] = value;
-          this.emit('change', {
-            prop: name,
-            value: value
-          });
-        },
-        get (name) {
-          return attrs[name];
+        const rawMixin = function () {
+        const attrs = {};
+        return Object.assign(this, {
+          set (name, value) {
+            attrs[name] = value;
+            this.emit('change', {
+              prop: name,
+              value: value
+            });
+          },
+          get (name) {
+            return attrs[name];
+          }
+        }, Events.prototype);
+        };
+
+        const mixinModel = (target) => rawMixin.call(target);
+        const george = { name: 'george' };
+        const model = mixinModel(george);
+        model.on('change', data => console.log(data));
+        model.set('name', 'Sam');
+        /*
+        {
+        prop: 'name',
+        value: 'Sam'
         }
-      }, Events.prototype);
-      };
+        */
+        ```
 
-      const mixinModel = (target) => rawMixin.call(target);
-      const george = { name: 'george' };
-      const model = mixinModel(george);
-      model.on('change', data => console.log(data));
-      model.set('name', 'Sam');
-      /*
-      {
-      prop: 'name',
-      value: 'Sam'
-      }
-      */
-      ```
+        By moving `attrs` from a public property to a private identifier, we remove all trace of it from the public API. // The only way to use it now is via the privileged methods. Privileged methods are any methods defined within the closure’s function scope, which gives them access to the private data.
 
-      By moving `attrs` from a public property to a private identifier, we remove all trace of it from the public API. // The only way to use it now is via the privileged methods. Privileged methods are any methods defined within the closure’s function scope, which gives them access to the private data.
-
-      Note in the example above, we have the `mixinModel()` wrapper around the actual functional mixin, `rawMixin()`. The reason we need that is because we need to set the value of `this` inside the function, which we do with [`Function.prototype.call()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call). We could skip the wrapper and let callers do that instead, but that would be obnoxious.
+        Note in the example above, we have the `mixinModel()` wrapper around the actual functional mixin, `rawMixin()`. The reason we need that is because we need to set the value of `this` inside the function, which we do with [`Function.prototype.call()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Function/call). We could skip the wrapper and let callers do that instead, but that would be obnoxious.
   * Each type of prototypal inheritance has its own set of use-cases, but all of them are equally useful in their ability to enable composition, which creates has-a or uses-a or can-do relationships as opposed to the is-a relationship created with class inheritance
 * e.g.
-* ECMAScript 5 introduced a new method: [`Object.create()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create). Calling this method creates a new object. The prototype of this object is the first argument of the function:
+*   ECMAScript 5 introduced a new method: [`Object.create()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Object/create). Calling this method creates a new object. The prototype of this object is the first argument of the function:
 
-  ```javascript
-  var a = {a: 1}; 
-  // a ---> Object.prototype ---> null
+    ```javascript
+    var a = {a: 1}; 
+    // a ---> Object.prototype ---> null
 
-  var b = Object.create(a);
-  // b ---> a ---> Object.prototype ---> null
-  console.log(b.a); // 1 (inherited)
+    var b = Object.create(a);
+    // b ---> a ---> Object.prototype ---> null
+    console.log(b.a); // 1 (inherited)
 
-  var c = Object.create(b);
-  // c ---> b ---> a ---> Object.prototype ---> null
+    var c = Object.create(b);
+    // c ---> b ---> a ---> Object.prototype ---> null
 
-  var d = Object.create(null);
-  // d ---> null
-  console.log(d.hasOwnProperty); 
-  // undefined, because d doesn't inherit from Object.prototype
-  ```
+    var d = Object.create(null);
+    // d ---> null
+    console.log(d.hasOwnProperty); 
+    // undefined, because d doesn't inherit from Object.prototype
+    ```
 
 ## Func.prototype:
 
@@ -509,13 +509,13 @@ Specifies the prototype to be assigned to all instances of objects created by th
 
 ### Def:
 
-Scope is a JS object that refers to the application model \(data available for the current view\) with properties and methods, which are available for both the view and controller. It is the glue between application controller and the view\(HTML\).
+Scope is a JS object that refers to the application model (data available for the current view) with properties and methods, which are available for both the view and controller. It is the glue between application controller and the view(HTML).
 
 ### Scope Hierarchies:
 
 * Each AngularJS application has exactly 1 root scope, but may have any number of child scopes, because directives can create new child scopes
-* E.g. When AngularJS evaluates an expression \(\), it first looks at the scope associated with the given element for the expression property. If no such property is found, it searches the parent scope and so on until the root scope is reached. This is called **prototypical inheritance**, and child scopes prototypically inherit from their parents.
-* e.g. 
+* E.g. When AngularJS evaluates an expression (), it first looks at the scope associated with the given element for the expression property. If no such property is found, it searches the parent scope and so on until the root scope is reached. This is called **prototypical inheritance**, and child scopes prototypically inherit from their parents.
+* e.g.&#x20;
 
 ```markup
 // index.html
@@ -544,15 +544,15 @@ angular.module('scopeExample', [])
 }]);
 ```
 
-![](.gitbook/assets/scope_hierarchies.png)
+![](.gitbook/assets/scope\_hierarchies.png)
 
 ## Immutability:
 
 ### Def:
 
-* An immutable object is an object whose state cannot be changed after it is created. 
-* Immutable JS values: numbers and strings. 
-* Mutable JS values: objects, arrays, functions, classes, sets and maps 
+* An immutable object is an object whose state cannot be changed after it is created.&#x20;
+* Immutable JS values: numbers and strings.&#x20;
+* Mutable JS values: objects, arrays, functions, classes, sets and maps&#x20;
 
 ### Immutable variable performance:
 
@@ -560,13 +560,13 @@ Whenever you add something to an immutable object, we need to create a new insta
 
 ### Pros of immutability in JS:
 
-* **Increases predictability**: Mutation hides change, which create \(unexpected\) side effects, which can cause nasty bugs. When you enforce immutability you can keep your application architecture and mental model simple, which makes it easier to reason about your application.
-* **Increases performance \(indirectly\)**: Even though adding values to an immutable Object means that a new instance needs to be created where existing values need to be copied and new values need to be added to the new Object which cost memory, immutable Objects can make use of structural sharing to reduce memory overhead. 
-* **Allows for mutation tracking:** Immutability allows you to optimize your application by making use of reference and value equality. This makes it really easy to see if anything has changed. e.g. a state change in a react component. You can use `shouldComponentUpdate` to check if the state is identical by comparing state Objects and prevent unnecessary rendering. 
+* **Increases predictability**: Mutation hides change, which create (unexpected) side effects, which can cause nasty bugs. When you enforce immutability you can keep your application architecture and mental model simple, which makes it easier to reason about your application.
+* **Increases performance (indirectly)**: Even though adding values to an immutable Object means that a new instance needs to be created where existing values need to be copied and new values need to be added to the new Object which cost memory, immutable Objects can make use of structural sharing to reduce memory overhead.&#x20;
+* **Allows for mutation tracking:** Immutability allows you to optimize your application by making use of reference and value equality. This makes it really easy to see if anything has changed. e.g. a state change in a react component. You can use `shouldComponentUpdate` to check if the state is identical by comparing state Objects and prevent unnecessary rendering.&#x20;
 
 ### How to implement:
 
-* Use ES6 feature `Object.assign` for adding new element: 
+* Use ES6 feature `Object.assign` for adding new element:&#x20;
 
 ```javascript
 const person = {
@@ -607,7 +607,7 @@ const newPerson = Object.keys(person).reduce((obj, key) => {
 
 * Makes it impossible to accidentally create global variables
 * Makes assignments which would otherwise silently fail to throw an exception
-* Makes attempts to delete undeletable properties throw \(where before the attempt would simply have no effect\).
+* Makes attempts to delete undeletable properties throw (where before the attempt would simply have no effect).
 * Requires that function parameter names to be unique.
 * `this` is undefined in the global context
 * It catches some common coding bloopers. throwing exceptions
@@ -632,24 +632,23 @@ const newPerson = Object.keys(person).reduce((obj, key) => {
 * They also makes maintaining and refactoring code much easier. You can change a pure function and not have to worry about unintended side effects messing up the entire application and ending up in debugging hell. Making your programs more flexible and adaptable to future changes.
 * Usually is used in ReactJS/Redux
 * completely independent of outside state, and as such, they are immune to entire classes of bugs that have to do with shared mutable state. Their independent nature also makes them great candidates for parallel processing across many CPUs, and across entire distributed computing clusters, which makes them essential for many types of scientific and resource-intensive computing tasks.
-* Pure function e.g.
+*   Pure function e.g.
 
-  ```javascript
-  function priceAfterTax(productPrice) {
-  return (productPrice * 0.20) + productPrice;
-  }
-  ```
+    ```javascript
+    function priceAfterTax(productPrice) {
+    return (productPrice * 0.20) + productPrice;
+    }
+    ```
+*   Impure Function e.g.
 
-* Impure Function e.g.
+    ```javascript
+    var tax = 20;
+    function calculateTax(productPrice) {
+    return (productPrice * (tax/100)) + productPrice; 
+    }
+    ```
 
-  ```javascript
-  var tax = 20;
-  function calculateTax(productPrice) {
-  return (productPrice * (tax/100)) + productPrice; 
-  }
-  ```
-
-  * Because the function depends on an external tax variable you’d be right! A pure function can not depend on outside variables. It fails one of the requirements thus this function is impure.
+    * Because the function depends on an external tax variable you’d be right! A pure function can not depend on outside variables. It fails one of the requirements thus this function is impure.
 
 ## AMD vs. CommonJS:
 
@@ -659,20 +658,20 @@ Both implement a module system, which was not natively present in JavaScript unt
 
 ### CommonJS:
 
-* Synchronous 
-* Is designed with server-side development 
-* Syntax is closer to the style you would write import statements in other languages 
-* It is closer to Node style of writing modules 
-* Has less context-switching overhead when switching between client side and server side JS development 
+* Synchronous&#x20;
+* Is designed with server-side development&#x20;
+* Syntax is closer to the style you would write import statements in other languages&#x20;
+* It is closer to Node style of writing modules&#x20;
+* Has less context-switching overhead when switching between client side and server side JS development&#x20;
 
-### AMD \(Asynchronous Module Definition\):
+### AMD (Asynchronous Module Definition):
 
-* Asynchronous 
-* Is for browsers 
-* Syntax is verbose/complicated 
-* It is unnecessary because if you served all your JS into one concatenated bundle file, you wouldn’t benefit from the async loading properties 
+* Asynchronous&#x20;
+* Is for browsers&#x20;
+* Syntax is verbose/complicated&#x20;
+* It is unnecessary because if you served all your JS into one concatenated bundle file, you wouldn’t benefit from the async loading properties&#x20;
 
-### ES2015 \(ES6\):
+### ES2015 (ES6):
 
 Support for both synchronous and asynchronous loading
 
@@ -690,14 +689,16 @@ e.g.
 
 ## Explain why the following doesn’t work as an IIFE: `function foo(){}();`. What needs to be changed to properly make it an IIFE?
 
-* **IIFE**: immediately Invoked Function Expressions 
-* The JS reads function `foo(){}();` as `function foo(){}` \(a function declaration\) and \(\) \(a pair of brackets, an attempt at calling a function but there is no name specified\), hence it throws `Uncaught SyntaxError: Unexpected token )` .
-* 2 ways to fix: 
-  * **Adding more brackets**: 
-    * 1. `(function foo(){ })()` 
-    * 1. `(function foo(){ }())`
-    * These functions are not exposed in the global scope and you can even omit its name if you dont need to reference itself within the body 
-  * **Use** `void` **operator**: 
+* **IIFE**: immediately Invoked Function Expressions&#x20;
+* The JS reads function `foo(){}();` as `function foo(){}` (a function declaration) and () (a pair of brackets, an attempt at calling a function but there is no name specified), hence it throws `Uncaught SyntaxError: Unexpected token )` .
+* 2 ways to fix:&#x20;
+  * **Adding more brackets**:&#x20;
+    *
+      1. `(function foo(){ })()`&#x20;
+    *
+      1. `(function foo(){ }())`
+    * These functions are not exposed in the global scope and you can even omit its name if you dont need to reference itself within the body&#x20;
+  * **Use** `void` **operator**:&#x20;
     * `void function foo(){ }();`
       * problem with this approach:
         * The evaluation of given expression is always undefined, so if your IIFE function returns anything, you can't use it, e.g.
@@ -713,10 +714,10 @@ console.log(foo); //undefined
 ### `Undeclared`:
 
 * created when you assign a value to an identifier that is not previously created using `var`, `let` or `const`.
-* Undeclared variables will be defined globally, outside of the current scope 
+* Undeclared variables will be defined globally, outside of the current scope&#x20;
 * In strict mode, a `ReferenceError` will be thrown whey you try to assign to an undeclared variable.
-* `Undeclared` variables are as bad as global variables 
-* How to check for them? use a `try/catch` block 
+* `Undeclared` variables are as bad as global variables&#x20;
+* How to check for them? use a `try/catch` block&#x20;
 * e.g.
 
 ```javascript
@@ -730,12 +731,12 @@ console.log(x); // 1
 
 ### `Undefined`:
 
-* A variable that has been declared, but not assigned a value 
+* A variable that has been declared, but not assigned a value&#x20;
 * Or a function doesn't return any value as the result of executing it is assigned to a variable, then the variable is undefined
 * How to check `undefined` variable?
-  * Use strict equality \(`===`\)
-  * Use `typeof === 'undefined'` 
-  * Note: don't use abstract equality operator to check, because it also return `true` if the value is `null`. 
+  * Use strict equality (`===`)
+  * Use `typeof === 'undefined'`&#x20;
+  * Note: don't use abstract equality operator to check, because it also return `true` if the value is `null`.&#x20;
   * e.g.
 
 ```javascript
@@ -753,11 +754,11 @@ console.log(baz); //undefined
 
 ### `Null`:
 
-* A variable that is `null` will have been explicitly assigned to the `null` value. 
-* It represents no value and is different from `undefined` in the sense that it has been explicitly assigned. 
+* A variable that is `null` will have been explicitly assigned to the `null` value.&#x20;
+* It represents no value and is different from `undefined` in the sense that it has been explicitly assigned.&#x20;
 * How to check null variable?
   * compare using the strict equality operator
-  * Note: don't use the abstract equality operator \(`==`\) to check, as it will also return `true` if the value is `undefined`
+  * Note: don't use the abstract equality operator (`==`) to check, as it will also return `true` if the value is `undefined`
   * e.g.
 
 ```javascript
@@ -772,19 +773,19 @@ console.log(foo == undefined); // true. Wrong! Don't use this to check!
 ### Closure:
 
 * A JavaScript closure is when an inner function has access to its outer enclosing function's variables and properties even after the outer function has returned.
-* The combination of a function and the lexical environment \(its surrounding state\) within which that function was declared.
-* The "lexical" = lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. 
+* The combination of a function and the lexical environment (its surrounding state) within which that function was declared.
+* The "lexical" = lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available.&#x20;
 * **How to use a closure?**
   * define a function inside another function and expose it. To expose a function, return it or pass it to another function.
 * **Why would you use closure?**
   * Data privacy / emulating private methods with closures. Commonly used in the [module pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
   * [Partial applications or currying](https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8):
-    * **Partial applications:** a function that takes a function with multiple parameters and returns a function with fewer parameters 
-      * Pass just a few of arguments, not all of them into a function 
-      * Partial application gives us another function, which can then be called with the other arguments 
-    * **Curry**: a function that takes a function with multiple parameters as input and returns a function with exactly one parameter. i.e. The process of make a function understand and handle partial application 
-      * **When to use curry?** When you call the same function and pass mostly the same parameters. You can create a new function dynamically by partially applying a set of arguments to your function. The new function will keep the repeated parameters stored \(so you don't have to pass them every time\) and will use them to pre-fill the full list of arguments that the original function expects. 
-      * e.g. 
+    * **Partial applications:** a function that takes a function with multiple parameters and returns a function with fewer parameters&#x20;
+      * Pass just a few of arguments, not all of them into a function&#x20;
+      * Partial application gives us another function, which can then be called with the other arguments&#x20;
+    * **Curry**: a function that takes a function with multiple parameters as input and returns a function with exactly one parameter. i.e. The process of make a function understand and handle partial application&#x20;
+      * **When to use curry?** When you call the same function and pass mostly the same parameters. You can create a new function dynamically by partially applying a set of arguments to your function. The new function will keep the repeated parameters stored (so you don't have to pass them every time) and will use them to pre-fill the full list of arguments that the original function expects.&#x20;
+      * e.g.&#x20;
 
 ```javascript
 // a curried add accepts partial list of arguments
@@ -826,9 +827,9 @@ Resource: [http://www.drdobbs.com/open-source/currying-and-partial-functions-in-
 
 ### `forEach`:
 
-* Iterates through the elements in an array. 
-* Executes a callback for each element 
-* Does not return a value 
+* Iterates through the elements in an array.&#x20;
+* Executes a callback for each element&#x20;
+* Does not return a value&#x20;
 
 ```javascript
 const a = [1, 2, 3];
@@ -841,8 +842,8 @@ const doubled = a.forEach((num, index) => {
 
 ### `map`:
 
-* Iterates through the elements in an array. 
-* "Map" each element to a new element by calling the function on each element, creating **a new array** as a result. 
+* Iterates through the elements in an array.&#x20;
+* "Map" each element to a new element by calling the function on each element, creating **a new array** as a result.&#x20;
 
 ```javascript
 const a = [1, 2, 3];
@@ -855,7 +856,7 @@ const doubled = a.map(num => {
 ### The main difference:
 
 * `.map()` returns a new array, use it when you need the result, but don't wish to mutate the original array
-* `forEach` doesn't return a new array, use it when you just need to iterate over an array. 
+* `forEach` doesn't return a new array, use it when you just need to iterate over an array.&#x20;
 
 ## A typical use case for anonymous functions?
 
@@ -883,7 +884,7 @@ setTimeout(function() {
 
 ### Pure functions used in functional JS programming:
 
-* Arguments to functional programming constructs or lodash \(similar to callbacks\). 
+* Arguments to functional programming constructs or lodash (similar to callbacks).&#x20;
 
 ```javascript
 const arr = [1, 2, 3];
@@ -901,7 +902,7 @@ Anonymous functions are declared inline and inline functions have advantages in 
 
 The code seems more self-contained and readable when handlers are defined right inside the code that's calling them. You can read the code in almost sequential fashion rather than having to go find the function with that name.
 
-## How do you organize your code? \(Module pattern, classical inheritance\)?
+## How do you organize your code? (Module pattern, classical inheritance)?
 
 **Backbone**: OOP approach, creating Backbone models and attaching methods to them.
 
@@ -909,7 +910,7 @@ The code seems more self-contained and readable when handlers are defined right 
 
 ## Host objects vs. Native objects?
 
-**Host objects**: provided by the runtime environment \(browser or Node\), such as `window`, `XMLHTTPRequest`, etc.
+**Host objects**: provided by the runtime environment (browser or Node), such as `window`, `XMLHTTPRequest`, etc.
 
 **Native objects**: part of the JS language defined by the ECMAScript specification, such as `String`, `Math`, `RegExp`, `Object`, `Function`
 
@@ -941,8 +942,8 @@ console.log(person.name); // "John"
 
 **Difference**:
 
-* `.call`: takes in comma-separated arguments as the next arguments 
-* `.apply` : takes in an array of arguments as the next argument 
+* `.call`: takes in comma-separated arguments as the next arguments&#x20;
+* `.apply` : takes in an array of arguments as the next argument&#x20;
 
 **E.g.**
 
@@ -957,7 +958,7 @@ console.log(add.apply(null, [1, 2]));
 
 ## Explain Function.prototype.bind.
 
-Bind creates a new function that will have this set to the first parameter passed to bind\(\). With a given sequence of arguments preceding any provided when the new function is called
+Bind creates a new function that will have this set to the first parameter passed to bind(). With a given sequence of arguments preceding any provided when the new function is called
 
 ### Why do you use bind function?
 
@@ -1001,7 +1002,7 @@ var boundGetX = unboundGetX.bind(module);
 console.log(boundGetX()); // 81
 ```
 
-You can also add extra parameters after the 1st \(`this`\) parameter and `bind` will pass in those values to the original function. Any additional parameters you later pass to the bound function will be passed in after the bound parameters:
+You can also add extra parameters after the 1st (`this`) parameter and `bind` will pass in those values to the original function. Any additional parameters you later pass to the bound function will be passed in after the bound parameters:
 
 e.g.
 
@@ -1039,9 +1040,9 @@ Button.prototype.hookEvent(element) {
 }
 ```
 
-## When would you use document.write\(\)?
+## When would you use document.write()?
 
-`document.write()` writes a string of text to a document stream opened by `document.open()`. When `document.write()` is executed after the page has loaded, it will call `document.open`which clears the whole document \(`<head>` and `<body>` removed!\) and replaces the contents with the given parameter value. Hence it is usually considered dangerous and prone to misuse.
+`document.write()` writes a string of text to a document stream opened by `document.open()`. When `document.write()` is executed after the page has loaded, it will call `document.open`which clears the whole document (`<head>` and `<body>` removed!) and replaces the contents with the given parameter value. Hence it is usually considered dangerous and prone to misuse.
 
 ## Feature detection vs. Feature inference vs. UA string?
 
@@ -1081,7 +1082,7 @@ It is a browser-reported string that allows the network protocol peers to identi
 
 ## Explain AJAX in as much detail as possible:
 
-AJAX \(Asynchronous JavaScript and XML\) is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With Ajax, web applications can send data to and retrieve from a server asynchronously \(in the background\) without interfering with the display and behavior of the existing page. By decoupling the data interchange layer from the presentation layer, **Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page**. In practice, modern implementations commonly substitute use JSON instead of XML, due tot eh advantages of JSON being native to JavaScript.
+AJAX (Asynchronous JavaScript and XML) is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With Ajax, web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. By decoupling the data interchange layer from the presentation layer, **Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page**. In practice, modern implementations commonly substitute use JSON instead of XML, due tot eh advantages of JSON being native to JavaScript.
 
 The XMLHttpRequest API is frequently used for the asynchronous communication or these days, the `fetch` API.
 
@@ -1089,20 +1090,20 @@ The XMLHttpRequest API is frequently used for the asynchronous communication or 
 
 ### Advantages:
 
-* Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page. 
-* Reduce connections to the server since scripts and stylesheets only have to be requested once. State can be maintained on a page. JS variables and DOM state will persist because the main container page was not reloaded. 
-* Most of the advantages of an SPA 
+* Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.&#x20;
+* Reduce connections to the server since scripts and stylesheets only have to be requested once. State can be maintained on a page. JS variables and DOM state will persist because the main container page was not reloaded.&#x20;
+* Most of the advantages of an SPA&#x20;
 
 ### Disadvantages:
 
-* Dynamic webpages are harder to bookmark 
-* Does not work if JS has been disabled in the browser 
-* Some webcrawlers don't execute JS and would not see content that has been loaded by JS. 
-* Most of the disadvantages of an SPA. 
+* Dynamic webpages are harder to bookmark&#x20;
+* Does not work if JS has been disabled in the browser&#x20;
+* Some webcrawlers don't execute JS and would not see content that has been loaded by JS.&#x20;
+* Most of the disadvantages of an SPA.&#x20;
 
 ## `Fetch()`:
 
-Allows you to make network requests similar to XMLHttpRequest \(XHR\). The main difference is that the Fetch API uses Promises, which enables a simpler and cleaner API, **avoiding callback hell and having to remember the complex API of XMLHttpRequest.**
+Allows you to make network requests similar to XMLHttpRequest (XHR). The main difference is that the Fetch API uses Promises, which enables a simpler and cleaner API, **avoiding callback hell and having to remember the complex API of XMLHttpRequest.**
 
 e.g.1- check response status is 200 and parse the response as JSON
 
@@ -1193,17 +1194,17 @@ Allows you request data from a server
 
 **pros**:
 
-* updated a web page without reloading the page 
-* request data from a server - after the page has loaded 
-* receive data from a server - after the page has loaded 
-* send data to a server - in the background 
+* updated a web page without reloading the page&#x20;
+* request data from a server - after the page has loaded&#x20;
+* receive data from a server - after the page has loaded&#x20;
+* send data to a server - in the background&#x20;
 
 **cons:**
 
-* callback hells 
-* API is complex 
+* callback hells&#x20;
+* API is complex&#x20;
 
-An XMLHttpRequest would need two listeners to be set to handle the success and error cases and a call to open\(\) and send\(\).
+An XMLHttpRequest would need two listeners to be set to handle the success and error cases and a call to open() and send().
 
 ```javascript
 function reqListener() {
@@ -1328,26 +1329,26 @@ async function foo() {
 
 ### Event Listener:
 
-* represents an object that can handle an event dispatched by en eventTarget object 
-* **pros**: events are great for things that can happen multiple times on the same object 
-* **cons**: hard to maintain complex async success/failure operations 
-  * callback hell 
+* represents an object that can handle an event dispatched by en eventTarget object&#x20;
+* **pros**: events are great for things that can happen multiple times on the same object&#x20;
+* **cons**: hard to maintain complex async success/failure operations&#x20;
+  * callback hell&#x20;
 
 ### Promise:
 
-* represents the eventual completion or failure of an asynchronous operation. 
-* A promise can only succeed or fail once. It cannot succeed or fail twice, neither can it switch from success to failure or vice versa. 
-* If a promise has succeeded or failed and you later add a success/failure callback, the correct callback will be called, even though the event took place earlier. 
-* Extremely useful async success/failure, because you're less interested in the exact time something became available, and more interested in reacting to the outcome. 
+* represents the eventual completion or failure of an asynchronous operation.&#x20;
+* A promise can only succeed or fail once. It cannot succeed or fail twice, neither can it switch from success to failure or vice versa.&#x20;
+* If a promise has succeeded or failed and you later add a success/failure callback, the correct callback will be called, even though the event took place earlier.&#x20;
+* Extremely useful async success/failure, because you're less interested in the exact time something became available, and more interested in reacting to the outcome.&#x20;
 
 ### [Async/await:](https://javascript.info/async-await)
 
 * async: makes a function become a promise
 * await: makes javascript to wait/pause for the current function, but countiue other excutions and comes back when the promise is settled.
 
-## How JSONP works \(and how it's not really Ajax\).
+## How JSONP works (and how it's not really Ajax).
 
-JSONP \(JSON with Padding\) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
+JSONP (JSON with Padding) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
 
 JSONP works by making a request to a cross-origin domain via a `<script>` tag and usually with a `callback` query parameter, for example: `https://example.com?callback=printData`. The server will then wrap the data within a function called `printData` and return it to the client.
 
@@ -1367,11 +1368,11 @@ function printData(data) {
 printData({ name: 'Yang Shun' });
 ```
 
-* The client has to have the `printData` function in its global scope and the function will be executed by the client when the response from the cross-origin domain is received. 
+* The client has to have the `printData` function in its global scope and the function will be executed by the client when the response from the cross-origin domain is received.&#x20;
 
 JSONP can be unsafe and has some security implications. As JSONP is really JavaScript, it can do everything else JavaScript can do, so you need to trust the provider of the JSONP data.
 
-These days,[CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)is the recommended approach and JSONP is seen as a hack.
+These days,[CORS](https://en.wikipedia.org/wiki/Cross-origin\_resource\_sharing)is the recommended approach and JSONP is seen as a hack.
 
 ## JS templating? Libraries of JS templating:
 
@@ -1391,7 +1392,7 @@ However, do be aware of a potential XSS in the above approach as the contents ar
 
 **Difference:**
 
-* To illustrate the difference, imagine we have this text field in our HTML: 
+* To illustrate the difference, imagine we have this text field in our HTML:&#x20;
 
 ```markup
 <input type="text" value="Hello">.
@@ -1410,7 +1411,7 @@ console.log(input.getAttribute('value')); // Hello
 console.log(input.value); // Hello World!
 ```
 
-* the value **attribute** specifies the initial value of an input, but the value **property** specifies the current value 
+* the value **attribute** specifies the initial value of an input, but the value **property** specifies the current value&#x20;
 
 ## Why is extending built-in JavaScript objects not a good idea?
 
@@ -1421,7 +1422,7 @@ The only time you may want to extend a native object is when you want ti create 
 ## Document `load` event VS. `DOMContentLoaded` event:
 
 * Window's `load` event is only fired after the DOM and all dependent resources and asses have loaded.
-* `DOMContentLoaded` event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. 
+* `DOMContentLoaded` event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.&#x20;
 
 ## Same-origin policy with regards to JS:
 
@@ -1441,7 +1442,7 @@ console.log(getFee(true)); // $2.00
 
 ## Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
 
-Every script has access to the global scope, and if everyone uses the global namespace to define their variables, collisions will likely occur. Use the module pattern \(IIFEs\) to encapsulate your variables within a local namespace.
+Every script has access to the global scope, and if everyone uses the global namespace to define their variables, collisions will likely occur. Use the module pattern (IIFEs) to encapsulate your variables within a local namespace.
 
 ## Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
@@ -1465,21 +1466,21 @@ Web apps tend to be highly interactive and dynamic, allowing the user to perform
 ### Single page app:
 
 * Client-side rendering is used
-* The browser loads the initial page from the server, along with the scripts \(frameworks, libraries, app code\) and stylesheets required for the whole app. When the user navigates to other pages, a page refresh is not triggered. The URL of the page is updated via the [HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API). New data required for the new page, usually in JSON format, is retrieved by the browser via [AJAX](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started) requests to the server. The SPA then dynamically updates the page with the data via JavaScript, which it has already downloaded in the initial page load. This model is similar to how native mobile apps work.
+* The browser loads the initial page from the server, along with the scripts (frameworks, libraries, app code) and stylesheets required for the whole app. When the user navigates to other pages, a page refresh is not triggered. The URL of the page is updated via the [HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History\_API). New data required for the new page, usually in JSON format, is retrieved by the browser via [AJAX](https://developer.mozilla.org/en-US/docs/AJAX/Getting\_Started) requests to the server. The SPA then dynamically updates the page with the data via JavaScript, which it has already downloaded in the initial page load. This model is similar to how native mobile apps work.
 * **Pros:**
   * The app feels more responsive and users do not see the flash between page navigations due to full-page refreshes.
   * Fewer HTTP requests are made to the server, as the same assets do not have to be downloaded again for each page load.
-  * Clear separation of the concerns between the client and the server; you can easily build new clients for different platforms \(e.g. mobile, chatbots, smart watches\) without having to modify the server code. You can also modify the technology stack on the client and server independently, as long as the API contract is not broken.
+  * Clear separation of the concerns between the client and the server; you can easily build new clients for different platforms (e.g. mobile, chatbots, smart watches) without having to modify the server code. You can also modify the technology stack on the client and server independently, as long as the API contract is not broken.
 * **Cons:**
   * Heavier initial page load due to the loading of framework, app code, and assets required for multiple pages.
   * There's an additional step to be done on your server which is to configure it to route all requests to a single entry point and allow client-side routing to take over from there.
-  * SPAs are reliant on JavaScript to render content, but not all search engines execute JavaScript during crawling, and they may see empty content on your page. This inadvertently hurts the Search Engine Optimization \(SEO\) of your app. However, most of the time, when you are building apps, SEO is not the most important factor, as not all the content needs to be indexable by search engines. To overcome this, you can either server-side render your app or use services such as [Prerender](https://prerender.io/) to "render your javascript in a browser, save the static HTML, and return that to the crawlers".
+  * SPAs are reliant on JavaScript to render content, but not all search engines execute JavaScript during crawling, and they may see empty content on your page. This inadvertently hurts the Search Engine Optimization (SEO) of your app. However, most of the time, when you are building apps, SEO is not the most important factor, as not all the content needs to be indexable by search engines. To overcome this, you can either server-side render your app or use services such as [Prerender](https://prerender.io) to "render your javascript in a browser, save the static HTML, and return that to the crawlers".
 
 ## Callback Hell:
 
 Def: long nesting of asynchronous functions in JS
 
-### When \(in what kind of settings\) does the "callback hell problem" occur?
+### When (in what kind of settings) does the "callback hell problem" occur?
 
 When you have lots of callback functions in your code! It gets harder to work with them the more of them you have in your code and it gets particularly bad when you need to do loops, try-catch blocks and things like that.
 
@@ -1491,7 +1492,7 @@ It occurs because in JavaScript the only way to delay a computation so that it r
 
 * Use promise
 * Use generator:
-  * idea is that the "yield" pauses our for loop until someone calls myGen.next\(\).
+  * idea is that the "yield" pauses our for loop until someone calls myGen.next().
   * e.g.
 
 ```javascript
@@ -1519,25 +1520,25 @@ console.log(it.next());   // throws StopIteration (as the generator is now close
 
 ### Parallelism:
 
-* The simultaneous \(at the same time\) execution of \(**possibly** related\) computations \(like **threads**\)
+* The simultaneous (at the same time) execution of (**possibly** related) computations (like **threads**)
 * **Do** lots of things at once
 
 ## What is the extent of your experience with Promises and/or their polyfills?
 
 ### Promise:
 
-* A promise is an object that may produce a single value sometime in the future: either a resolved value or a reason that it's not resolved \(e.g., a network error occurred\). 
-* A promise may be in one of 3 possible states: fulfilled, rejected, or pending. 
+* A promise is an object that may produce a single value sometime in the future: either a resolved value or a reason that it's not resolved (e.g., a network error occurred).&#x20;
+* A promise may be in one of 3 possible states: fulfilled, rejected, or pending.&#x20;
 * Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
 
 ### Polyfills of promise:
 
-* `$.deferred`, Q and Bluebird but not all of them comply with the specification. 
+* `$.deferred`, Q and Bluebird but not all of them comply with the specification.&#x20;
 * ES2015 supports Promises out of the box and polyfills are typically not needed these days.
 
 ## Polyfills
 
-A polyfill is a piece of code \(usually JavaScript on the Web\) used to provide modern functionality on older browsers that do not natively support it.
+A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.
 
 ## What are the pros and cons of using Promises instead of callbacks?
 
@@ -1549,7 +1550,7 @@ A polyfill is a piece of code \(usually JavaScript on the Web\) used to provide 
 
 **Cons**
 
-* Slightly more complex code \(debatable\).
+* Slightly more complex code (debatable).
 * In older browsers where ES2015 is not supported, you need to load a polyfill in order to use it.
 
 ## What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
@@ -1560,14 +1561,14 @@ Some examples of languages that compile to JavaScript include CoffeeScript, Elm,
 
 * Fixes some of the longstanding problems in JavaScript and discourages JavaScript anti-patterns.
 * Enables you to write shorter code, by providing some syntactic sugar on top of JavaScript, which I think ES5 lacks, but ES2015 is awesome.
-* Static types are awesome \(in the case of TypeScript\) for large projects that need to be maintained over time.
+* Static types are awesome (in the case of TypeScript) for large projects that need to be maintained over time.
 
 ### Disadvantages:
 
 * Require a build/compile process as browsers only run JavaScript and your code will need to be compiled into JavaScript before being served to browsers.
 * Debugging can be a pain if your source maps do not map nicely to your pre-compiled source.
 * Most developers are not familiar with these languages and will need to learn it. There's a ramp up cost involved for your team if you use it for your projects.
-* Smaller community \(depends on the language\), which means resources, tutorials, libraries, and tooling would be harder to find.
+* Smaller community (depends on the language), which means resources, tutorials, libraries, and tooling would be harder to find.
 * IDE/editor support might be lacking.
 * These languages will always be behind the latest JavaScript standard.
 * Developers should be cognizant of what their code is being compiled to — because that is what would actually be running, and that is what matters in the end.
@@ -1589,16 +1590,16 @@ Some examples of languages that compile to JavaScript include CoffeeScript, Elm,
 ## Task Runner
 
 * Grunt, gulp
-    * command line utitlities
-    * A task runner that automates the development workflow
-    * Automate tasks:
-      * Bundling and minifying libraries and stylesheets
-      * Refreshing your browser when you save a file
-      * Quickly running unit tests
-      * Running code analysis
-      * Compiling Less/Sass to CSS
-      * Copying modified files to an output directory
-      
+  * command line utitlities
+  * A task runner that automates the development workflow
+  * Automate tasks:
+    * Bundling and minifying libraries and stylesheets
+    * Refreshing your browser when you save a file
+    * Quickly running unit tests
+    * Running code analysis
+    * Compiling Less/Sass to CSS
+    * Copying modified files to an output directory
+
 ## [Reduce webpack bundle size for production](https://hackernoon.com/reduce-webpack-bundle-size-for-production-880bb6b2c72f)
 
 * Use the right environment variable, change to production
@@ -1608,27 +1609,27 @@ Some examples of languages that compile to JavaScript include CoffeeScript, Elm,
 * Use bundle analyzer to figure out what increases the size
 * extract vendors out of your bundle
 * code split by routes:
-   * Webpack:
-      * This feature allows you to split your code into various bundles which can then be loaded on demand or in parallel. It can be used to achieve smaller bundles and control resource load prioritization which, if used correctly, can have a major impact on load time.
-  * react-code-splitting
+  * Webpack:
+    * This feature allows you to split your code into various bundles which can then be loaded on demand or in parallel. It can be used to achieve smaller bundles and control resource load prioritization which, if used correctly, can have a major impact on load time.
+      * react-code-splitting
 
 ## Development cycle:
 
-* coding -&gt; write test code \(auto testing\) -&gt; run test
+* coding -> write test code (auto testing) -> run test
 
 ## Auto Testing:
 
-* Server: PostMan \(HTTP request server testing\)
+* Server: PostMan (HTTP request server testing)
 * Client: Karma, Jasmine
 
 ## What tools and techniques do you use for debugging JavaScript code?
 
 * React and Redux
-  * [React Devtools](https://github.com/facebook/react-devtools): 
+  * [React Devtools](https://github.com/facebook/react-devtools):&#x20;
     * lets you inspect the React component hierarchy, including component props and state.
   * [Redux Devtools](https://github.com/gaearon/redux-devtools)
 * Angular:
-  * [Augury](https://augury.angular.io/):
+  * [Augury](https://augury.angular.io):
     * Augury helps Angular 2.0 developers visualize the application through component trees, and visual debugging tools. Developers get immediate insight into their application structure, change detection and performance characteristics.
 * Vue
   * [Vue Devtools](https://github.com/vuejs/vue-devtools)
@@ -1656,7 +1657,7 @@ Synchronous functions are blocking while asynchronous functions are not.
 
 In **synchronous functions**, statements complete before the next statement is run. In this case, the program is evaluated exactly in order of the statements and execution of the program is paused if one of the statements take a very long time.
 
-**Asynchronous functions** usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty. Heavy duty operations such as loading data from a web server or querying a database should be done asynchronously so that the main thread can continue executing other operations instead of blocking until that long operation to complete \(in the case of browsers, the UI will freeze\).
+**Asynchronous functions** usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty. Heavy duty operations such as loading data from a web server or querying a database should be done asynchronously so that the main thread can continue executing other operations instead of blocking until that long operation to complete (in the case of browsers, the UI will freeze).
 
 ## [What is event loop? Call stack vs. task queue?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
@@ -1805,15 +1806,15 @@ const { e, f, ...others } = {
 
 This depends on the JavaScript environment.
 
-On the client \(browser environment\), as long as the variables/functions are declared in the global scope \(`window`\), all scripts can refer to them. Alternatively, adopt the Asynchronous Module Definition \(AMD\) via RequireJS for a more modular approach.
+On the client (browser environment), as long as the variables/functions are declared in the global scope (`window`), all scripts can refer to them. Alternatively, adopt the Asynchronous Module Definition (AMD) via RequireJS for a more modular approach.
 
-On the server \(Node.js\), the common way has been to use CommonJS. Each file is treated as a module and it can export variables and functions by attaching them to the `module.exports` object.
+On the server (Node.js), the common way has been to use CommonJS. Each file is treated as a module and it can export variables and functions by attaching them to the `module.exports` object.
 
 ES2015 defines a module syntax which aims to replace both AMD and CommonJS. This will eventually be supported in both browser and Node environments.
 
 ## Why you might want to create static class members?
 
-Static class members \(properties/methods\) are not tied to a specific instance of a class and have the same value regardless of which instance is referring to it. Static properties are typically configuration variables and static methods are usually pure utility functions which do not depend on the state of the instance.
+Static class members (properties/methods) are not tied to a specific instance of a class and have the same value regardless of which instance is referring to it. Static properties are typically configuration variables and static methods are usually pure utility functions which do not depend on the state of the instance.
 
 ## Function Composition?
 
@@ -1823,46 +1824,46 @@ Resources:
 
 [https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/questions/coding-questions.md](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/questions/coding-questions.md)
 
-[https://medium.com/@nupoor\_neha/javascript-front-end-interview-questions-1cbc5e32792b](https://medium.com/@nupoor_neha/javascript-front-end-interview-questions-1cbc5e32792b)
+[https://medium.com/@nupoor\_neha/javascript-front-end-interview-questions-1cbc5e32792b](https://medium.com/@nupoor\_neha/javascript-front-end-interview-questions-1cbc5e32792b)
 
 ## Flux:
 
 * Takes Model part in the MVC architecture. It is a pattern
-* It is the architecture responsible for creating data layers in JavaScript applications and building client-side web applications. 
-    * 4 main parts:
-    * Dispatcher
-    * Stores
-    * Views
-    * Action 
+* It is the architecture responsible for creating data layers in JavaScript applications and building client-side web applications.&#x20;
+  * 4 main parts:
+  * Dispatcher
+  * Stores
+  * Views
+  * Action&#x20;
 * Follows the unidirectional data flow
 * Pros:
-    * It is easier to maintain and reason about when it gets more complex
-    * Flux is consistent and repeatable, making it very logical to work with, while creating an “action”.
-    * It is easier when you want the “store” to know how to handle the “action”, store data and activate change event.
-    
+  * It is easier to maintain and reason about when it gets more complex
+  * Flux is consistent and repeatable, making it very logical to work with, while creating an “action”.
+  * It is easier when you want the “store” to know how to handle the “action”, store data and activate change event.
+
 ## MVC:
 
 * Model View Controller software architecture pattern, used to implement user interfaces for web applications
 * It separates out the application logic into three parts, promoting modularity and eas of collaboration and reuse
 * Pros:
-    * Faster development process
-    * Ability to provide multiple views
-    * Support for asynchronous technique
-    * Modification doesn’t affect the entire model
-    * Returns data without formatting
-    * SEO friendly development platform 
+  * Faster development process
+  * Ability to provide multiple views
+  * Support for asynchronous technique
+  * Modification doesn’t affect the entire model
+  * Returns data without formatting
+  * SEO friendly development platform&#x20;
 * Cons:
-    * Code navigability — The framework navigation can be complex because it introduces new layers of abstraction and requires users to adapt to the decomposition criteria of MVC.
-    * Multiple Representations — Decomposing a feature into three artifacts causes scattering. Thus, requiring developers to maintain the consistency of multiple representations at once.
-    
+  * Code navigability — The framework navigation can be complex because it introduces new layers of abstraction and requires users to adapt to the decomposition criteria of MVC.
+  * Multiple Representations — Decomposing a feature into three artifacts causes scattering. Thus, requiring developers to maintain the consistency of multiple representations at once.
+
 ## Restful API:
 
 * An application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE server side objects/resources
 * It is an architecture style for designing networked applications, relies on a stateless, client-server communication protocol.
 * Why is it amazing?
-    * Clients (browser) and servers can interact in complex ways without the client knowing anything beforehand about the server and the resources it holds.
-    * Flexible:
-      * Data is not tied to resources or methods, Rest can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia.
+  * Clients (browser) and servers can interact in complex ways without the client knowing anything beforehand about the server and the resources it holds.
+  * Flexible:
+    * Data is not tied to resources or methods, Rest can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia.
 
 ## Agile:
 
@@ -1878,20 +1879,20 @@ Resources:
 
 * A javascript unit testing framework. It is provided and used by Facebook themselves
 * Pros:
-    * This testing framework is well maintained, it is really close to the ReactJS philosophy
-    * It is simple, standard and standalone.
-    * Zero configuration
+  * This testing framework is well maintained, it is really close to the ReactJS philosophy
+  * It is simple, standard and standalone.
+  * Zero configuration
 * Top Features:
-    * Automatically finds tests
-    * Automatically mocks dependencies
-    * Runs your tests with a fake DOM implementation
-    * Runs tests in parallel process
-    
+  * Automatically finds tests
+  * Automatically mocks dependencies
+  * Runs your tests with a fake DOM implementation
+  * Runs tests in parallel process
+
 **Postman**:
 
 Server apis testing
 
 **Other**:
+
 * Karma
 * Jasmine
-
