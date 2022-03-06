@@ -28,6 +28,13 @@
 * When I finish the project, I make sure my website is working well with all kinds of browsers and devices like it has to be working with firefox, chrome, Internet Explore all the same
 * Make sure my website is responsive to be working on desktop, tablets, and mobile phones
 
+## Scope of a variable
+
+Scope refers to the accessibility of functions and underlying variables in the running environment. There are two scopes supported in Javascript:
+
+* Local scope: values and functions declared inside the same function can only be accessed within that function and not outside it.
+* &#x20;Global scope: If a variable is declared as global, it can be accessed from anywhere in the application.
+
 ## Differences between variables created using `let`, `var` or `const`?
 
 * Variable declarations using `var` are scoped to the function in which they are created, i.e. treated as if they are at the top of the function (or global scope, if declared outside of a function) regardless of where the actual declaration occurs; this is called **hoisting**.
